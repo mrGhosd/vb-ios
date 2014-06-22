@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		64BE32BD19574B01003E99D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32BC19574B01003E99D0 /* Foundation.framework */; };
+		64BE32BF19574B01003E99D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32BE19574B01003E99D0 /* CoreGraphics.framework */; };
+		64BE32C119574B01003E99D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32C019574B01003E99D0 /* UIKit.framework */; };
+		64BE32C719574B01003E99D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64BE32C519574B01003E99D0 /* InfoPlist.strings */; };
+		64BE32C919574B01003E99D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE32C819574B01003E99D0 /* main.m */; };
+		64BE32CD19574B01003E99D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE32CC19574B01003E99D0 /* AppDelegate.m */; };
+		64BE32D019574B01003E99D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64BE32CE19574B01003E99D0 /* Main.storyboard */; };
+		64BE32D319574B01003E99D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE32D219574B01003E99D0 /* ViewController.m */; };
+		64BE32D519574B01003E99D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64BE32D419574B01003E99D0 /* Images.xcassets */; };
+		64BE32DC19574B01003E99D0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32DB19574B01003E99D0 /* XCTest.framework */; };
+		64BE32DD19574B01003E99D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32BC19574B01003E99D0 /* Foundation.framework */; };
+		64BE32DE19574B01003E99D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32C019574B01003E99D0 /* UIKit.framework */; };
+		64BE32E619574B01003E99D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64BE32E419574B01003E99D0 /* InfoPlist.strings */; };
+		64BE32E819574B01003E99D0 /* voenbankTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE32E719574B01003E99D0 /* voenbankTests.m */; };
+		64BE32F319574B4B003E99D0 /* vb_pattrn_0061.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64BE32F119574B4B003E99D0 /* vb_pattrn_0061.jpg */; };
+		64BE32F419574B4B003E99D0 /* vb-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 64BE32F219574B4B003E99D0 /* vb-logo.png */; };
+		64BE32F619574B64003E99D0 /* green-success-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 64BE32F519574B64003E99D0 /* green-success-button.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		64BE32DF19574B01003E99D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64BE32B119574B01003E99D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64BE32B819574B01003E99D0;
+			remoteInfo = voenbank;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		64BE32B919574B01003E99D0 /* voenbank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voenbank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64BE32BC19574B01003E99D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		64BE32BE19574B01003E99D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		64BE32C019574B01003E99D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		64BE32C419574B01003E99D0 /* voenbank-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "voenbank-Info.plist"; sourceTree = "<group>"; };
+		64BE32C619574B01003E99D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		64BE32C819574B01003E99D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		64BE32CA19574B01003E99D0 /* voenbank-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "voenbank-Prefix.pch"; sourceTree = "<group>"; };
+		64BE32CB19574B01003E99D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		64BE32CC19574B01003E99D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		64BE32CF19574B01003E99D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		64BE32D119574B01003E99D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		64BE32D219574B01003E99D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		64BE32D419574B01003E99D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		64BE32DA19574B01003E99D0 /* voenbankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = voenbankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64BE32DB19574B01003E99D0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		64BE32E319574B01003E99D0 /* voenbankTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "voenbankTests-Info.plist"; sourceTree = "<group>"; };
+		64BE32E519574B01003E99D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		64BE32E719574B01003E99D0 /* voenbankTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = voenbankTests.m; sourceTree = "<group>"; };
+		64BE32F119574B4B003E99D0 /* vb_pattrn_0061.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = vb_pattrn_0061.jpg; path = "../../rails_projects/vb-ror-mysql/app/assets/images/vb_pattrn_0061.jpg"; sourceTree = "<group>"; };
+		64BE32F219574B4B003E99D0 /* vb-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "vb-logo.png"; path = "../../rails_projects/vb-ror-mysql/app/assets/images/vb-logo.png"; sourceTree = "<group>"; };
+		64BE32F519574B64003E99D0 /* green-success-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "green-success-button.png"; path = "../../rails_projects/vb-ror-mysql/green-success-button.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64BE32B619574B01003E99D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64BE32BF19574B01003E99D0 /* CoreGraphics.framework in Frameworks */,
+				64BE32C119574B01003E99D0 /* UIKit.framework in Frameworks */,
+				64BE32BD19574B01003E99D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64BE32D719574B01003E99D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64BE32DC19574B01003E99D0 /* XCTest.framework in Frameworks */,
+				64BE32DE19574B01003E99D0 /* UIKit.framework in Frameworks */,
+				64BE32DD19574B01003E99D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64BE32B019574B01003E99D0 = {
+			isa = PBXGroup;
+			children = (
+				64BE32F519574B64003E99D0 /* green-success-button.png */,
+				64BE32F119574B4B003E99D0 /* vb_pattrn_0061.jpg */,
+				64BE32F219574B4B003E99D0 /* vb-logo.png */,
+				64BE32C219574B01003E99D0 /* voenbank */,
+				64BE32E119574B01003E99D0 /* voenbankTests */,
+				64BE32BB19574B01003E99D0 /* Frameworks */,
+				64BE32BA19574B01003E99D0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		64BE32BA19574B01003E99D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64BE32B919574B01003E99D0 /* voenbank.app */,
+				64BE32DA19574B01003E99D0 /* voenbankTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64BE32BB19574B01003E99D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64BE32BC19574B01003E99D0 /* Foundation.framework */,
+				64BE32BE19574B01003E99D0 /* CoreGraphics.framework */,
+				64BE32C019574B01003E99D0 /* UIKit.framework */,
+				64BE32DB19574B01003E99D0 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64BE32C219574B01003E99D0 /* voenbank */ = {
+			isa = PBXGroup;
+			children = (
+				64BE32CB19574B01003E99D0 /* AppDelegate.h */,
+				64BE32CC19574B01003E99D0 /* AppDelegate.m */,
+				64BE32CE19574B01003E99D0 /* Main.storyboard */,
+				64BE32D119574B01003E99D0 /* ViewController.h */,
+				64BE32D219574B01003E99D0 /* ViewController.m */,
+				64BE32D419574B01003E99D0 /* Images.xcassets */,
+				64BE32C319574B01003E99D0 /* Supporting Files */,
+			);
+			path = voenbank;
+			sourceTree = "<group>";
+		};
+		64BE32C319574B01003E99D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				64BE32C419574B01003E99D0 /* voenbank-Info.plist */,
+				64BE32C519574B01003E99D0 /* InfoPlist.strings */,
+				64BE32C819574B01003E99D0 /* main.m */,
+				64BE32CA19574B01003E99D0 /* voenbank-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		64BE32E119574B01003E99D0 /* voenbankTests */ = {
+			isa = PBXGroup;
+			children = (
+				64BE32E719574B01003E99D0 /* voenbankTests.m */,
+				64BE32E219574B01003E99D0 /* Supporting Files */,
+			);
+			path = voenbankTests;
+			sourceTree = "<group>";
+		};
+		64BE32E219574B01003E99D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				64BE32E319574B01003E99D0 /* voenbankTests-Info.plist */,
+				64BE32E419574B01003E99D0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64BE32B819574B01003E99D0 /* voenbank */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64BE32EB19574B01003E99D0 /* Build configuration list for PBXNativeTarget "voenbank" */;
+			buildPhases = (
+				64BE32B519574B01003E99D0 /* Sources */,
+				64BE32B619574B01003E99D0 /* Frameworks */,
+				64BE32B719574B01003E99D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = voenbank;
+			productName = voenbank;
+			productReference = 64BE32B919574B01003E99D0 /* voenbank.app */;
+			productType = "com.apple.product-type.application";
+		};
+		64BE32D919574B01003E99D0 /* voenbankTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64BE32EE19574B01003E99D0 /* Build configuration list for PBXNativeTarget "voenbankTests" */;
+			buildPhases = (
+				64BE32D619574B01003E99D0 /* Sources */,
+				64BE32D719574B01003E99D0 /* Frameworks */,
+				64BE32D819574B01003E99D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64BE32E019574B01003E99D0 /* PBXTargetDependency */,
+			);
+			name = voenbankTests;
+			productName = voenbankTests;
+			productReference = 64BE32DA19574B01003E99D0 /* voenbankTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64BE32B119574B01003E99D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "___FULLUSERNAME___";
+				TargetAttributes = {
+					64BE32D919574B01003E99D0 = {
+						TestTargetID = 64BE32B819574B01003E99D0;
+					};
+				};
+			};
+			buildConfigurationList = 64BE32B419574B01003E99D0 /* Build configuration list for PBXProject "voenbank" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 64BE32B019574B01003E99D0;
+			productRefGroup = 64BE32BA19574B01003E99D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64BE32B819574B01003E99D0 /* voenbank */,
+				64BE32D919574B01003E99D0 /* voenbankTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64BE32B719574B01003E99D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64BE32F419574B4B003E99D0 /* vb-logo.png in Resources */,
+				64BE32D519574B01003E99D0 /* Images.xcassets in Resources */,
+				64BE32C719574B01003E99D0 /* InfoPlist.strings in Resources */,
+				64BE32F619574B64003E99D0 /* green-success-button.png in Resources */,
+				64BE32D019574B01003E99D0 /* Main.storyboard in Resources */,
+				64BE32F319574B4B003E99D0 /* vb_pattrn_0061.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64BE32D819574B01003E99D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64BE32E619574B01003E99D0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64BE32B519574B01003E99D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64BE32D319574B01003E99D0 /* ViewController.m in Sources */,
+				64BE32CD19574B01003E99D0 /* AppDelegate.m in Sources */,
+				64BE32C919574B01003E99D0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64BE32D619574B01003E99D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64BE32E819574B01003E99D0 /* voenbankTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		64BE32E019574B01003E99D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64BE32B819574B01003E99D0 /* voenbank */;
+			targetProxy = 64BE32DF19574B01003E99D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		64BE32C519574B01003E99D0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64BE32C619574B01003E99D0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		64BE32CE19574B01003E99D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64BE32CF19574B01003E99D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		64BE32E419574B01003E99D0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64BE32E519574B01003E99D0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		64BE32E919574B01003E99D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		64BE32EA19574B01003E99D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		64BE32EC19574B01003E99D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "voenbank/voenbank-Prefix.pch";
+				INFOPLIST_FILE = "voenbank/voenbank-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		64BE32ED19574B01003E99D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "voenbank/voenbank-Prefix.pch";
+				INFOPLIST_FILE = "voenbank/voenbank-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		64BE32EF19574B01003E99D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/voenbank.app/voenbank";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "voenbank/voenbank-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "voenbankTests/voenbankTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		64BE32F019574B01003E99D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/voenbank.app/voenbank";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "voenbank/voenbank-Prefix.pch";
+				INFOPLIST_FILE = "voenbankTests/voenbankTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64BE32B419574B01003E99D0 /* Build configuration list for PBXProject "voenbank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64BE32E919574B01003E99D0 /* Debug */,
+				64BE32EA19574B01003E99D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64BE32EB19574B01003E99D0 /* Build configuration list for PBXNativeTarget "voenbank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64BE32EC19574B01003E99D0 /* Debug */,
+				64BE32ED19574B01003E99D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		64BE32EE19574B01003E99D0 /* Build configuration list for PBXNativeTarget "voenbankTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64BE32EF19574B01003E99D0 /* Debug */,
+				64BE32F019574B01003E99D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64BE32B119574B01003E99D0 /* Project object */;
+}
