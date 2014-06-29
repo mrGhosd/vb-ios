@@ -14,6 +14,12 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 - (IBAction)segment:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
+- (IBAction)sliderAmount:(id)sender;
+- (IBAction)sliderTime:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *creditAmount;
+@property (weak, nonatomic) IBOutlet UILabel *creditTime;
+@property (weak, nonatomic) IBOutlet UISlider *sliderAmount;
+@property (weak, nonatomic) IBOutlet UISlider *sliderTime;
 
 @property (weak, nonatomic) IBOutlet UIView *creditView;
 @property (weak, nonatomic) IBOutlet UIView *depositView;

@@ -65,13 +65,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="448"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FaO-RY-xSc">
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.5" minValue="0.0" maxValue="1.5" translatesAutoresizingMaskIntoConstraints="NO" id="FaO-RY-xSc">
                                         <rect key="frame" x="18" y="20" width="284" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="sliderAmount:" destination="7oL-le-HMz" eventType="valueChanged" id="Pyn-Rf-QQr"/>
+                                        </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="AT9-Qa-Z6T">
                                         <rect key="frame" x="18" y="125" width="284" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="sliderTime:" destination="7oL-le-HMz" eventType="valueChanged" id="eJJ-Pf-GXJ"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Сумма кредита" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeQ-sf-D7L">
                                         <rect key="frame" x="20" y="58" width="124" height="40"/>
@@ -81,7 +87,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="р." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QN8-SP-vPy">
-                                        <rect key="frame" x="245" y="65" width="55" height="26"/>
+                                        <rect key="frame" x="215" y="65" width="90" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
@@ -165,9 +171,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="MyD-Z3-UhF"/>
                     <connections>
+                        <outlet property="creditAmount" destination="QN8-SP-vPy" id="fQl-bO-d34"/>
+                        <outlet property="creditTime" destination="75a-Kd-RW1" id="OVx-Zs-VW9"/>
                         <outlet property="creditView" destination="1Yt-cQ-L1A" id="gHk-en-ZXg"/>
                         <outlet property="depositView" destination="xmu-EV-vss" id="q1w-nT-thr"/>
                         <outlet property="segmentControl" destination="qeT-QP-eBZ" id="I2n-Xk-Gdy"/>
+                        <outlet property="sliderAmount" destination="FaO-RY-xSc" id="R1O-N7-Hsk"/>
+                        <outlet property="sliderTime" destination="AT9-Qa-Z6T" id="6k3-XP-2f7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1B-Iw-Lwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
