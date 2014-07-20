@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6422E2651957673900BA98B7 /* sliderThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 6422E2641957673900BA98B7 /* sliderThumb.png */; };
-		6422E2681957689800BA98B7 /* sliderFilledArea.png in Resources */ = {isa = PBXBuildFile; fileRef = 6422E2661957689800BA98B7 /* sliderFilledArea.png */; };
-		6422E2691957689800BA98B7 /* sliderUnfilledArea.png in Resources */ = {isa = PBXBuildFile; fileRef = 6422E2671957689800BA98B7 /* sliderUnfilledArea.png */; };
+		647F91EA196349F40039CFDF /* CurrentUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647F91E9196349F40039CFDF /* CurrentUserViewController.m */; };
+		64A2151D197BFC2500D913B0 /* feedback_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 64A2151C197BFC2500D913B0 /* feedback_button.png */; };
+		64A2151F197BFC2F00D913B0 /* sliderThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 64A2151E197BFC2F00D913B0 /* sliderThumb.png */; };
+		64A21521197BFCAB00D913B0 /* slider_unfilled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64A21520197BFCAB00D913B0 /* slider_unfilled.jpg */; };
+		64A21523197BFCB000D913B0 /* slider_filled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64A21522197BFCB000D913B0 /* slider_filled.jpg */; };
 		64BE32BD19574B01003E99D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32BC19574B01003E99D0 /* Foundation.framework */; };
 		64BE32BF19574B01003E99D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32BE19574B01003E99D0 /* CoreGraphics.framework */; };
 		64BE32C119574B01003E99D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32C019574B01003E99D0 /* UIKit.framework */; };
@@ -26,7 +28,6 @@
 		64BE32E819574B01003E99D0 /* voenbankTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE32E719574B01003E99D0 /* voenbankTests.m */; };
 		64BE32F319574B4B003E99D0 /* vb_pattrn_0061.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64BE32F119574B4B003E99D0 /* vb_pattrn_0061.jpg */; };
 		64BE32F419574B4B003E99D0 /* vb-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 64BE32F219574B4B003E99D0 /* vb-logo.png */; };
-		64BE32F619574B64003E99D0 /* green-success-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 64BE32F519574B64003E99D0 /* green-success-button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6422E2641957673900BA98B7 /* sliderThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sliderThumb.png; path = "../../rails_projects/vb-ror-mysql/sliderThumb.png"; sourceTree = "<group>"; };
-		6422E2661957689800BA98B7 /* sliderFilledArea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sliderFilledArea.png; path = "../../rails_projects/vb-ror-mysql/sliderFilledArea.png"; sourceTree = "<group>"; };
-		6422E2671957689800BA98B7 /* sliderUnfilledArea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sliderUnfilledArea.png; path = "../../rails_projects/vb-ror-mysql/sliderUnfilledArea.png"; sourceTree = "<group>"; };
+		647F91E8196349F40039CFDF /* CurrentUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUserViewController.h; sourceTree = "<group>"; };
+		647F91E9196349F40039CFDF /* CurrentUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentUserViewController.m; sourceTree = "<group>"; };
+		64A2151C197BFC2500D913B0 /* feedback_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = feedback_button.png; path = "../../rails_projects/vb-ror-mysql/app/assets/images/feedback_button.png"; sourceTree = "<group>"; };
+		64A2151E197BFC2F00D913B0 /* sliderThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sliderThumb.png; path = "../../rails_projects/vb-ror-mysql/app/assets/images/sliderThumb.png"; sourceTree = "<group>"; };
+		64A21520197BFCAB00D913B0 /* slider_unfilled.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = slider_unfilled.jpg; path = ../../Desktop/slider_unfilled.jpg; sourceTree = "<group>"; };
+		64A21522197BFCB000D913B0 /* slider_filled.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = slider_filled.jpg; path = ../../Desktop/slider_filled.jpg; sourceTree = "<group>"; };
 		64BE32B919574B01003E99D0 /* voenbank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voenbank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64BE32BC19574B01003E99D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		64BE32BE19574B01003E99D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,7 +68,6 @@
 		64BE32E719574B01003E99D0 /* voenbankTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = voenbankTests.m; sourceTree = "<group>"; };
 		64BE32F119574B4B003E99D0 /* vb_pattrn_0061.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = vb_pattrn_0061.jpg; path = "../../rails_projects/vb-ror-mysql/app/assets/images/vb_pattrn_0061.jpg"; sourceTree = "<group>"; };
 		64BE32F219574B4B003E99D0 /* vb-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "vb-logo.png"; path = "../../rails_projects/vb-ror-mysql/app/assets/images/vb-logo.png"; sourceTree = "<group>"; };
-		64BE32F519574B64003E99D0 /* green-success-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "green-success-button.png"; path = "../../rails_projects/vb-ror-mysql/green-success-button.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +97,10 @@
 		64BE32B019574B01003E99D0 = {
 			isa = PBXGroup;
 			children = (
-				6422E2661957689800BA98B7 /* sliderFilledArea.png */,
-				6422E2671957689800BA98B7 /* sliderUnfilledArea.png */,
-				6422E2641957673900BA98B7 /* sliderThumb.png */,
-				64BE32F519574B64003E99D0 /* green-success-button.png */,
+				64A21522197BFCB000D913B0 /* slider_filled.jpg */,
+				64A21520197BFCAB00D913B0 /* slider_unfilled.jpg */,
+				64A2151E197BFC2F00D913B0 /* sliderThumb.png */,
+				64A2151C197BFC2500D913B0 /* feedback_button.png */,
 				64BE32F119574B4B003E99D0 /* vb_pattrn_0061.jpg */,
 				64BE32F219574B4B003E99D0 /* vb-logo.png */,
 				64BE32C219574B01003E99D0 /* voenbank */,
@@ -133,6 +136,8 @@
 				64BE32CB19574B01003E99D0 /* AppDelegate.h */,
 				64BE32CC19574B01003E99D0 /* AppDelegate.m */,
 				64BE32CE19574B01003E99D0 /* Main.storyboard */,
+				647F91E8196349F40039CFDF /* CurrentUserViewController.h */,
+				647F91E9196349F40039CFDF /* CurrentUserViewController.m */,
 				64BE32D119574B01003E99D0 /* ViewController.h */,
 				64BE32D219574B01003E99D0 /* ViewController.m */,
 				64BE32D419574B01003E99D0 /* Images.xcassets */,
@@ -246,15 +251,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A2151D197BFC2500D913B0 /* feedback_button.png in Resources */,
 				64BE32F419574B4B003E99D0 /* vb-logo.png in Resources */,
 				64BE32D519574B01003E99D0 /* Images.xcassets in Resources */,
-				6422E2691957689800BA98B7 /* sliderUnfilledArea.png in Resources */,
 				64BE32C719574B01003E99D0 /* InfoPlist.strings in Resources */,
-				6422E2681957689800BA98B7 /* sliderFilledArea.png in Resources */,
-				64BE32F619574B64003E99D0 /* green-success-button.png in Resources */,
-				6422E2651957673900BA98B7 /* sliderThumb.png in Resources */,
+				64A2151F197BFC2F00D913B0 /* sliderThumb.png in Resources */,
+				64A21523197BFCB000D913B0 /* slider_filled.jpg in Resources */,
 				64BE32D019574B01003E99D0 /* Main.storyboard in Resources */,
 				64BE32F319574B4B003E99D0 /* vb_pattrn_0061.jpg in Resources */,
+				64A21521197BFCAB00D913B0 /* slider_unfilled.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +281,7 @@
 				64BE32D319574B01003E99D0 /* ViewController.m in Sources */,
 				64BE32CD19574B01003E99D0 /* AppDelegate.m in Sources */,
 				64BE32C919574B01003E99D0 /* main.m in Sources */,
+				647F91EA196349F40039CFDF /* CurrentUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

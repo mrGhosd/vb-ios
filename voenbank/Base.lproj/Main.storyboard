@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="7oL-le-HMz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tnl-uY-fla">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -56,6 +56,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="authButton:" destination="7oL-le-HMz" eventType="touchUpInside" id="bMN-Us-Yya"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Yt-cQ-L1A">
                                 <rect key="frame" x="0.0" y="120" width="320" height="448"/>
@@ -159,6 +162,9 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="FFg-VX-26e" kind="push" identifier="current_user" id="Sph-zz-FkQ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -175,12 +181,55 @@
                         <outlet property="creditTime" destination="75a-Kd-RW1" id="OVx-Zs-VW9"/>
                         <outlet property="creditView" destination="1Yt-cQ-L1A" id="gHk-en-ZXg"/>
                         <outlet property="depositView" destination="xmu-EV-vss" id="q1w-nT-thr"/>
+                        <outlet property="loginField" destination="nhv-lc-mcc" id="opn-NK-18b"/>
+                        <outlet property="passwordField" destination="dyK-3n-zzN" id="vi7-l6-Pm9"/>
                         <outlet property="segmentControl" destination="qeT-QP-eBZ" id="I2n-Xk-Gdy"/>
                         <outlet property="sliderAmount" destination="FaO-RY-xSc" id="R1O-N7-Hsk"/>
                         <outlet property="sliderTime" destination="AT9-Qa-Z6T" id="6k3-XP-2f7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1B-Iw-Lwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="-47"/>
+        </scene>
+        <!--Current User View Controller - Авторизированный пользователь-->
+        <scene sceneID="OgW-KD-BFM">
+            <objects>
+                <viewController id="FFg-VX-26e" customClass="CurrentUserViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ysc-BV-x9q"/>
+                        <viewControllerLayoutGuide type="bottom" id="nGN-Uv-j8H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pbk-tS-St0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Авторизированный пользователь" id="Chh-Yf-AIz"/>
+                    <connections>
+                        <outlet property="backButton" destination="Chh-Yf-AIz" id="s9m-cF-VKl"/>
+                        <outlet property="userView" destination="Pbk-tS-St0" id="nzk-Xp-qe7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OTY-Oz-ptY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1830" y="-272"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qrQ-GG-bmn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tnl-uY-fla" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PXX-VW-T22">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7oL-le-HMz" kind="relationship" relationship="rootViewController" id="RuQ-BV-72f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y7w-Qj-WTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="580" y="-47"/>
         </scene>
