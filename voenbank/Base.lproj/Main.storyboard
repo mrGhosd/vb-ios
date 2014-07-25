@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tnl-uY-fla">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Tnl-uY-fla">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -52,7 +52,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCZ-ZF-Cm8">
                                 <rect key="frame" x="20" y="206" width="280" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Войти" backgroundImage="green-success-button.png">
+                                <state key="normal" title="Войти" backgroundImage="feedback_button.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -110,7 +110,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppm-bP-dg9">
                                         <rect key="frame" x="20" y="209" width="280" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Оставить заявку" backgroundImage="green-success-button.png">
+                                        <state key="normal" title="Оставить заявку" backgroundImage="feedback_button.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -126,6 +126,9 @@
                                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="f1A-pP-Nen">
                                                 <rect key="frame" x="18" y="20" width="284" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="depositAmount:" destination="7oL-le-HMz" eventType="valueChanged" id="KeW-iC-Pf6"/>
+                                                </connections>
                                             </slider>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Сумма вклада:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9r-3q-Isb">
                                                 <rect key="frame" x="20" y="58" width="126" height="32"/>
@@ -142,6 +145,9 @@
                                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="v5B-tr-k7h">
                                                 <rect key="frame" x="18" y="98" width="284" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="depositTime:" destination="7oL-le-HMz" eventType="valueChanged" id="Gv8-WU-14E"/>
+                                                </connections>
                                             </slider>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Срок вклада:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKP-OP-c2j">
                                                 <rect key="frame" x="20" y="136" width="126" height="34"/>
@@ -158,7 +164,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RH9-Nc-q0X">
                                                 <rect key="frame" x="20" y="178" width="280" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Оставить заявку" backgroundImage="green-success-button.png">
+                                                <state key="normal" title="Оставить заявку" backgroundImage="feedback_button.png">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -180,6 +186,10 @@
                         <outlet property="creditAmount" destination="QN8-SP-vPy" id="fQl-bO-d34"/>
                         <outlet property="creditTime" destination="75a-Kd-RW1" id="OVx-Zs-VW9"/>
                         <outlet property="creditView" destination="1Yt-cQ-L1A" id="gHk-en-ZXg"/>
+                        <outlet property="depositAmount" destination="f1A-pP-Nen" id="d2F-6c-Jwc"/>
+                        <outlet property="depositAmountLabel" destination="OBr-eV-dOk" id="COP-SC-OKe"/>
+                        <outlet property="depositTime" destination="v5B-tr-k7h" id="sWr-eD-mss"/>
+                        <outlet property="depositTimeLabel" destination="fzX-kO-6Rm" id="y7d-B1-l8M"/>
                         <outlet property="depositView" destination="xmu-EV-vss" id="q1w-nT-thr"/>
                         <outlet property="loginField" destination="nhv-lc-mcc" id="opn-NK-18b"/>
                         <outlet property="passwordField" destination="dyK-3n-zzN" id="vi7-l6-Pm9"/>
@@ -195,7 +205,7 @@
         <!--Current User View Controller - Авторизированный пользователь-->
         <scene sceneID="OgW-KD-BFM">
             <objects>
-                <viewController id="FFg-VX-26e" customClass="CurrentUserViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentUserViewController" id="FFg-VX-26e" customClass="CurrentUserViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ysc-BV-x9q"/>
                         <viewControllerLayoutGuide type="bottom" id="nGN-Uv-j8H"/>
@@ -235,7 +245,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="green-success-button.png" width="408" height="60"/>
+        <image name="feedback_button.png" width="142" height="30"/>
         <image name="vb-logo.png" width="251" height="40"/>
         <image name="vb_pattrn_0061.jpg" width="500" height="500"/>
     </resources>

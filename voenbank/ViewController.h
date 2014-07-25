@@ -31,4 +31,10 @@
 
 @property (weak, nonatomic) IBOutlet UIView *creditView;
 @property (weak, nonatomic) IBOutlet UIView *depositView;
+@property (weak, nonatomic) IBOutlet UISlider *depositAmount;
+- (IBAction)depositAmount:(id)sender;
+@property (weak, nonatomic) IBOutlet UISlider *depositTime;
+- (IBAction)depositTime:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *depositAmountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *depositTimeLabel;
 @end
