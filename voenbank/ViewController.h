@@ -37,4 +37,6 @@
 - (IBAction)depositTime:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *depositAmountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *depositTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *creditAmountValue;
+@property (weak, nonatomic) IBOutlet UILabel *creditTimeValue;
 @end

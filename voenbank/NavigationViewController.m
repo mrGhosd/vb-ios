@@ -1,18 +1,18 @@
 //
-//  CurrentUserViewController.m
+//  NavigationViewController.m
 //  voenbank
 //
-//  Created by vsokoltsov on 01.07.14.
+//  Created by vsokoltsov on 26.07.14.
 //  Copyright (c) 2014 vsokoltsov. All rights reserved.
 //
 
-#import "CurrentUserViewController.h"
+#import "NavigationViewController.h"
 
-@interface CurrentUserViewController ()
+@interface NavigationViewController ()
 
 @end
 
-@implementation CurrentUserViewController
+@implementation NavigationViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [_backButton setHidesBackButton:YES];
     // Do any additional setup after loading the view.
 }
 

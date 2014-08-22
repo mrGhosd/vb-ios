@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "CurrentUserViewController.h"
+#import "SWRevealViewController.h"
+#import "MainViewController.h"
+#import "SidebarViewController.h"
 
 @interface ViewController ()
 {
@@ -102,19 +104,21 @@
     if (val >= 30000)
     {
         _sliderTime.value = 6;
+        _creditTime.text = @"6 м.";
+        
     }
     if (val >= 45000)
     {
         _sliderTime.value = 9;
+        _creditTime.text = @"9 м.";
     }
     if (val >= 72000)
     {
         _sliderTime.value = 12;
+        _creditTime.text = @"12 м.";
     }
     
     self.creditAmount.text = [NSString stringWithFormat:@"%i р.", val];
-    
-    
 }
 
 - (IBAction)depositAmount:(id)sender
@@ -125,15 +129,18 @@
     if (val >= 600000)
     {
         _depositTime.value = 12;
+        _depositTimeLabel.text = @"12 м.";
         
     }
     if (val >= 1200000)
     {
         _depositTime.value = 24;
+        _depositTimeLabel.text = @"24 м.";
     }
     if (val >= 2400000)
     {
         _depositTime.value = 36;
+        _depositTimeLabel.text = @"36 м.";
     }
     
     self.depositAmountLabel.text = [NSString stringWithFormat:@"%i р.", val];
@@ -146,6 +153,22 @@
     UISlider *slider = (UISlider *)sender;
     
     int val = slider.value;
+    
+    if(val >= 3)
+    {
+        _sliderAmount.value = 30000;
+        _creditAmount.text = @"30000 р.";
+    }
+    if(val >= 6)
+    {
+        _sliderAmount.value = 45000;
+        _creditAmount.text = @"45000 р.";
+    }
+    if(val >= 12)
+    {
+        _sliderAmount.value = 72000;
+        _creditAmount.text = @"72000 р.";
+    }
     
     self.creditTime.text = [NSString stringWithFormat:@"%i м.", val];
     
@@ -196,11 +219,13 @@
         //        CurrentUserViewController *toViewController=[[CurrentUserViewController alloc] init];
         //        [self.navigationController pushViewController:toViewController animated:YES];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-        CurrentUserViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"CurrentUserViewController"];
+        MainViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+        
+        viewController.userInformation = jsonObject;
         [self.navigationController pushViewController:viewController animated:YES];
         // можно вывести в консоль и посмотреть - что мы получили
-        NSLog( @"%@",result );
-        NSLog(@"ID: %@", [jsonObject objectForKey:@"name"]);
+//        NSLog( @"%@",result );
+//        NSLog(@"ID: %@", [jsonObject objectForKey:@"name"]);
         
 	}
 }
