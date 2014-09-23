@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64098E2419B3C19100813312 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64098E2319B3C19100813312 /* RegistrationViewController.m */; };
 		648CE5F51983CDA500AD7FAB /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CE5F41983CDA500AD7FAB /* SidebarViewController.m */; };
 		648CE5F81983D01900AD7FAB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CE5F71983D01900AD7FAB /* MainViewController.m */; };
 		6498B5B419831A760056B251 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6498B5B319831A760056B251 /* SWRevealViewController.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		64098E2219B3C19100813312 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		64098E2319B3C19100813312 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		648CE5F31983CDA500AD7FAB /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
 		648CE5F41983CDA500AD7FAB /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		648CE5F61983D01900AD7FAB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 		64BE32C219574B01003E99D0 /* voenbank */ = {
 			isa = PBXGroup;
 			children = (
+				64098E2219B3C19100813312 /* RegistrationViewController.h */,
+				64098E2319B3C19100813312 /* RegistrationViewController.m */,
 				64BE32CB19574B01003E99D0 /* AppDelegate.h */,
 				64BE32CC19574B01003E99D0 /* AppDelegate.m */,
 				6498B5B219831A760056B251 /* SWRevealViewController.h */,
@@ -306,6 +311,7 @@
 				648CE5F51983CDA500AD7FAB /* SidebarViewController.m in Sources */,
 				6498B5B419831A760056B251 /* SWRevealViewController.m in Sources */,
 				64BE32C919574B01003E99D0 /* main.m in Sources */,
+				64098E2419B3C19100813312 /* RegistrationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -114,6 +114,10 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loanRegistration:" destination="7oL-le-HMz" eventType="touchUpInside" id="0ez-Mh-aDK"/>
+                                            <segue destination="t4X-ES-eLd" kind="push" identifier="loanRegistration" id="hpa-4s-cAh"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xmu-EV-vss">
                                         <rect key="frame" x="0.0" y="1" width="320" height="448"/>
@@ -169,6 +173,10 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="depositRegistration:" destination="7oL-le-HMz" eventType="touchUpInside" id="Gx0-hr-fcY"/>
+                                                    <segue destination="t4X-ES-eLd" kind="push" identifier="depositRegistration" id="LTV-VT-i7W"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -188,9 +196,11 @@
                         <outlet property="creditView" destination="1Yt-cQ-L1A" id="gHk-en-ZXg"/>
                         <outlet property="depositAmount" destination="f1A-pP-Nen" id="d2F-6c-Jwc"/>
                         <outlet property="depositAmountLabel" destination="OBr-eV-dOk" id="COP-SC-OKe"/>
+                        <outlet property="depositRegistration" destination="MyD-Z3-UhF" id="dQ5-Ef-BCU"/>
                         <outlet property="depositTime" destination="v5B-tr-k7h" id="sWr-eD-mss"/>
                         <outlet property="depositTimeLabel" destination="fzX-kO-6Rm" id="y7d-B1-l8M"/>
                         <outlet property="depositView" destination="xmu-EV-vss" id="q1w-nT-thr"/>
+                        <outlet property="loanRegistration" destination="ppm-bP-dg9" id="ybE-Ce-Oy7"/>
                         <outlet property="loginField" destination="nhv-lc-mcc" id="opn-NK-18b"/>
                         <outlet property="passwordField" destination="dyK-3n-zzN" id="vi7-l6-Pm9"/>
                         <outlet property="segmentControl" destination="qeT-QP-eBZ" id="I2n-Xk-Gdy"/>
@@ -242,7 +252,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gey-Hx-I5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="934" y="671"/>
+            <point key="canvasLocation" x="726" y="719"/>
+        </scene>
+        <!--Registration View Controller - Reg-->
+        <scene sceneID="lHZ-5p-LXx">
+            <objects>
+                <viewController storyboardIdentifier="Registration" title="Reg" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t4X-ES-eLd" customClass="RegistrationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D7s-5d-kbK"/>
+                        <viewControllerLayoutGuide type="bottom" id="R0E-VK-BID"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a0N-NB-fVG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vb_pattrn_0061.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gI1-Pt-8eJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1ia-Yf-sQC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6N-5b-yci" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2413" y="399"/>
         </scene>
         <!--Sidebar View Controller-->
         <scene sceneID="A3y-uq-V4t">
@@ -339,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qxl-mw-MW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2899" y="228"/>
+            <point key="canvasLocation" x="2949" y="-386"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JJ9-f6-TbK">
@@ -424,7 +459,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rh9-km-C2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2333" y="228"/>
+            <point key="canvasLocation" x="2339" y="-386"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="UfI-oJ-uaH">
@@ -456,4 +491,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="LTV-VT-i7W"/>
+    </inferredMetricsTieBreakers>
 </document>

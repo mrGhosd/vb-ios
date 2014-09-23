@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "MainViewController.h"
 #import "SidebarViewController.h"
+#import "RegistrationViewController.h"
 
 @interface ViewController ()
 {
@@ -182,6 +183,19 @@
         //        destViewController.recipeName = [recipes objectAtIndex:indexPath.row];
         //
     }
+    if([segue.identifier isEqualToString:@"loanRegistration"])
+    {
+        RegistrationViewController *regView = (RegistrationViewController *) segue.destinationViewController;
+        regView.regType = @"Loan";
+        regView.loanSum = _sliderAmount.value;
+        regView.loanTime = _sliderTime.value;
+
+    }
+    if([segue.identifier isEqualToString:@"depositRegistration"])
+    {
+        RegistrationViewController *regView = (RegistrationViewController *) segue.destinationViewController;
+        regView.regType = @"Deposit";
+    }
 }
 /**
  * При получении новой порции данных добавляем их к уже полученным
@@ -232,7 +246,7 @@
 
 - (IBAction)authButton:(id)sender {
     
-    NSURL *url = [NSURL URLWithString:@"api.voenbank.com:3000/api/users/login"];    //создаем объект NSURL с адресом, на который
+    NSURL *url = [NSURL URLWithString:@"localhost:3000/api/users/login"];    //создаем объект NSURL с адресом, на который
     //будет идти запрос
     
     NSString *params = [NSString stringWithFormat:@"login=%@&password=%@", _loginField.text, _passwordField.text];
@@ -270,5 +284,19 @@
 }
 
 
+
+- (IBAction)loanRegistration:(id)sender {
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+//    RegistrationViewController *regView = [storyboard instantiateViewControllerWithIdentifier:@"RegistrationViewController"];
+//    
+//    regView.regType = @"Loan";
+//    [self.navigationController pushViewController:regView animated:YES];
+//    RegistrationViewController *regView = [self.storyboard instantiateViewControllerWithIdentifier:@"RegistrationViewController"];
+//    regView.regType = @"Loan";
+//    [self.navigationController pushViewController: regView animated:YES];
+    
+}
+- (IBAction)depositRegistration:(id)sender {
+}
 
 @end

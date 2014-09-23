@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RegistrationViewController.h"
 
 @interface ViewController : UIViewController
 {
@@ -39,4 +40,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *depositTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *creditAmountValue;
 @property (weak, nonatomic) IBOutlet UILabel *creditTimeValue;
+@property (weak, nonatomic) IBOutlet UIButton *loanRegistration;
+- (IBAction)loanRegistration:(id)sender;
+@property (weak, nonatomic) IBOutlet UINavigationItem *depositRegistration;
+- (IBAction)depositRegistration:(id)sender;
 @end
