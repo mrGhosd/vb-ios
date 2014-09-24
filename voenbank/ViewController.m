@@ -237,9 +237,6 @@
         
         viewController.userInformation = jsonObject;
         [self.navigationController pushViewController:viewController animated:YES];
-        // можно вывести в консоль и посмотреть - что мы получили
-//        NSLog( @"%@",result );
-//        NSLog(@"ID: %@", [jsonObject objectForKey:@"name"]);
         
 	}
 }

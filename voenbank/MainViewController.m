@@ -11,7 +11,7 @@
 
 @interface MainViewController ()
 {
-    
+    NSString* image ;
 }
 
 @end
@@ -34,6 +34,16 @@
     _nameField.text = [_userInformation objectForKey:@"name"];
     _surnameField.text = [_userInformation objectForKey:@"surname"];
     _secondname_field.text = [_userInformation objectForKey:@"secondname"];
+    
+    image = @"avatar_url";
+    NSString *imageURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",[_userInformation objectForKey:image]];
+    NSURL *url = [NSURL URLWithString:imageURL];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *avatar = [[UIImage alloc] initWithData:data];
+    _userAvatar.image = avatar;
+    NSLog(@"IMAGE URL IS %@", imageURL);
+    
+
     // Do any additional setup after loading the view.
     _sideButton.target = self.revealViewController;
     _sideButton.action = @selector(revealToggle:);

@@ -15,5 +15,6 @@
 - (IBAction)sidebarButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *nameField;
 @property (weak, nonatomic) IBOutlet UILabel *surnameField;
+@property (weak, nonatomic) IBOutlet UIImageView *userAvatar;
 @property (weak, nonatomic) IBOutlet UILabel *secondname_field;
 @end
