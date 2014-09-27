@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		64098E2419B3C19100813312 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64098E2319B3C19100813312 /* RegistrationViewController.m */; };
+		64574C3B19D6A45F0094979C /* RegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64574C3919D6A45F0094979C /* RegViewController.m */; };
+		64574C3C19D6A45F0094979C /* RegViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64574C3A19D6A45F0094979C /* RegViewController.xib */; };
+		64574C4219D6D5680094979C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64574C4119D6D5680094979C /* Main.storyboard */; };
+		64574C4519D6DBD90094979C /* EntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64574C4419D6DBD90094979C /* EntryViewController.m */; };
 		648CE5F51983CDA500AD7FAB /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CE5F41983CDA500AD7FAB /* SidebarViewController.m */; };
 		648CE5F81983D01900AD7FAB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CE5F71983D01900AD7FAB /* MainViewController.m */; };
 		6498B5B419831A760056B251 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6498B5B319831A760056B251 /* SWRevealViewController.m */; };
@@ -17,7 +21,6 @@
 		64BE32C719574B01003E99D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64BE32C519574B01003E99D0 /* InfoPlist.strings */; };
 		64BE32C919574B01003E99D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE32C819574B01003E99D0 /* main.m */; };
 		64BE32CD19574B01003E99D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE32CC19574B01003E99D0 /* AppDelegate.m */; };
-		64BE32D019574B01003E99D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64BE32CE19574B01003E99D0 /* Main.storyboard */; };
 		64BE32D319574B01003E99D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BE32D219574B01003E99D0 /* ViewController.m */; };
 		64BE32D519574B01003E99D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64BE32D419574B01003E99D0 /* Images.xcassets */; };
 		64BE32DC19574B01003E99D0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32DB19574B01003E99D0 /* XCTest.framework */; };
@@ -47,6 +50,12 @@
 /* Begin PBXFileReference section */
 		64098E2219B3C19100813312 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		64098E2319B3C19100813312 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		64574C3819D6A45F0094979C /* RegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegViewController.h; sourceTree = "<group>"; };
+		64574C3919D6A45F0094979C /* RegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegViewController.m; sourceTree = "<group>"; };
+		64574C3A19D6A45F0094979C /* RegViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegViewController.xib; sourceTree = "<group>"; };
+		64574C4119D6D5680094979C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		64574C4319D6DBD90094979C /* EntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryViewController.h; sourceTree = "<group>"; };
+		64574C4419D6DBD90094979C /* EntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryViewController.m; sourceTree = "<group>"; };
 		648CE5F31983CDA500AD7FAB /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
 		648CE5F41983CDA500AD7FAB /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		648CE5F61983D01900AD7FAB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -63,7 +72,6 @@
 		64BE32CA19574B01003E99D0 /* voenbank-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "voenbank-Prefix.pch"; sourceTree = "<group>"; };
 		64BE32CB19574B01003E99D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		64BE32CC19574B01003E99D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		64BE32CF19574B01003E99D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64BE32D119574B01003E99D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		64BE32D219574B01003E99D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		64BE32D419574B01003E99D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -105,6 +113,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		643C590C19D57DC70038C4B8 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				64574C4119D6D5680094979C /* Main.storyboard */,
+				64574C3A19D6A45F0094979C /* RegViewController.xib */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		643C590D19D57DD10038C4B8 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		643C590E19D57DD80038C4B8 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
 		64BE32B019574B01003E99D0 = {
 			isa = PBXGroup;
 			children = (
@@ -139,13 +170,19 @@
 		64BE32C219574B01003E99D0 /* voenbank */ = {
 			isa = PBXGroup;
 			children = (
+				643C590E19D57DD80038C4B8 /* controllers */,
+				643C590D19D57DD10038C4B8 /* models */,
+				643C590C19D57DC70038C4B8 /* views */,
 				64098E2219B3C19100813312 /* RegistrationViewController.h */,
 				64098E2319B3C19100813312 /* RegistrationViewController.m */,
+				64574C4319D6DBD90094979C /* EntryViewController.h */,
+				64574C4419D6DBD90094979C /* EntryViewController.m */,
 				64BE32CB19574B01003E99D0 /* AppDelegate.h */,
 				64BE32CC19574B01003E99D0 /* AppDelegate.m */,
 				6498B5B219831A760056B251 /* SWRevealViewController.h */,
+				64574C3819D6A45F0094979C /* RegViewController.h */,
+				64574C3919D6A45F0094979C /* RegViewController.m */,
 				6498B5B319831A760056B251 /* SWRevealViewController.m */,
-				64BE32CE19574B01003E99D0 /* Main.storyboard */,
 				648CE5F61983D01900AD7FAB /* MainViewController.h */,
 				648CE5F71983D01900AD7FAB /* MainViewController.m */,
 				648CE5F31983CDA500AD7FAB /* SidebarViewController.h */,
@@ -282,11 +319,12 @@
 				64BE32C719574B01003E99D0 /* InfoPlist.strings in Resources */,
 				64CF4EA61986E2B200274BF8 /* vb_pattrn_0061.jpg in Resources */,
 				64CF4EA51986E2B200274BF8 /* sliderThumb.png in Resources */,
-				64BE32D019574B01003E99D0 /* Main.storyboard in Resources */,
 				64CF4EA41986E2B200274BF8 /* slider_unfilled.jpg in Resources */,
 				64CF4EA21986E2B200274BF8 /* menu.png in Resources */,
 				64CF4EA11986E2B200274BF8 /* feedback_button.png in Resources */,
 				64CF4EA71986E2B200274BF8 /* vb-logo.png in Resources */,
+				64574C4219D6D5680094979C /* Main.storyboard in Resources */,
+				64574C3C19D6A45F0094979C /* RegViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +346,8 @@
 				64BE32D319574B01003E99D0 /* ViewController.m in Sources */,
 				64BE32CD19574B01003E99D0 /* AppDelegate.m in Sources */,
 				648CE5F81983D01900AD7FAB /* MainViewController.m in Sources */,
+				64574C3B19D6A45F0094979C /* RegViewController.m in Sources */,
+				64574C4519D6DBD90094979C /* EntryViewController.m in Sources */,
 				648CE5F51983CDA500AD7FAB /* SidebarViewController.m in Sources */,
 				6498B5B419831A760056B251 /* SWRevealViewController.m in Sources */,
 				64BE32C919574B01003E99D0 /* main.m in Sources */,
@@ -340,14 +380,6 @@
 				64BE32C619574B01003E99D0 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		64BE32CE19574B01003E99D0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				64BE32CF19574B01003E99D0 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		64BE32E419574B01003E99D0 /* InfoPlist.strings */ = {

@@ -15,9 +15,6 @@
 
 @implementation RegistrationViewController
 
-@synthesize regType;
-@synthesize loanSum;
-@synthesize loanTime;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"regType is %@, loan sum is %f and time is %f", regType, loanSum, loanTime);
+//    NSLog(@"regType is %@, loan sum is %f and time is %f", regType, loanSum, loanTime);
 }
 
 - (void)didReceiveMemoryWarning

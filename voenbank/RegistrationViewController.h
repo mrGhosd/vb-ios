@@ -13,9 +13,5 @@ enum regType
     deposit
 };
 @interface RegistrationViewController : UIViewController
-@property(nonatomic, retain) NSString *regType;
-@property(nonatomic) float loanSum;
-@property(nonatomic) float loanTime;
-@property(nonatomic) float *depositSum;
-@property(nonatomic) float *depositTime;
+
 @end

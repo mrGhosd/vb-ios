@@ -25,28 +25,19 @@
 @end
 
 @implementation ViewController
+@synthesize entryView;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self viewsInit];
     [_creditView setHidden:YES];
     [_depositView setHidden:YES];
-    _sliderAmount.minimumValue = 15000;
-    _sliderAmount.maximumValue = 90000;
+    
     _depositAmount.minimumValue = 1000000;
     _depositAmount.maximumValue = 3000000;
     _depositTime.minimumValue = 12;
     _depositTime.maximumValue = 36;
     
-    [self.sliderAmount setThumbImage:[UIImage imageNamed:@"sliderThumb.png"] forState:UIControlStateNormal];
-    [self.sliderAmount setMinimumTrackImage:[UIImage imageNamed:@"slider_unfilled.jpg"]
-                                   forState:UIControlStateNormal];
-    [self.sliderAmount setMaximumTrackImage:[UIImage imageNamed:@"slider_filled.jpg"]
-                                   forState:UIControlStateNormal];
-    [self.sliderTime setThumbImage:[UIImage imageNamed:@"sliderThumb.png"] forState:UIControlStateNormal];
-    [self.sliderTime setMinimumTrackImage:[UIImage imageNamed:@"slider_unfilled.jpg"]
-                                 forState:UIControlStateNormal];
-    [self.sliderTime setMaximumTrackImage:[UIImage imageNamed:@"slider_filled.jpg"]
-                                 forState:UIControlStateNormal];
     
     [self.depositAmount setThumbImage:[UIImage imageNamed:@"sliderThumb.png"] forState:UIControlStateNormal];
     [self.depositAmount setMinimumTrackImage:[UIImage imageNamed:@"slider_unfilled.jpg"]
@@ -61,13 +52,6 @@
     
     
     
-    
-    
-    
-    
-    _sliderTime.minimumValue = 3;
-    _sliderTime.maximumValue = 15;
-    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -76,26 +60,45 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void) viewsInit{
+    RegViewController *registrationView = [[RegViewController alloc] initWithNibName:@"RegViewController" bundle:nil];
+    UIView *myView = self.loginView;
+    UIView *superView = self.entryView;
+    self.regView = registrationView.view;
+    
+//    self.secondnView.backgroundColor = [UIColor redColor];
+//    registrationView.view.backgroundColor = [UIColor redColor];
+    [self.regView setHidden:YES];
+    
+//    [self.ent addSubview:self.regView];
+}
 
+-(void) setRegistrationView:(int) index
+{
+    if(index == 0){
+        [self.loginView setHidden:NO];
+        [self.regView setHidden:YES];
+    } else if(index == 1) {
+        [self.loginView setHidden:YES];
+        [self.regView setHidden:NO];
+    }
 
+//    [self.navigationController pushViewController:regView animated:NO];
+}
 
 - (IBAction)segment:(id)sender {
-    switch (self.segmentControl.selectedSegmentIndex)
-    {
-        case 0:
-            [_creditView setHidden:YES];
-            [_depositView setHidden:YES];
-            break;
-        case 1:
-            [_creditView setHidden:NO];
-            [_depositView setHidden:YES];
-            break;
-        case 2:
-            [_creditView setHidden:NO];
-            [_depositView setHidden:NO];
-        default:
-            break;
-    }
+    [self setRegistrationView:self.segmentControl.selectedSegmentIndex];
+//    switch (self.segmentControl.selectedSegmentIndex)
+//    {
+//        case 0:
+//        case 1:
+//        case 2:
+//            [entryView setHidden:YES];
+//            [self setRegistrationView];
+//            break;
+//        default:
+//            break;
+//    }
 }
 - (IBAction)sliderAmount:(id)sender {
     UISlider *slider = (UISlider *)sender;
@@ -186,15 +189,15 @@
     if([segue.identifier isEqualToString:@"loanRegistration"])
     {
         RegistrationViewController *regView = (RegistrationViewController *) segue.destinationViewController;
-        regView.regType = @"Loan";
-        regView.loanSum = _sliderAmount.value;
-        regView.loanTime = _sliderTime.value;
+//        regView.regType = @"Loan";
+//        regView.loanSum = _sliderAmount.value;
+//        regView.loanTime = _sliderTime.value;
 
     }
     if([segue.identifier isEqualToString:@"depositRegistration"])
     {
         RegistrationViewController *regView = (RegistrationViewController *) segue.destinationViewController;
-        regView.regType = @"Deposit";
+//        regView.regType = @"Deposit";
     }
 }
 /**
@@ -230,8 +233,6 @@
     else
     {
         id jsonObject = [NSJSONSerialization JSONObjectWithData:userData options:NSJSONReadingMutableContainers error:nil];
-        //        CurrentUserViewController *toViewController=[[CurrentUserViewController alloc] init];
-        //        [self.navigationController pushViewController:toViewController animated:YES];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
         MainViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
         
@@ -294,6 +295,11 @@
     
 }
 - (IBAction)depositRegistration:(id)sender {
+}
+
+-(IBAction)showRegisterView{
+    [[NSBundle mainBundle] loadNibNamed:@"test" owner:self options:nil];
+    [self.view addSubview:self.regView];
 }
 
 @end

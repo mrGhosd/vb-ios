@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RegistrationViewController.h"
+#import "RegViewController.h"
 
 @interface ViewController : UIViewController
 {
@@ -16,10 +17,16 @@
 
 
 //segmentControl
+@property(strong, nonatomic) IBOutlet UIView *view;
+
 @property (nonatomic, retain) NSMutableData *userData;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 - (IBAction)segment:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *entryView;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
+@property(nonatomic, weak) IBOutlet UIView *regView;
+
+
 - (IBAction)sliderAmount:(id)sender;
 - (IBAction)sliderTime:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *loginField;
@@ -44,4 +51,7 @@
 - (IBAction)loanRegistration:(id)sender;
 @property (weak, nonatomic) IBOutlet UINavigationItem *depositRegistration;
 - (IBAction)depositRegistration:(id)sender;
+
+
+-(IBAction)showRegisterView;
 @end
