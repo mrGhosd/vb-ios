@@ -8,6 +8,7 @@
 
 #import "EntryViewController.h"
 
+
 @interface EntryViewController ()
 
 @end
@@ -15,6 +16,8 @@
 @implementation EntryViewController
 
 - (void)viewDidLoad {
+    APIConnect *connection = [[APIConnect alloc] init];
+    self.connection = connection;
     [super viewDidLoad];
     [self initSliderApperance];
     
@@ -119,6 +122,10 @@
 }
 
 - (IBAction)authButton:(id)sender {
+   [self.connection getData:@"/users/login" params:[NSString stringWithFormat:@"login=%i&password=%i",3,3]];
+    NSLog(@"%@", self.connection.dataFromServer
+          );
+    
 }
 - (IBAction)viewSwitcher:(id)sender {
     [self switchView:self.segment.selectedSegmentIndex];
@@ -127,13 +134,11 @@
 {
     UISlider *slider = (UISlider *)sender;
     int val = slider.value;
-    NSLog(@"sliderTime value is %i", val);
     self.sliderTimeLabel.text = [NSString stringWithFormat:@"%i м.", val];
 }
 - (IBAction)changeAmount:(id)sender {
     UISlider *slider = (UISlider *)sender;
     int val = slider.value;
-    NSLog(@"sliderAmount value is %i", val);
     self.sliderSumLabel.text = [NSString stringWithFormat:@"%i р.", val];
 }
 @end

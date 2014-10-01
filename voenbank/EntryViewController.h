@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RegistrationViewController.h"
+#import "APIConnect.h"
 
 @interface EntryViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIView *loginView;
@@ -19,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 @property (strong, nonatomic) IBOutlet UILabel *sliderSumLabel;
 @property (strong, nonatomic) IBOutlet UILabel *sliderTimeLabel;
+@property (strong, nonatomic) IBOutlet APIConnect *connection;
 - (IBAction)authButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UISlider *sliderAmount;
 @property (weak, nonatomic) IBOutlet UISlider *sliderTime;
