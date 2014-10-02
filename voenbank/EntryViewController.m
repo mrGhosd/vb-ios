@@ -7,6 +7,7 @@
 //
 
 #import "EntryViewController.h"
+#import "MainViewController.h"
 
 @interface EntryViewController ()
 
@@ -121,13 +122,24 @@
 }
 
 - (IBAction)authButton:(id)sender {
-    [self.connection getData:@"/users/login" params:[NSString stringWithFormat:@"login=%i&password=%i",3,3]
-    success:complete];
-    
+
+    [self.connection getData:@"/users/login" params:[NSString stringWithFormat:@"login=&password=%i",3]
+                     success:^(id json){
+                         [self toUserProfile:json];
+                     }];
 }
 void (^complete)(id) = ^(id json){
-    NSLog(@"the result is %@", [json objectForKey:@"surname"]);
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    MainViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    viewController.userInformation = json;
+//
 };
+-(void) toUserProfile:(id) user{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    MainViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    viewController.userInformation = user;
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 - (IBAction)viewSwitcher:(id)sender {
     [self switchView:self.segment.selectedSegmentIndex];
 }
