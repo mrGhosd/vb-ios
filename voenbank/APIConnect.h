@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+typedef void (^requestCompletedBlock)(id);
+typedef void(^requestErrorBlock)(NSError *);
 
 @interface APIConnect : NSObject{
     NSMutableData *userData;
 }
-@property (nonatomic) id dataFromServer;
--(void)getData:(NSString *)url params: (NSString *) params;
+
+@property (nonatomic, copy) requestCompletedBlock completed;
+@property (nonatomic, copy) requestErrorBlock errored;
+
+@property (nonatomic) NSString *dataFromServer;
+- (void)getData:(NSString *)url params: (NSString *) params success: (requestCompletedBlock) completed error: (requestErrorBlock) error;
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection;
 @end

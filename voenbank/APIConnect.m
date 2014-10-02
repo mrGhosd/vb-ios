@@ -10,7 +10,12 @@
 
 #define MAIN_URL [NSURL URLWithString:@"http://localhost:3000/api"]
 
+
+
 @implementation APIConnect
+
+@synthesize completed = _completed;
+@synthesize errored = _errored;
 
 -(void)getData:(NSString *)url params:(NSString *)params{
     NSURL *finalURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", MAIN_URL, url]];
@@ -55,8 +60,13 @@
         [alert show];
     }
     else{
-//    id jsonObject = [NSJSONSerialization JSONObjectWithData:userData options:NSJSONReadingMutableContainers error:nil];
-    self.dataFromServer = result;
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:userData options:NSJSONReadingMutableContainers error:nil];
+//        [self setUserData:result];
+        self.completed(jsonObject);
     }
+}
+
+-(void) setUserData: (NSString *) params{
+    self.dataFromServer = params;
 }
 @end
