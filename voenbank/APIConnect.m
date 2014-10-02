@@ -17,7 +17,8 @@
 @synthesize completed = _completed;
 @synthesize errored = _errored;
 
--(void)getData:(NSString *)url params:(NSString *)params{
+- (void)getData:(NSString *)url params: (NSString *) params success: (requestCompletedBlock) completed{
+    self.completed = completed;
     NSURL *finalURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", MAIN_URL, url]];
     NSData *postData = [params dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
