@@ -10,7 +10,6 @@
 		64098E2419B3C19100813312 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64098E2319B3C19100813312 /* RegistrationViewController.m */; };
 		645159F419DB392700F299C8 /* APIConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 645159F319DB392700F299C8 /* APIConnect.m */; };
 		64574C3B19D6A45F0094979C /* RegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64574C3919D6A45F0094979C /* RegViewController.m */; };
-		64574C3C19D6A45F0094979C /* RegViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64574C3A19D6A45F0094979C /* RegViewController.xib */; };
 		64574C4219D6D5680094979C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64574C4119D6D5680094979C /* Main.storyboard */; };
 		64574C4519D6DBD90094979C /* EntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64574C4419D6DBD90094979C /* EntryViewController.m */; };
 		648CE5F51983CDA500AD7FAB /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CE5F41983CDA500AD7FAB /* SidebarViewController.m */; };
@@ -55,7 +54,6 @@
 		645159F319DB392700F299C8 /* APIConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIConnect.m; sourceTree = "<group>"; };
 		64574C3819D6A45F0094979C /* RegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegViewController.h; sourceTree = "<group>"; };
 		64574C3919D6A45F0094979C /* RegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegViewController.m; sourceTree = "<group>"; };
-		64574C3A19D6A45F0094979C /* RegViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegViewController.xib; sourceTree = "<group>"; };
 		64574C4119D6D5680094979C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		64574C4319D6DBD90094979C /* EntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryViewController.h; sourceTree = "<group>"; };
 		64574C4419D6DBD90094979C /* EntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryViewController.m; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				64574C4119D6D5680094979C /* Main.storyboard */,
-				64574C3A19D6A45F0094979C /* RegViewController.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -329,7 +326,6 @@
 				64CF4EA11986E2B200274BF8 /* feedback_button.png in Resources */,
 				64CF4EA71986E2B200274BF8 /* vb-logo.png in Resources */,
 				64574C4219D6D5680094979C /* Main.storyboard in Resources */,
-				64574C3C19D6A45F0094979C /* RegViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +473,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "voenbank/voenbank-Prefix.pch";
 				INFOPLIST_FILE = "voenbank/voenbank-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -490,6 +487,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "voenbank/voenbank-Prefix.pch";
 				INFOPLIST_FILE = "voenbank/voenbank-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

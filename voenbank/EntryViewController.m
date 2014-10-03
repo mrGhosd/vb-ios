@@ -8,7 +8,7 @@
 
 #import "EntryViewController.h"
 #import "MainViewController.h"
-
+#import "RegistrationViewController.h"
 @interface EntryViewController ()
 
 @end
@@ -20,9 +20,6 @@
     self.connection = connection;
     [super viewDidLoad];
     [self initSliderApperance];
-    
-
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,15 +27,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 -(void) initLittlePopup{
     UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Пожалуйста, выберите роль:" delegate:self cancelButtonTitle:@"Отмена" destructiveButtonTitle:nil otherButtonTitles:
                             @"Курсант",
@@ -110,8 +98,6 @@
     } else {
         [self initViewWithSliders:index];
         [self.sliderView setHidden:NO];
-//        [self initSliderApperance];
-//        [self initViewWithSliders];
         [self.loginView setHidden:YES];
         if(self.roleWindowShow != true){
             [self initLittlePopup];
@@ -122,36 +108,59 @@
 }
 
 - (IBAction)authButton:(id)sender {
-
-    [self.connection getData:@"/users/login" params:[NSString stringWithFormat:@"login=&password=%i",3]
+    if([_loginField.text length] == 0 || [_passwordField.text length] == 0){
+        [self showAlertWindow:@"ОШИБКА" text:@"Поле логин и/или пароль пустое!"];
+    } else {
+    [self.connection getData:@"/users/login" params:[NSString stringWithFormat:@"login=%@&password=%@",_loginField.text, _passwordField.text]
                      success:^(id json){
                          [self toUserProfile:json];
                      }];
+    }
 }
 void (^complete)(id) = ^(id json){
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     MainViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
     viewController.userInformation = json;
-//
 };
+
 -(void) toUserProfile:(id) user{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     MainViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
     viewController.userInformation = user;
     [self.navigationController pushViewController:viewController animated:YES];
 }
+
 - (IBAction)viewSwitcher:(id)sender {
     [self switchView:self.segment.selectedSegmentIndex];
 }
+
 - (IBAction)changeTime:(id)sender
 {
     UISlider *slider = (UISlider *)sender;
     int val = slider.value;
     self.sliderTimeLabel.text = [NSString stringWithFormat:@"%i м.", val];
 }
+
 - (IBAction)changeAmount:(id)sender {
     UISlider *slider = (UISlider *)sender;
     int val = slider.value;
     self.sliderSumLabel.text = [NSString stringWithFormat:@"%i р.", val];
 }
+
+-(void) showAlertWindow: (NSString *) title text:(NSString *) text{
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:title
+                          message:text
+                          delegate:self
+                          cancelButtonTitle: @"OK"
+                          otherButtonTitles:nil];
+    [alert show];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"registrationView"]) {
+        RegistrationViewController *registration = [[RegistrationViewController alloc] init];
+    }
+}
+
 @end

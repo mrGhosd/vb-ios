@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-enum regType
-{
-    loan,
-    deposit
-};
-@interface RegistrationViewController : UIViewController
+
+@interface RegistrationViewController : UIViewController <UITextFieldDelegate>{
+    IBOutlet UIScrollView *scroll;
+}
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (strong, nonatomic) IBOutlet UITextField *surnameField;
 
 @end
