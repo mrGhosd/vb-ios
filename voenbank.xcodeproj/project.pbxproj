@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		64098E2419B3C19100813312 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64098E2319B3C19100813312 /* RegistrationViewController.m */; };
 		645159F419DB392700F299C8 /* APIConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 645159F319DB392700F299C8 /* APIConnect.m */; };
+		645159FA19E023AE00F299C8 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645159F919E023AE00F299C8 /* SWRevealViewController.m */; };
 		64574C3B19D6A45F0094979C /* RegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64574C3919D6A45F0094979C /* RegViewController.m */; };
 		64574C4219D6D5680094979C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64574C4119D6D5680094979C /* Main.storyboard */; };
 		64574C4519D6DBD90094979C /* EntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64574C4419D6DBD90094979C /* EntryViewController.m */; };
 		648CE5F51983CDA500AD7FAB /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CE5F41983CDA500AD7FAB /* SidebarViewController.m */; };
 		648CE5F81983D01900AD7FAB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CE5F71983D01900AD7FAB /* MainViewController.m */; };
-		6498B5B419831A760056B251 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6498B5B319831A760056B251 /* SWRevealViewController.m */; };
 		64BE32BD19574B01003E99D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32BC19574B01003E99D0 /* Foundation.framework */; };
 		64BE32BF19574B01003E99D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32BE19574B01003E99D0 /* CoreGraphics.framework */; };
 		64BE32C119574B01003E99D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32C019574B01003E99D0 /* UIKit.framework */; };
@@ -52,6 +52,8 @@
 		64098E2319B3C19100813312 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		645159F219DB392700F299C8 /* APIConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConnect.h; sourceTree = "<group>"; };
 		645159F319DB392700F299C8 /* APIConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIConnect.m; sourceTree = "<group>"; };
+		645159F819E023AE00F299C8 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		645159F919E023AE00F299C8 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		64574C3819D6A45F0094979C /* RegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegViewController.h; sourceTree = "<group>"; };
 		64574C3919D6A45F0094979C /* RegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegViewController.m; sourceTree = "<group>"; };
 		64574C4119D6D5680094979C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -61,8 +63,6 @@
 		648CE5F41983CDA500AD7FAB /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		648CE5F61983D01900AD7FAB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		648CE5F71983D01900AD7FAB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		6498B5B219831A760056B251 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
-		6498B5B319831A760056B251 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
 		64BE32B919574B01003E99D0 /* voenbank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voenbank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64BE32BC19574B01003E99D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		64BE32BE19574B01003E99D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -176,15 +176,15 @@
 				643C590D19D57DD10038C4B8 /* models */,
 				643C590C19D57DC70038C4B8 /* views */,
 				64098E2219B3C19100813312 /* RegistrationViewController.h */,
+				645159F819E023AE00F299C8 /* SWRevealViewController.h */,
+				645159F919E023AE00F299C8 /* SWRevealViewController.m */,
 				64098E2319B3C19100813312 /* RegistrationViewController.m */,
 				64574C4319D6DBD90094979C /* EntryViewController.h */,
 				64574C4419D6DBD90094979C /* EntryViewController.m */,
 				64BE32CB19574B01003E99D0 /* AppDelegate.h */,
 				64BE32CC19574B01003E99D0 /* AppDelegate.m */,
-				6498B5B219831A760056B251 /* SWRevealViewController.h */,
 				64574C3819D6A45F0094979C /* RegViewController.h */,
 				64574C3919D6A45F0094979C /* RegViewController.m */,
-				6498B5B319831A760056B251 /* SWRevealViewController.m */,
 				648CE5F61983D01900AD7FAB /* MainViewController.h */,
 				648CE5F71983D01900AD7FAB /* MainViewController.m */,
 				648CE5F31983CDA500AD7FAB /* SidebarViewController.h */,
@@ -350,8 +350,8 @@
 				64574C3B19D6A45F0094979C /* RegViewController.m in Sources */,
 				64574C4519D6DBD90094979C /* EntryViewController.m in Sources */,
 				648CE5F51983CDA500AD7FAB /* SidebarViewController.m in Sources */,
-				6498B5B419831A760056B251 /* SWRevealViewController.m in Sources */,
 				64BE32C919574B01003E99D0 /* main.m in Sources */,
+				645159FA19E023AE00F299C8 /* SWRevealViewController.m in Sources */,
 				64098E2419B3C19100813312 /* RegistrationViewController.m in Sources */,
 				645159F419DB392700F299C8 /* APIConnect.m in Sources */,
 			);

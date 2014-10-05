@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SWRevealViewController.h"
 
 @interface MainViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sideButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *sideButton;
 @property(nonatomic) id userInformation;
 - (IBAction)sidebarButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *nameField;

@@ -29,7 +29,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.sideButton setTarget: self.revealViewController];
+        [self.sideButton setAction: @selector( revealToggle: )];
+        [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+        
+    }
+
+//    [self callSideBarButton];
+    [self setupMainPageData];
     
+    
+}
+-(void) setupMainPageData{
     NSLog(@"MAINVIEWCONTROLLER JSON: %@", [_userInformation objectForKey:@"name"]);
     _nameField.text = [_userInformation objectForKey:@"name"];
     _surnameField.text = [_userInformation objectForKey:@"surname"];
@@ -42,15 +56,18 @@
     UIImage *avatar = [[UIImage alloc] initWithData:data];
     _userAvatar.image = avatar;
     NSLog(@"IMAGE URL IS %@", imageURL);
-    
 
-    // Do any additional setup after loading the view.
-    _sideButton.target = self.revealViewController;
-    _sideButton.action = @selector(revealToggle:);
-    UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self.revealViewController action:@selector(revealToggle:)];
-    [self.navigationController.view addGestureRecognizer:gesture];
-    [self.navigationController.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
+}
+- (void) callSideBarButton{
+    //    // Change button color
+//    _sideButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
+//    
+//    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+//    _sideButton.target = self.revealViewController;
+//    _sideButton.action = @selector(revealToggle:);
+//    
+//    // Set the gesture
+//    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning

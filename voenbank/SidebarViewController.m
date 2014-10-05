@@ -31,12 +31,28 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSUserDefaults *userName = [NSUserDefaults standardUserDefaults];
-    self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    self.tableView.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
+//    NSUserDefaults *userName = [NSUserDefaults standardUserDefaults];
+//    self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
+//    self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
+//    self.tableView.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
     leftMenu = [NSArray arrayWithObjects: @"Моя страница", @"Кредиты", @"Вклады", @"Акции", @"Новости", nil];
 }
+- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
+{
+    // configure the destination view controller:
+    if ( [sender isKindOfClass:[UITableViewCell class]] )
+    {
+//        UILabel* c = [(UITableViewCell *)sender label];
+//        UINavigationController *navController = segue.destinationViewController;
+//        ColorViewController* cvc = [navController childViewControllers].firstObject;
+//        if ( [cvc isKindOfClass:[ColorViewController class]] )
+//        {
+//            cvc.color = c.textColor;
+//            cvc.text = c.text;
+//        }
+    }
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [leftMenu count];
