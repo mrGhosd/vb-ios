@@ -12,4 +12,5 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic) id userInformation;
+@property (nonatomic, strong) NSArray *menuItems;
 @end

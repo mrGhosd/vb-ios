@@ -25,20 +25,10 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
-//    _backButton.title = @"wadwa";
     [scroll setScrollEnabled:YES];
     [scroll setContentSize:CGSizeMake(320, 784)];
-
-//    self.navigationController.navigationBar.titleTextAttributes=@"Назад";
-//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Назад" style:UIBarButtonItemStylePlain target:self action:nil];
-//    self.navigationController.na
-//    vigationBar.tintColor = [UIColor blackColor];
-//    self.navigationItem.backBarButtonItem = backButton;
-    // Do any additional setup after loading the view.
-//    NSLog(@"regType is %@, loan sum is %f and time is %f", regType, loanSum, loanTime);
 }
 
 - (void)didReceiveMemoryWarning
