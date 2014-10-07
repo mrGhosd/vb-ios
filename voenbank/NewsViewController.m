@@ -7,6 +7,7 @@
 //
 
 #import "NewsViewController.h"
+#import "SWRevealViewController.h"
 
 @interface NewsViewController ()
 {
@@ -23,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self defBackButton];
     stock_title = @"stock_title";
     date = @"date";
     image = @"image_url";
@@ -53,7 +55,16 @@
     self.connection = connection;
    
 }
-
+- (void) defBackButton{
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.backButton setTarget: self.revealViewController];
+        [self.backButton setAction: @selector( revealToggle: )];
+        [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+        
+    }
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

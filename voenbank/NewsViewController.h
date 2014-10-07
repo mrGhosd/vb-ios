@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "APIConnect.h"
-#import "SWRevealViewController.h"
+
 
 @interface NewsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
@@ -17,6 +17,7 @@
 @property(nonatomic, strong) APIConnect *connection;
 @property(nonatomic, weak) id jsonObjects;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *cell;
 @end

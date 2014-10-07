@@ -439,7 +439,7 @@
             </objects>
             <point key="canvasLocation" x="960" y="-522"/>
         </scene>
-        <!--News View Controller-->
+        <!--Новости-->
         <scene sceneID="QDK-IH-72b">
             <objects>
                 <viewController storyboardIdentifier="NewsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YN1-c4-2AY" customClass="NewsViewController" sceneMemberID="viewController">
@@ -460,7 +460,14 @@
                             <outlet property="delegate" destination="YN1-c4-2AY" id="H9n-3D-x6o"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="36v-g0-5JD"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Новости" id="cnA-5O-vqo">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="RfR-LO-KeS"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="RfR-LO-KeS" id="Gjq-Mn-IlB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2f1-Bd-a4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
