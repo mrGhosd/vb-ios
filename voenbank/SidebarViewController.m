@@ -8,6 +8,9 @@
 
 #import "SidebarViewController.h"
 #import "NewsViewController.h"
+#import "MainViewController.h"
+#import "User.h"
+
 @interface SidebarViewController ()
 {
     NSArray *leftMenu;
@@ -37,13 +40,17 @@
 //    self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
 //    self.tableView.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
 //    leftMenu = [NSArray arrayWithObjects: @"Новости", nil];
-    _menuItems = @[@"news"];
+    _menuItems = @[@"my_page", @"news"];
 }
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
     if([[segue identifier] isEqualToString:@"news_page"]){
         NewsViewController *news = [segue destinationViewController];
     }
+    if([[segue identifier] isEqualToString:@"my_page"]){
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        MainViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+        [self.navigationController pushViewController:viewController animated:YES];    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

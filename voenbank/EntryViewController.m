@@ -9,6 +9,8 @@
 #import "EntryViewController.h"
 #import "MainViewController.h"
 #import "RegistrationViewController.h"
+#import "User.h"
+
 @interface EntryViewController ()
 
 @end
@@ -125,6 +127,8 @@ void (^complete)(id) = ^(id json){
 -(void) toUserProfile:(id) user{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     MainViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    User *userObject = [User sharedManager];
+    userObject.userData = user;
     viewController.userInformation = user;
     [self.navigationController pushViewController:viewController animated:YES];
 }

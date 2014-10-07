@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		64098E2419B3C19100813312 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64098E2319B3C19100813312 /* RegistrationViewController.m */; };
 		642C62A619E3595700A3E446 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62A519E3595700A3E446 /* NewsViewController.m */; };
+		642C62A919E3F4DC00A3E446 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62A819E3F4DC00A3E446 /* User.m */; };
+		642C62AC19E3FC2100A3E446 /* FullNewsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62AB19E3FC2100A3E446 /* FullNewsInfoViewController.m */; };
 		645159F419DB392700F299C8 /* APIConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 645159F319DB392700F299C8 /* APIConnect.m */; };
 		645159FA19E023AE00F299C8 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645159F919E023AE00F299C8 /* SWRevealViewController.m */; };
 		64574C3B19D6A45F0094979C /* RegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64574C3919D6A45F0094979C /* RegViewController.m */; };
@@ -53,6 +55,10 @@
 		64098E2319B3C19100813312 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		642C62A419E3595700A3E446 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		642C62A519E3595700A3E446 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		642C62A719E3F4DC00A3E446 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		642C62A819E3F4DC00A3E446 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		642C62AA19E3FC2100A3E446 /* FullNewsInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullNewsInfoViewController.h; sourceTree = "<group>"; };
+		642C62AB19E3FC2100A3E446 /* FullNewsInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullNewsInfoViewController.m; sourceTree = "<group>"; };
 		645159F219DB392700F299C8 /* APIConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConnect.h; sourceTree = "<group>"; };
 		645159F319DB392700F299C8 /* APIConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIConnect.m; sourceTree = "<group>"; };
 		645159F819E023AE00F299C8 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -130,6 +136,8 @@
 			children = (
 				645159F219DB392700F299C8 /* APIConnect.h */,
 				645159F319DB392700F299C8 /* APIConnect.m */,
+				642C62A719E3F4DC00A3E446 /* User.h */,
+				642C62A819E3F4DC00A3E446 /* User.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -198,6 +206,8 @@
 				642C62A519E3595700A3E446 /* NewsViewController.m */,
 				64BE32D419574B01003E99D0 /* Images.xcassets */,
 				64BE32C319574B01003E99D0 /* Supporting Files */,
+				642C62AA19E3FC2100A3E446 /* FullNewsInfoViewController.h */,
+				642C62AB19E3FC2100A3E446 /* FullNewsInfoViewController.m */,
 			);
 			path = voenbank;
 			sourceTree = "<group>";
@@ -355,8 +365,10 @@
 				64574C3B19D6A45F0094979C /* RegViewController.m in Sources */,
 				64574C4519D6DBD90094979C /* EntryViewController.m in Sources */,
 				642C62A619E3595700A3E446 /* NewsViewController.m in Sources */,
+				642C62AC19E3FC2100A3E446 /* FullNewsInfoViewController.m in Sources */,
 				648CE5F51983CDA500AD7FAB /* SidebarViewController.m in Sources */,
 				64BE32C919574B01003E99D0 /* main.m in Sources */,
+				642C62A919E3F4DC00A3E446 /* User.m in Sources */,
 				645159FA19E023AE00F299C8 /* SWRevealViewController.m in Sources */,
 				64098E2419B3C19100813312 /* RegistrationViewController.m in Sources */,
 				645159F419DB392700F299C8 /* APIConnect.m in Sources */,

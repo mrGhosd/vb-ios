@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
+#import "User.h"
 
 @interface MainViewController ()
 {
@@ -44,18 +45,19 @@
     
 }
 -(void) setupMainPageData{
-    NSLog(@"MAINVIEWCONTROLLER JSON: %@", [_userInformation objectForKey:@"name"]);
-    _nameField.text = [_userInformation objectForKey:@"name"];
-    _surnameField.text = [_userInformation objectForKey:@"surname"];
-    _secondname_field.text = [_userInformation objectForKey:@"secondname"];
+//    NSLog(@"MAINVIEWCONTROLLER JSON: %@", [_userInformation objectForKey:@"name"]);
+    User *user = [User sharedManager];
+    _nameField.text = [user.userData objectForKey:@"name"];
+    _surnameField.text = [user.userData objectForKey:@"surname"];
+    _secondname_field.text = [user.userData objectForKey:@"secondname"];
     
     image = @"avatar_url";
-    NSString *imageURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",[_userInformation objectForKey:image]];
+    NSString *imageURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",[user.userData objectForKey:image]];
     NSURL *url = [NSURL URLWithString:imageURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *avatar = [[UIImage alloc] initWithData:data];
     _userAvatar.image = avatar;
-    NSLog(@"IMAGE URL IS %@", imageURL);
+//    NSLog(@"IMAGE URL IS %@", imageURL);
 
 }
 - (void) callSideBarButton{
