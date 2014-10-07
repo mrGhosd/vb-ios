@@ -66,7 +66,15 @@
         self.completed(jsonObject);
     }
 }
+- (id) requestForStaticPages: (NSString *) urlPart{
+    NSData *jsonSource = [NSData dataWithContentsOfURL:
+                          [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", MAIN_URL, urlPart]]];
+    
+    id jsonObjects = [NSJSONSerialization JSONObjectWithData:
+                      jsonSource options:NSJSONReadingMutableContainers error:nil];
+    return jsonObjects;
 
+}
 -(void) setUserData: (NSString *) params{
     self.dataFromServer = params;
 }

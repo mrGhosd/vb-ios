@@ -11,6 +11,12 @@
 #import "SWRevealViewController.h"
 
 @interface NewsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    IBOutlet UITableView *tableData;
+}
 @property(nonatomic, strong) APIConnect *connection;
 @property(nonatomic, weak) id jsonObjects;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) IBOutlet UITableViewCell *cell;
 @end
