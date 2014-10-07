@@ -261,7 +261,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "-getData:params:success:"
+            landmarkName = "-getData:params:type:success:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -309,7 +309,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
             endingLineNumber = "42"
-            landmarkName = "-getData:params:success:"
+            landmarkName = "-getData:params:type:success:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -357,7 +357,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "-getData:params:success:"
+            landmarkName = "-getData:params:type:success:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -374,22 +374,6 @@
             startingLineNumber = "51"
             endingLineNumber = "51"
             landmarkName = "-connectionDidFinishLoading:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "voenbank/EntryViewController.m"
-            timestampString = "434032753.323442"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "-authButton:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

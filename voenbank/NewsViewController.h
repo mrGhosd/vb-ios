@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APIConnect.h"
+#import "SWRevealViewController.h"
 
 @interface NewsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-
+@property(nonatomic, strong) APIConnect *connection;
+@property(nonatomic, weak) id jsonObjects;
 @end

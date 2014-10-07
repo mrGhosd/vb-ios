@@ -111,10 +111,9 @@
     if([_loginField.text length] == 0 || [_passwordField.text length] == 0){
         [self showAlertWindow:@"ОШИБКА" text:@"Поле логин и/или пароль пустое!"];
     } else {
-    [self.connection getData:@"/users/login" params:[NSString stringWithFormat:@"login=%@&password=%@",_loginField.text, _passwordField.text]
-                     success:^(id json){
-                         [self toUserProfile:json];
-                     }];
+        [self.connection getData:@"/users/login" params:[NSString stringWithFormat:@"login=%@&password=%@",_loginField.text, _passwordField.text] type:@"POST" success:^(id json){
+            [self toUserProfile:json];
+        }];
     }
 }
 void (^complete)(id) = ^(id json){
