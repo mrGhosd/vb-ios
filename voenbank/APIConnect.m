@@ -62,7 +62,6 @@
     }
     else{
     id jsonObject = [NSJSONSerialization JSONObjectWithData:userData options:NSJSONReadingMutableContainers error:nil];
-//        [self setUserData:result];
         self.completed(jsonObject);
     }
 }

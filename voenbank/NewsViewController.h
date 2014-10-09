@@ -18,6 +18,6 @@
 @property(nonatomic, weak) id jsonObjects;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
-
+@property(nonatomic, strong) IBOutlet NSDictionary *currentCellData;
 @property (strong, nonatomic) IBOutlet UITableViewCell *cell;
 @end

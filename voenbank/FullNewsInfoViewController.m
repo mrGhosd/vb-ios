@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initNewsInfo];
+    NSLog(@"News data is %@", self.newsData);
     // Do any additional setup after loading the view.
 }
 
@@ -23,7 +25,22 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void) initNewsInfo{
+    [self initImageNews];
+    _newsLabel.text = [_newsData objectForKey:@"stock_title"];
+    [_newsText setEditable:NO];
+    _newsText.backgroundColor = [UIColor clearColor];
+    _newsText.text = [_newsData objectForKey:@"stock_text"];
+}
+-(void) initImageNews{
+    NSString *fullURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",[_newsData objectForKey:@"image_url"]];
+    NSURL *url = [NSURL URLWithString: fullURL];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *img = [[UIImage alloc]initWithData:data];
+    _newsImage.frame = CGRectMake(10, 70, 300, 150);
+    _newsImage.image = img;
 
+}
 /*
 #pragma mark - Navigation
 

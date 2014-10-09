@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="jXR-ih-BHh">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -224,12 +223,12 @@
             <objects>
                 <viewController storyboardIdentifier="RegistrationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qnj-cI-8oa" customClass="RegistrationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qiF-MN-KiN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="784"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" keyboardDismissMode="onDrag" id="7io-yi-pMu">
-                                <rect key="frame" x="0.0" y="68" width="320" height="716"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <rect key="frame" x="0.0" y="68" width="320" height="500"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="XGk-bY-3Pt">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="716"/>
@@ -368,8 +367,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="0sO-Xq-1rx"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="784"/>
                     <connections>
                         <outlet property="scroll" destination="7io-yi-pMu" id="Zh2-mU-XlZ"/>
                     </connections>
@@ -466,11 +463,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rNR-kz-BFn">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rNR-kz-BFn">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rNR-kz-BFn" id="nC3-X0-EHd">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="b9Y-vC-Ezz" kind="push" identifier="detail_view" id="lJz-ai-hmX"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -489,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2f1-Bd-a4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2867" y="-871"/>
+            <point key="canvasLocation" x="1927" y="-1435"/>
         </scene>
         <!--Full News Info View Controller-->
         <scene sceneID="uHd-Yy-sIg">
@@ -498,12 +498,42 @@
                     <view key="view" contentMode="scaleToFill" id="x3O-tL-HMB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vb_pattrn_0061.jpg" id="Ucl-gV-yIV">
+                                <rect key="frame" x="0.0" y="60" width="320" height="467"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="C8V-kL-2do">
+                                <rect key="frame" x="0.0" y="78" width="320" height="114"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="U7z-Ib-aGO">
+                                <rect key="frame" x="16" y="262" width="288" height="254"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст новости" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QGg-Ts-ZjE">
+                                <rect key="frame" x="16" y="224" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5CE-Wk-H7Y"/>
+                    <connections>
+                        <outlet property="newsImage" destination="C8V-kL-2do" id="29e-Q0-7Wi"/>
+                        <outlet property="newsLabel" destination="QGg-Ts-ZjE" id="mxV-XX-1bV"/>
+                        <outlet property="newsText" destination="U7z-Ib-aGO" id="fSi-3Q-M6s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQU-fU-8Ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3408" y="-883"/>
+            <point key="canvasLocation" x="2468" y="-1447"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="TJD-e9-gGO">
@@ -562,24 +592,6 @@
             <point key="canvasLocation" x="3045" y="374"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="qrQ-GG-bmn">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tnl-uY-fla" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PXX-VW-T22">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7oL-le-HMz" kind="relationship" relationship="rootViewController" id="RuQ-BV-72f"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y7w-Qj-WTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-400" y="-515"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="c5a-6f-fMv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hAH-3C-Y7n" customClass="NavigationController" sceneMemberID="viewController">
@@ -631,7 +643,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caG-ff-sX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2335" y="-871"/>
+            <point key="canvasLocation" x="1395" y="-1435"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yur-9N-u1I">

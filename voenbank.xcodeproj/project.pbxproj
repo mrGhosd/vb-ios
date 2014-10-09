@@ -204,10 +204,10 @@
 				64BE32D219574B01003E99D0 /* ViewController.m */,
 				642C62A419E3595700A3E446 /* NewsViewController.h */,
 				642C62A519E3595700A3E446 /* NewsViewController.m */,
-				64BE32D419574B01003E99D0 /* Images.xcassets */,
-				64BE32C319574B01003E99D0 /* Supporting Files */,
 				642C62AA19E3FC2100A3E446 /* FullNewsInfoViewController.h */,
 				642C62AB19E3FC2100A3E446 /* FullNewsInfoViewController.m */,
+				64BE32D419574B01003E99D0 /* Images.xcassets */,
+				64BE32C319574B01003E99D0 /* Supporting Files */,
 			);
 			path = voenbank;
 			sourceTree = "<group>";

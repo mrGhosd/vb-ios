@@ -8,6 +8,7 @@
 
 #import "NewsViewController.h"
 #import "SWRevealViewController.h"
+#import "FullNewsInfoViewController.h"
 
 @interface NewsViewController ()
 {
@@ -16,6 +17,7 @@
     NSString *stock_title;
     NSString *date;
     NSString *image;
+    NSString *text;
 }
 
 @end
@@ -24,10 +26,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.delegate = self;
     [self defBackButton];
     stock_title = @"stock_title";
     date = @"date";
     image = @"image_url";
+    text = @"stock_text";
     myObject = [[NSMutableArray alloc] init];
     NSData *jsonSource = [NSData dataWithContentsOfURL:
                           [NSURL URLWithString:@"http://localhost:3000/api/stocks"]];
@@ -39,11 +43,13 @@
         NSString *stock_title_data = [dataDict objectForKey:@"stock_title"];
         NSString *time_data = [dataDict objectForKey:@"created_at"];
         NSString *image_data = [dataDict objectForKey:@"image_url"];
+        NSString *stockText_data = [dataDict objectForKey:@"stock_text"];
         
         dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                       stock_title_data, stock_title,
                       image_data, image,
                       time_data,date,
+                      stockText_data, text,
                       nil];
         [myObject addObject:dictionary];
     }
@@ -92,10 +98,6 @@
     NSMutableString *detail;
     detail = [NSMutableString stringWithFormat:@"%@ ",
               [tmpDict objectForKey:date]];
-    
-    //    NSURL *url = [NSURL URLWithString:[tmpDict objectForKey:image]];
-    //    NSData *data = [NSData dataWithContentsOfURL:url];
-    //    UIImage *img = [[UIImage alloc]initWithData:data];
     NSMutableString *images;
     images = [NSMutableString stringWithFormat:@"%@ ",
               [tmpDict objectForKey:image]];
@@ -114,6 +116,20 @@
     
     return cell;
 
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"full data of news is %@", myObject[indexPath.row]);
+//    FullNewsInfoViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"FullNewsInfoViewController"];
+//    view.newsData = myObject[indexPath.row];
+//    [self.navigationController pushViewController:view animated:YES];
+    self.currentCellData = myObject[indexPath.row];
+    [self performSegueWithIdentifier:@"detail_view" sender:self];
+}
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"detail_view"]){
+        FullNewsInfoViewController *detailView = segue.destinationViewController;
+        detailView.newsData = self.currentCellData;
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -61,10 +61,10 @@
     // Dispose of any resources that can be recreated.
 }
 -(void) viewsInit{
-    RegViewController *registrationView = [[RegViewController alloc] initWithNibName:@"RegViewController" bundle:nil];
-    UIView *myView = self.loginView;
-    UIView *superView = self.entryView;
-    self.regView = registrationView.view;
+//    RegViewController *registrationView = [[RegViewController alloc] initWithNibName:@"RegViewController" bundle:nil];
+//    UIView *myView = self.loginView;
+//    UIView *superView = self.entryView;
+//    self.regView = registrationView.view;
     
 //    self.secondnView.backgroundColor = [UIColor redColor];
 //    registrationView.view.backgroundColor = [UIColor redColor];
