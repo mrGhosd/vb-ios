@@ -11,6 +11,9 @@
 		642C62A619E3595700A3E446 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62A519E3595700A3E446 /* NewsViewController.m */; };
 		642C62A919E3F4DC00A3E446 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62A819E3F4DC00A3E446 /* User.m */; };
 		642C62AC19E3FC2100A3E446 /* FullNewsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62AB19E3FC2100A3E446 /* FullNewsInfoViewController.m */; };
+		642C62AF19E67D8400A3E446 /* SharesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62AE19E67D8400A3E446 /* SharesViewController.m */; };
+		642C62B119E8824100A3E446 /* testCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 642C62B019E8824000A3E446 /* testCellView.xib */; };
+		642C62B719E895FB00A3E446 /* SharesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62B619E895FB00A3E446 /* SharesCell.m */; };
 		645159F419DB392700F299C8 /* APIConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 645159F319DB392700F299C8 /* APIConnect.m */; };
 		645159FA19E023AE00F299C8 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645159F919E023AE00F299C8 /* SWRevealViewController.m */; };
 		64574C3B19D6A45F0094979C /* RegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64574C3919D6A45F0094979C /* RegViewController.m */; };
@@ -59,6 +62,11 @@
 		642C62A819E3F4DC00A3E446 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		642C62AA19E3FC2100A3E446 /* FullNewsInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullNewsInfoViewController.h; sourceTree = "<group>"; };
 		642C62AB19E3FC2100A3E446 /* FullNewsInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullNewsInfoViewController.m; sourceTree = "<group>"; };
+		642C62AD19E67D8400A3E446 /* SharesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharesViewController.h; sourceTree = "<group>"; };
+		642C62AE19E67D8400A3E446 /* SharesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharesViewController.m; sourceTree = "<group>"; };
+		642C62B019E8824000A3E446 /* testCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testCellView.xib; sourceTree = "<group>"; };
+		642C62B519E895FB00A3E446 /* SharesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharesCell.h; sourceTree = "<group>"; };
+		642C62B619E895FB00A3E446 /* SharesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharesCell.m; sourceTree = "<group>"; };
 		645159F219DB392700F299C8 /* APIConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConnect.h; sourceTree = "<group>"; };
 		645159F319DB392700F299C8 /* APIConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIConnect.m; sourceTree = "<group>"; };
 		645159F819E023AE00F299C8 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -127,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				64574C4119D6D5680094979C /* Main.storyboard */,
+				642C62B019E8824000A3E446 /* testCellView.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -206,6 +215,10 @@
 				642C62A519E3595700A3E446 /* NewsViewController.m */,
 				642C62AA19E3FC2100A3E446 /* FullNewsInfoViewController.h */,
 				642C62AB19E3FC2100A3E446 /* FullNewsInfoViewController.m */,
+				642C62AD19E67D8400A3E446 /* SharesViewController.h */,
+				642C62AE19E67D8400A3E446 /* SharesViewController.m */,
+				642C62B519E895FB00A3E446 /* SharesCell.h */,
+				642C62B619E895FB00A3E446 /* SharesCell.m */,
 				64BE32D419574B01003E99D0 /* Images.xcassets */,
 				64BE32C319574B01003E99D0 /* Supporting Files */,
 			);
@@ -335,6 +348,7 @@
 				64BE32D519574B01003E99D0 /* Images.xcassets in Resources */,
 				64BE32C719574B01003E99D0 /* InfoPlist.strings in Resources */,
 				64CF4EA61986E2B200274BF8 /* vb_pattrn_0061.jpg in Resources */,
+				642C62B119E8824100A3E446 /* testCellView.xib in Resources */,
 				64CF4EA51986E2B200274BF8 /* sliderThumb.png in Resources */,
 				64CF4EA41986E2B200274BF8 /* slider_unfilled.jpg in Resources */,
 				64CF4EA21986E2B200274BF8 /* menu.png in Resources */,
@@ -359,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				642C62B719E895FB00A3E446 /* SharesCell.m in Sources */,
 				64BE32D319574B01003E99D0 /* ViewController.m in Sources */,
 				64BE32CD19574B01003E99D0 /* AppDelegate.m in Sources */,
 				648CE5F81983D01900AD7FAB /* MainViewController.m in Sources */,
@@ -367,6 +382,7 @@
 				642C62A619E3595700A3E446 /* NewsViewController.m in Sources */,
 				642C62AC19E3FC2100A3E446 /* FullNewsInfoViewController.m in Sources */,
 				648CE5F51983CDA500AD7FAB /* SidebarViewController.m in Sources */,
+				642C62AF19E67D8400A3E446 /* SharesViewController.m in Sources */,
 				64BE32C919574B01003E99D0 /* main.m in Sources */,
 				642C62A919E3F4DC00A3E446 /* User.m in Sources */,
 				645159FA19E023AE00F299C8 /* SWRevealViewController.m in Sources */,

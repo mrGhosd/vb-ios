@@ -26,6 +26,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self apiConnect];
+    [self initMainData];
+    [self initDicitionaries];
+}
+
+-(void) initMainData{
     self.tableView.delegate = self;
     [self defBackButton];
     stock_title = @"stock_title";
@@ -33,34 +39,14 @@
     image = @"image_url";
     text = @"stock_text";
     myObject = [[NSMutableArray alloc] init];
-    NSData *jsonSource = [NSData dataWithContentsOfURL:
-                          [NSURL URLWithString:@"http://localhost:3000/api/stocks"]];
-    
-    id jsonObjects = [NSJSONSerialization JSONObjectWithData:
-                      jsonSource options:NSJSONReadingMutableContainers error:nil];
-    
-    for (NSDictionary *dataDict in jsonObjects) {
-        NSString *stock_title_data = [dataDict objectForKey:@"stock_title"];
-        NSString *time_data = [dataDict objectForKey:@"created_at"];
-        NSString *image_data = [dataDict objectForKey:@"image_url"];
-        NSString *stockText_data = [dataDict objectForKey:@"stock_text"];
-        
-        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                      stock_title_data, stock_title,
-                      image_data, image,
-                      time_data,date,
-                      stockText_data, text,
-                      nil];
-        [myObject addObject:dictionary];
-    }
-
-    // Do any additional setup after loading the view.
 }
+
 - (void) apiConnect{
     APIConnect *connection = [[APIConnect alloc] init];
     self.connection = connection;
    
 }
+
 - (void) defBackButton{
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
@@ -70,6 +56,25 @@
         [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
         
     }
+}
+
+-(void) initDicitionaries{
+    id jsonObjects = [self.connection requestForStaticPages:@"/stocks"];
+    
+    for (NSDictionary *dataDict in jsonObjects) {
+            NSString *stock_title_data = [dataDict objectForKey:@"stock_title"];
+            NSString *time_data = [dataDict objectForKey:@"created_at"];
+            NSString *image_data = [dataDict objectForKey:@"image_url"];
+            NSString *stockText_data = [dataDict objectForKey:@"stock_text"];
+    
+            dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                          stock_title_data, stock_title,
+                          image_data, image,
+                          time_data,date,
+                          stockText_data, text,
+                          nil];
+            [myObject addObject:dictionary];
+        }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

@@ -9,6 +9,7 @@
 #import "SidebarViewController.h"
 #import "NewsViewController.h"
 #import "MainViewController.h"
+#import "SharesViewController.h"
 #import "User.h"
 
 @interface SidebarViewController ()
@@ -34,13 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    NSUserDefaults *userName = [NSUserDefaults standardUserDefaults];
-//    self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-//    self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-//    self.tableView.separatorColor = [UIColor colorWithWhite:0.15f alpha:0.2f];
-//    leftMenu = [NSArray arrayWithObjects: @"Новости", nil];
-    _menuItems = @[@"my_page", @"news"];
+    _menuItems = @[@"my_page", @"news", @"shares"];
 }
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
@@ -50,7 +45,11 @@
     if([[segue identifier] isEqualToString:@"my_page"]){
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
         MainViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-        [self.navigationController pushViewController:viewController animated:YES];    }
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    if([[segue identifier] isEqualToString:@"shares_page"]){
+        SharesViewController *share = [segue destinationViewController];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
