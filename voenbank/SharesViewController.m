@@ -119,7 +119,7 @@
     detail = [NSMutableString stringWithFormat:@"%@ ",
               [tmpDict objectForKey:date]];
     
-    NSMutableString *shareText = [NSMutableString stringWithFormat:[tmpDict objectForKey:text]];
+    NSMutableString *shareText = [NSMutableString stringWithFormat:[ tmpDict objectForKey:text]];
 
     cell.titleLabel.text = label;
     cell.timeLabel.text = detail;

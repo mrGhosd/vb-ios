@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 @property (strong, nonatomic) IBOutlet UILabel *sliderSumLabel;
 @property (strong, nonatomic) IBOutlet UILabel *sliderTimeLabel;
+@property (strong, nonatomic) IBOutlet NSString *operationType;
 @property (strong, nonatomic) IBOutlet APIConnect *connection;
 - (IBAction)authButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UISlider *sliderAmount;

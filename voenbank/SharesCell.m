@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [_shareText setEditable:NO];
+    _shareText.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

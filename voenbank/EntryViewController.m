@@ -42,13 +42,13 @@
     switch(buttonIndex)
     {
         case 0:
-            _userRole = @"Курсант";
+            _userRole = @"1";
             break;
         case 1:
-            _userRole = @"Контракт";
+            _userRole = @"2";
             break;
         case 2:
-            _userRole= @"Офицер";
+            _userRole= @"3";
             break;
     }
 }
@@ -69,6 +69,7 @@
     NSLog(@"segment value is %i", segmentValue);
     if(segmentValue == 1){
         //Займ
+        self.operationType= @"Loan";
         self.sliderAmount.minimumValue = 15000;
         self.sliderAmount.maximumValue = 90000;
         self.sliderAmount.value = 21000;
@@ -80,6 +81,7 @@
         
     } else if(segmentValue == 2) {
         //Вклад
+        self.operationType = @"Deposit";
         _sliderAmount.minimumValue = 100000;
         _sliderAmount.maximumValue = 3000000;
         _sliderAmount.value = 300000;
@@ -98,6 +100,10 @@
         [self.sliderView setHidden:YES];
         [self.loginView setHidden:NO];
     } else {
+        if(index == 1)
+        {
+            
+        }
         [self initViewWithSliders:index];
         [self.sliderView setHidden:NO];
         [self.loginView setHidden:YES];
@@ -162,7 +168,11 @@ void (^complete)(id) = ^(id json){
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"registrationView"]) {
-        RegistrationViewController *registration = [[RegistrationViewController alloc] init];
+        RegistrationViewController *registration = segue.destinationViewController;
+        registration.sum = _sliderAmount.value;
+        registration.time = _sliderTime.value;
+        registration.userRole = _userRole;
+        registration.operationType = self.operationType;
     }
 }
 
