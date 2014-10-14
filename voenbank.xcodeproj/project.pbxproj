@@ -41,6 +41,9 @@
 		64CF4EA51986E2B200274BF8 /* sliderThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CF4E9E1986E2B200274BF8 /* sliderThumb.png */; };
 		64CF4EA61986E2B200274BF8 /* vb_pattrn_0061.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64CF4E9F1986E2B200274BF8 /* vb_pattrn_0061.jpg */; };
 		64CF4EA71986E2B200274BF8 /* vb-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CF4EA01986E2B200274BF8 /* vb-logo.png */; };
+		64EA07B719EDC1D000A3FA2A /* RightPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64EA07B619EDC1D000A3FA2A /* RightPanelViewController.m */; };
+		64EA07B919EDD18D00A3FA2A /* faq_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EA07B819EDD18D00A3FA2A /* faq_arrow_down.png */; };
+		64EA07BB19EDDFA400A3FA2A /* faq_arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EA07BA19EDDFA400A3FA2A /* faq_arrow_up.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,10 @@
 		64CF4E9E1986E2B200274BF8 /* sliderThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sliderThumb.png; path = images/sliderThumb.png; sourceTree = "<group>"; };
 		64CF4E9F1986E2B200274BF8 /* vb_pattrn_0061.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = vb_pattrn_0061.jpg; path = images/vb_pattrn_0061.jpg; sourceTree = "<group>"; };
 		64CF4EA01986E2B200274BF8 /* vb-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "vb-logo.png"; path = "images/vb-logo.png"; sourceTree = "<group>"; };
+		64EA07B519EDC1D000A3FA2A /* RightPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightPanelViewController.h; sourceTree = "<group>"; };
+		64EA07B619EDC1D000A3FA2A /* RightPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightPanelViewController.m; sourceTree = "<group>"; };
+		64EA07B819EDD18D00A3FA2A /* faq_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faq_arrow_down.png; sourceTree = "<group>"; };
+		64EA07BA19EDDFA400A3FA2A /* faq_arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faq_arrow_up.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +204,8 @@
 				643C590C19D57DC70038C4B8 /* views */,
 				645159F819E023AE00F299C8 /* SWRevealViewController.h */,
 				645159F919E023AE00F299C8 /* SWRevealViewController.m */,
+				64EA07B519EDC1D000A3FA2A /* RightPanelViewController.h */,
+				64EA07B619EDC1D000A3FA2A /* RightPanelViewController.m */,
 				64098E2219B3C19100813312 /* RegistrationViewController.h */,
 				64098E2319B3C19100813312 /* RegistrationViewController.m */,
 				64574C4319D6DBD90094979C /* EntryViewController.h */,
@@ -257,6 +266,8 @@
 		64CF4E991986E28D00274BF8 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				64EA07BA19EDDFA400A3FA2A /* faq_arrow_up.png */,
+				64EA07B819EDD18D00A3FA2A /* faq_arrow_down.png */,
 				64CF4E9A1986E2B200274BF8 /* feedback_button.png */,
 				64CF4E9B1986E2B200274BF8 /* menu.png */,
 				64CF4E9C1986E2B200274BF8 /* slider_filled.jpg */,
@@ -351,9 +362,11 @@
 				642C62B119E8824100A3E446 /* testCellView.xib in Resources */,
 				64CF4EA51986E2B200274BF8 /* sliderThumb.png in Resources */,
 				64CF4EA41986E2B200274BF8 /* slider_unfilled.jpg in Resources */,
+				64EA07BB19EDDFA400A3FA2A /* faq_arrow_up.png in Resources */,
 				64CF4EA21986E2B200274BF8 /* menu.png in Resources */,
 				64CF4EA11986E2B200274BF8 /* feedback_button.png in Resources */,
 				64CF4EA71986E2B200274BF8 /* vb-logo.png in Resources */,
+				64EA07B919EDD18D00A3FA2A /* faq_arrow_down.png in Resources */,
 				64574C4219D6D5680094979C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +388,7 @@
 			files = (
 				642C62B719E895FB00A3E446 /* SharesCell.m in Sources */,
 				64BE32D319574B01003E99D0 /* ViewController.m in Sources */,
+				64EA07B719EDC1D000A3FA2A /* RightPanelViewController.m in Sources */,
 				64BE32CD19574B01003E99D0 /* AppDelegate.m in Sources */,
 				648CE5F81983D01900AD7FAB /* MainViewController.m in Sources */,
 				64574C3B19D6A45F0094979C /* RegViewController.m in Sources */,

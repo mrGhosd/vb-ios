@@ -3,6 +3,7 @@
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -654,10 +655,10 @@
             </objects>
             <point key="canvasLocation" x="1145" y="353"/>
         </scene>
-        <!--View Controller-->
+        <!--Right Panel View Controller-->
         <scene sceneID="iJN-Ru-6AI">
             <objects>
-                <viewController storyboardIdentifier="RightViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tDW-Un-MgC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RightViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tDW-Un-MgC" customClass="RightPanelViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ku4-Sg-Jlk"/>
                         <viewControllerLayoutGuide type="bottom" id="QRG-W6-6Wb"/>
@@ -669,15 +670,42 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vb_pattrn_0061.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Qrf-KQ-Ts0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DGg-2Z-MbZ">
-                                <rect key="frame" x="16" y="20" width="288" height="43"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DGg-2Z-MbZ">
+                                <rect key="frame" x="79" y="20" width="225" height="243"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MB7-Wr-toz">
-                                        <rect key="frame" x="0.0" y="11" width="288" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNt-Qz-uGS">
+                                        <rect key="frame" x="39" y="0.0" width="178" height="43"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showLoanView:" destination="tDW-Un-MgC" eventType="touchUpInside" id="L6u-cj-uM5"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="faq_arrow_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mbq-hb-Q9d">
+                                        <rect key="frame" x="17" y="12" width="14" height="19"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DGg-2Z-MbZ" secondAttribute="height" multiplier="25:27" id="Mc0-5B-X8n"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OR2-Sh-b5U">
+                                <rect key="frame" x="80" y="271" width="224" height="43"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="faq_arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="G8z-Kg-W7S">
+                                        <rect key="frame" x="8" y="8" width="14" height="19"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R42-Fv-Ui9">
+                                        <rect key="frame" x="30" y="3" width="186" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showDepositView:" destination="tDW-Un-MgC" eventType="touchUpInside" id="crU-a7-z0k"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -685,6 +713,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="depositImageArrow" destination="G8z-Kg-W7S" id="cdg-ch-8fd"/>
+                        <outlet property="depositView" destination="OR2-Sh-b5U" id="QQO-WZ-ots"/>
+                        <outlet property="loanImageArrow" destination="Mbq-hb-Q9d" id="TLe-cC-3fr"/>
+                        <outlet property="loanView" destination="DGg-2Z-MbZ" id="bby-Gt-t6j"/>
                         <segue destination="hAH-3C-Y7n" kind="push" id="VbT-Kr-ltQ"/>
                     </connections>
                 </viewController>
@@ -748,6 +780,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="faq_arrow_down.png" width="9" height="10"/>
+        <image name="faq_arrow_up.png" width="9" height="10"/>
         <image name="feedback_button.png" width="142" height="30"/>
         <image name="menu.png" width="28" height="20"/>
         <image name="vb-logo.png" width="251" height="40"/>
