@@ -45,14 +45,16 @@
     
 }
 -(void) setupMainPageData{
-//    NSLog(@"MAINVIEWCONTROLLER JSON: %@", [_userInformation objectForKey:@"name"]);
-    User *user = [User sharedManager];
-    _nameField.text = [user.userData objectForKey:@"name"];
-    _surnameField.text = [user.userData objectForKey:@"surname"];
-    _secondname_field.text = [user.userData objectForKey:@"secondname"];
+//    NSLog(@"MAINVIEWCONTROLLER JSON: %@", _userInformation);
+    User *user = [[User sharedManager] parseUserData];
+    
+    
+    _nameField.text = [user.main objectForKey:@"name"];
+    _surnameField.text = [user.main objectForKey:@"surname"];
+    _secondname_field.text = [user.main objectForKey:@"secondname"];
     
     image = @"avatar_url";
-    NSString *imageURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",[user.userData objectForKey:image]];
+    NSString *imageURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",[user.main objectForKey:image]];
     NSURL *url = [NSURL URLWithString:imageURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *avatar = [[UIImage alloc] initWithData:data];

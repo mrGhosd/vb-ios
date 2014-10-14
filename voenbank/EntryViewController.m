@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     APIConnect *connection = [[APIConnect alloc] init];
     self.connection = connection;
+    [self.navigationItem setHidesBackButton:YES];
     [super viewDidLoad];
     [self initSliderApperance];
 }

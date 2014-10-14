@@ -10,5 +10,13 @@
 
 @interface User : NSObject
 @property(nonatomic) id userData;
+@property(nonatomic) NSDictionary *main;
+@property(nonatomic) NSMutableArray *loans;
+@property(nonatomic) NSMutableArray *deposits;
+@property(nonatomic) NSDictionary *passport;
+@property(nonatomic) NSDictionary *voen_pasport;
+@property(nonatomic) NSDictionary *contact_information;
+@property(nonatomic) NSDictionary *role;
 + (id) sharedManager;
+- (id) parseUserData;
 @end
