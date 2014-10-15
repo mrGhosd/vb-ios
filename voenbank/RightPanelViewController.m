@@ -7,9 +7,11 @@
 //
 
 #import "RightPanelViewController.h"
+#import "User.h"
+#import "RightPanelTableViewCell.h"
 
 @interface RightPanelViewController (){
-     int clickCount;
+    int selectedIndex;
 }
 
 @end
@@ -18,14 +20,58 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    clickCount = 1;
+    _menuItems = @[@"loanPart", @"depositPart"];
+    selectedIndex = -1;
+    [self initUserLoanDepositData];
     // Do any additional setup after loading the view.
 }
 
+-(void) initUserLoanDepositData{
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return 2;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *CellIdentifier = [self.menuItems objectAtIndex:indexPath.row];
+    RightPanelTableViewCell *cell = (RightPanelTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    return cell;
+    
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(selectedIndex == indexPath.row){
+        return 260;
+    }
+    else {
+        return 44;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(selectedIndex == indexPath.row){
+        selectedIndex = -1;
+        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        return;
+    }
+    
+    if(selectedIndex != -1){
+        NSIndexPath *prevPath = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
+        selectedIndex = indexPath.row;
+        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:prevPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
+    selectedIndex = indexPath.row;
+    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+
 
 /*
 #pragma mark - Navigation
@@ -37,53 +83,53 @@
 }
 */
 
-- (IBAction)showLoanView:(id)sender {
-//    self.edgesForExtendedLayout = UIRectEdgeNone;
-    [self.view layoutIfNeeded];
-
-    [UIView animateWithDuration:0.5 animations:^{
-        int size;
-        int animationCount;
-        if(clickCount == 1) {
-            size = -200.0;
-            clickCount = 0 ;
-            animationCount = 1;
-        } else if(clickCount == 0)
-        {
-            size = 200.0;
-            clickCount = 1;
-            animationCount = 2;
-        }
-
-        [self animateLoanDepositWindows:size animation:animationCount window:self.loanView image:self.loanImageArrow];
-        [self.view layoutIfNeeded];
-    }];
-}
-
-- (IBAction)showDepositView:(id)sender {
-    [self.view layoutIfNeeded];
-//    self.edgesForExtendedLayout = UIRectEdgeNone;
-    [UIView animateWithDuration:0.5 animations:^{
-        int size;
-        int animationCount;
-        if(clickCount == 0) {
-            size = -200.0;
-            clickCount = 1 ;
-            animationCount = 1;
-        } else if(clickCount == 1)
-        {
-            size = 200.0;
-            clickCount = 0;
-            animationCount = 2;
-        }
-        
-        [self animateLoanDepositWindows:size animation:animationCount window:self.depositView image:self.depositImageArrow ];
-        [self.view layoutIfNeeded];
-    }];
-
-}
--(void) animateLoanDepositWindows: (int) size animation: (int) count window: (UIView *) view image: (UIImageView *) image{
-    image.layer.transform = CATransform3DMakeRotation(M_PI*count,1.0,0.0,0.0);
-    view.frame = CGRectMake(view.frame.origin.x , view.frame.origin.y, view.frame.size.width, view.frame.size.height + size);
-}
+//- (IBAction)showLoanView:(id)sender {
+////    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    [self.view layoutIfNeeded];
+//
+//    [UIView animateWithDuration:0.5 animations:^{
+//        int size;
+//        int animationCount;
+//        if(clickCount == 1) {
+//            size = -200.0;
+//            clickCount = 0 ;
+//            animationCount = 1;
+//        } else if(clickCount == 0)
+//        {
+//            size = 200.0;
+//            clickCount = 1;
+//            animationCount = 2;
+//        }
+//
+//        [self animateLoanDepositWindows:size animation:animationCount window:self.loanView image:self.loanImageArrow];
+//        [self.view layoutIfNeeded];
+//    }];
+//}
+//
+//- (IBAction)showDepositView:(id)sender {
+//    [self.view layoutIfNeeded];
+////    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    [UIView animateWithDuration:0.5 animations:^{
+//        int size;
+//        int animationCount;
+//        if(clickCount == 0) {
+//            size = -200.0;
+//            clickCount = 1 ;
+//            animationCount = 1;
+//        } else if(clickCount == 1)
+//        {
+//            size = 200.0;
+//            clickCount = 0;
+//            animationCount = 2;
+//        }
+//        
+//        [self animateLoanDepositWindows:size animation:animationCount window:self.depositView image:self.depositImageArrow ];
+//        [self.view layoutIfNeeded];
+//    }];
+//
+//}
+//-(void) animateLoanDepositWindows: (int) size animation: (int) count window: (UIView *) view image: (UIImageView *) image{
+//    image.layer.transform = CATransform3DMakeRotation(M_PI*count,1.0,0.0,0.0);
+//    view.frame = CGRectMake(view.frame.origin.x , view.frame.origin.y, view.frame.size.width, view.frame.size.height + size);
+//}
 @end

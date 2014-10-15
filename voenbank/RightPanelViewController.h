@@ -8,12 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RightPanelViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UIView *loanView;
-@property (strong, nonatomic) IBOutlet UIView *depositView;
-@property (strong, nonatomic) IBOutlet UIImageView *loanImageArrow;
-@property (strong, nonatomic) IBOutlet UIImageView *depositImageArrow;
-- (IBAction)showLoanView:(id)sender;
-- (IBAction)showDepositView:(id)sender;
-
+@interface RightPanelViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property(nonatomic, strong) NSArray *menuItems;
 @end

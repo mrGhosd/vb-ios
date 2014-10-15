@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		64098E2419B3C19100813312 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64098E2319B3C19100813312 /* RegistrationViewController.m */; };
+		6410B21B19EF0E8B006CCD40 /* RightPanelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6410B21A19EF0E8B006CCD40 /* RightPanelTableViewCell.m */; };
 		642C62A619E3595700A3E446 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62A519E3595700A3E446 /* NewsViewController.m */; };
 		642C62A919E3F4DC00A3E446 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62A819E3F4DC00A3E446 /* User.m */; };
 		642C62AC19E3FC2100A3E446 /* FullNewsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62AB19E3FC2100A3E446 /* FullNewsInfoViewController.m */; };
@@ -59,6 +60,8 @@
 /* Begin PBXFileReference section */
 		64098E2219B3C19100813312 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		64098E2319B3C19100813312 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		6410B21919EF0E8B006CCD40 /* RightPanelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightPanelTableViewCell.h; sourceTree = "<group>"; };
+		6410B21A19EF0E8B006CCD40 /* RightPanelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightPanelTableViewCell.m; sourceTree = "<group>"; };
 		642C62A419E3595700A3E446 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		642C62A519E3595700A3E446 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		642C62A719E3F4DC00A3E446 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 				642C62B619E895FB00A3E446 /* SharesCell.m */,
 				64BE32D419574B01003E99D0 /* Images.xcassets */,
 				64BE32C319574B01003E99D0 /* Supporting Files */,
+				6410B21919EF0E8B006CCD40 /* RightPanelTableViewCell.h */,
+				6410B21A19EF0E8B006CCD40 /* RightPanelTableViewCell.m */,
 			);
 			path = voenbank;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				64EA07B719EDC1D000A3FA2A /* RightPanelViewController.m in Sources */,
 				64BE32CD19574B01003E99D0 /* AppDelegate.m in Sources */,
 				648CE5F81983D01900AD7FAB /* MainViewController.m in Sources */,
+				6410B21B19EF0E8B006CCD40 /* RightPanelTableViewCell.m in Sources */,
 				64574C3B19D6A45F0094979C /* RegViewController.m in Sources */,
 				64574C4519D6DBD90094979C /* EntryViewController.m in Sources */,
 				642C62A619E3595700A3E446 /* NewsViewController.m in Sources */,
