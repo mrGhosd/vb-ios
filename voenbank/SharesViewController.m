@@ -89,6 +89,7 @@
     static NSString *CellIdentifier = @"Item";
     
     SharesCell *cell = (SharesCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
     if(cell == nil){
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"testCellView" owner:self options:nil];
         cell = [nib objectAtIndex:0];
@@ -120,7 +121,7 @@
               [tmpDict objectForKey:date]];
     
     NSMutableString *shareText = [NSMutableString stringWithFormat:[ tmpDict objectForKey:text]];
-
+    cell.clipsToBounds =YES;
     cell.titleLabel.text = label;
     cell.timeLabel.text = detail;
     cell.shareText.text = shareText;
@@ -133,18 +134,18 @@
 //    cell.view;
     if(selectedIndex == indexPath.row){
         selectedIndex = -1;
-        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         return;
     }
     
     if(selectedIndex != -1){
         NSIndexPath *prevPath = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
         selectedIndex = indexPath.row;
-        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:prevPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:prevPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
     
     selectedIndex = indexPath.row;
-    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(selectedIndex == indexPath.row){

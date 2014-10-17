@@ -42,6 +42,7 @@
 {
     NSString *CellIdentifier = [self.menuItems objectAtIndex:indexPath.row];
     RightPanelTableViewCell *cell = (RightPanelTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.clipsToBounds =YES;
     return cell;
     
 }
