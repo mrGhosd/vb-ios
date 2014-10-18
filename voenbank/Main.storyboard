@@ -722,12 +722,26 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94V-nL-cUx">
+                                                    <rect key="frame" x="214" y="54" width="98" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gz-ku-IhO">
+                                                    <rect key="frame" x="214" y="83" width="98" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="loanArrow" destination="yNm-wO-EUO" id="k8Y-PN-VGg"/>
+                                    <outlet property="loanView" destination="mXp-OX-9Ar" id="ujX-Jm-EQ4"/>
                                     <outlet property="sliderOfTime" destination="8yV-BX-nIl" id="liC-2D-YGQ"/>
                                 </connections>
                             </tableViewCell>
@@ -762,6 +776,10 @@
                                         </view>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="depositArrow" destination="T8v-9u-Bbo" id="itW-8s-qAD"/>
+                                    <outlet property="depositView" destination="9FH-7b-xfH" id="Ya4-ye-AMW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -776,7 +794,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9y-aS-4Sa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="527" y="1154"/>
+            <point key="canvasLocation" x="527" y="1151"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LqW-oi-F6M">

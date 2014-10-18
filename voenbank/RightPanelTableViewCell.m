@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    clickCount = 1;
     [self.sliderOfTime setThumbImage:[UIImage imageNamed:@"sliderThumb.png"] forState:UIControlStateNormal];
     [self.sliderOfTime setMinimumTrackImage:[UIImage imageNamed:@"slider_unfilled.jpg"]
                                      forState:UIControlStateNormal];
@@ -19,6 +20,9 @@
                                      forState:UIControlStateNormal];
 
 }
+-(void) logImageCellName: (RightPanelTableViewCell *) cell{
+//    NSLog(@"%@", [cell i]);
+   }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

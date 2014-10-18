@@ -12,6 +12,7 @@
 
 @interface RightPanelViewController (){
     int selectedIndex;
+    int clickCount;
 }
 
 @end
@@ -20,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    clickCount = 1;
     _menuItems = @[@"loanPart", @"depositPart"];
     selectedIndex = -1;
     [self initUserLoanDepositData];
@@ -56,9 +58,20 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    RightPanelTableViewCell *cell = (RightPanelTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+//    if(clickCount == 1){
+//        
+//        clickCount = 0;
+//    } else if(clickCount == 0) {
+//        
+//        clickCount = 1;
+//    }
+
+//    NSLog(@"cell is %@", cell);
     if(selectedIndex == indexPath.row){
         selectedIndex = -1;
-        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        cell.loanArrow.layer.transform = CATransform3DMakeRotation(M_PI*1,1.0,0.0,0.0);
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         return;
     }
     
@@ -66,10 +79,15 @@
         NSIndexPath *prevPath = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
         selectedIndex = indexPath.row;
         [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:prevPath] withRowAnimation:UITableViewRowAnimationFade];
+        cell.loanArrow.layer.transform = CATransform3DMakeRotation(M_PI*2
+                                                                   ,1.0,0.0,0.0);
     }
     
     selectedIndex = indexPath.row;
-    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    
+
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    cell.loanArrow.layer.transform = CATransform3DMakeRotation(M_PI*2, 0, 0, 0);
 }
 
 

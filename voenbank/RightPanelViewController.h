@@ -11,4 +11,8 @@
 @interface RightPanelViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic, strong) NSArray *menuItems;
+@property (strong, nonatomic) IBOutlet UIView *loanView;
+@property (strong, nonatomic) IBOutlet UIView *depositView;
+@property (strong, nonatomic) IBOutlet UIImageView *loanArrow;
+@property (strong, nonatomic) IBOutlet UIImageView *depositArrow;
 @end
