@@ -23,7 +23,11 @@
 -(void) logImageCellName: (RightPanelTableViewCell *) cell{
 //    NSLog(@"%@", [cell i]);
    }
-
+- (void)setArrowDown:(BOOL)down{
+    if(down) {
+        self.loanArrow.image = [UIImage imageNamed:@"faq_arrow_up.png"];
+    }
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

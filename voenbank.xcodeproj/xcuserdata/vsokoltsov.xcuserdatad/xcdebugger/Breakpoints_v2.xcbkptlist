@@ -888,11 +888,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/RightPanelViewController.m"
-            timestampString = "435363279.835204"
+            timestampString = "435885504.639195"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -904,12 +904,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/RightPanelViewController.m"
-            timestampString = "435363279.835204"
+            timestampString = "435885656.854017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-updateCellsRows"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -919,29 +919,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "voenbank/RightPanelViewController.m"
-            timestampString = "435363279.835204"
+            filePath = "voenbank/RightPanelTableViewCell.m"
+            timestampString = "435886162.736944"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "voenbank/RightPanelViewController.m"
-            timestampString = "435363279.835204"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-setArrowDown:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

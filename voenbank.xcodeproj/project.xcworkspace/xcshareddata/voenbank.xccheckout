@@ -10,17 +10,13 @@
 	<string>voenbank</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>2A655A10-96AF-4531-ACE9-113EAF9A4BC0</key>
-		<string>https://github.com/mrGhosd/vb-ror-mysql.git</string>
 		<key>894A5E4CAEA89BA32A0B3C18E9574DB634B12020</key>
 		<string>https://github.com/mrGhosd/vb-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>voenbank.xcodeproj/project.xcworkspace</string>
+	<string>voenbank.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2A655A10-96AF-4531-ACE9-113EAF9A4BC0</key>
-		<string>../../../rails_projects/vb-ror-mysql</string>
 		<key>894A5E4CAEA89BA32A0B3C18E9574DB634B12020</key>
 		<string>../..</string>
 	</dict>
@@ -32,14 +28,6 @@
 	<string>894A5E4CAEA89BA32A0B3C18E9574DB634B12020</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2A655A10-96AF-4531-ACE9-113EAF9A4BC0</string>
-			<key>IDESourceControlWCCName</key>
-			<string>vb-ror-mysql</string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

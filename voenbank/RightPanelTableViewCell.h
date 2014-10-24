@@ -17,4 +17,5 @@
 @property (strong, nonatomic) IBOutlet UIView *depositView;
 @property (strong, nonatomic) IBOutlet UIImageView *depositArrow;
 -(void) logImageCellName: (RightPanelTableViewCell *) cell;
+- (void)setArrowDown:(BOOL)down;
 @end

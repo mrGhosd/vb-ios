@@ -11,7 +11,7 @@
 #import "RightPanelTableViewCell.h"
 
 @interface RightPanelViewController (){
-    int selectedIndex;
+    NSInteger selectedIndex;
     int clickCount;
 }
 
@@ -24,13 +24,20 @@
     clickCount = 1;
     _menuItems = @[@"loanPart", @"depositPart"];
     selectedIndex = -1;
-    [self initUserLoanDepositData];
+//    [self initUserLoanDepositData];
+    [self updateCellsRows];
     // Do any additional setup after loading the view.
 }
-
--(void) initUserLoanDepositData{
+- (void)updateCellsRows{
+    RightPanelTableViewCell *topCell = (RightPanelTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [topCell setArrowDown:selectedIndex == 0];
+    
+    RightPanelTableViewCell *buttomCell = (RightPanelTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    [buttomCell setArrowDown:selectedIndex == 1];
 
 }
+-(void) initUserLoanDepositData{
+    }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -70,7 +77,7 @@
 //    NSLog(@"cell is %@", cell);
     if(selectedIndex == indexPath.row){
         selectedIndex = -1;
-        cell.loanArrow.layer.transform = CATransform3DMakeRotation(M_PI*1,1.0,0.0,0.0);
+//        cell.loanArrow.layer.transform = CATransform3DMakeRotation(M_PI*1,1.0,0.0,0.0);
         [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         return;
     }
@@ -79,15 +86,17 @@
         NSIndexPath *prevPath = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
         selectedIndex = indexPath.row;
         [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:prevPath] withRowAnimation:UITableViewRowAnimationFade];
-        cell.loanArrow.layer.transform = CATransform3DMakeRotation(M_PI*2
-                                                                   ,1.0,0.0,0.0);
+//        cell.loanArrow.layer.transform = CATransform3DMakeRotation(M_PI*2
+//                                                                   ,1.0,0.0,0.0);
     }
     
     selectedIndex = indexPath.row;
     
 
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    cell.loanArrow.layer.transform = CATransform3DMakeRotation(M_PI*2, 0, 0, 0);
+//    cell.loanArrow.layer.transform = CATransform3DMakeRotation(M_PI*2, 0, 0, 0);
+    selectedIndex =   indexPath.row;
+    [self updateCellsRows];
 }
 
 
