@@ -11,6 +11,7 @@
 #import "RightPanelTableViewCell.h"
 
 @interface RightPanelViewController (){
+    User *user;
     NSInteger selectedIndex;
     int clickCount;
 }
@@ -24,16 +25,22 @@
     clickCount = 1;
     _menuItems = @[@"loanPart", @"depositPart"];
     selectedIndex = -1;
-//    [self initUserLoanDepositData];
+    user = [[User sharedManager] parseUserData];
     [self updateCellsRows];
     // Do any additional setup after loading the view.
 }
 - (void)updateCellsRows{
     RightPanelTableViewCell *topCell = (RightPanelTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     [topCell setArrowDown:selectedIndex == 0];
+    if(user.loans.count == 0){
+        [topCell setViewForCell:YES];
+    }
     
     RightPanelTableViewCell *buttomCell = (RightPanelTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
     [buttomCell setArrowDown:selectedIndex == 1];
+    if(user.deposits.count == 0){
+        [topCell setViewForCell: NO];
+    }
 
 }
 -(void) initUserLoanDepositData{
@@ -66,15 +73,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     RightPanelTableViewCell *cell = (RightPanelTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-//    if(clickCount == 1){
-//        
-//        clickCount = 0;
-//    } else if(clickCount == 0) {
-//        
-//        clickCount = 1;
-//    }
 
-//    NSLog(@"cell is %@", cell);
     if(selectedIndex == indexPath.row){
         selectedIndex = -1;
 //        cell.loanArrow.layer.transform = CATransform3DMakeRotation(M_PI*1,1.0,0.0,0.0);
@@ -94,7 +93,6 @@
     
 
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//    cell.loanArrow.layer.transform = CATransform3DMakeRotation(M_PI*2, 0, 0, 0);
     selectedIndex =   indexPath.row;
     [self updateCellsRows];
 }

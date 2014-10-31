@@ -15,4 +15,6 @@
 @property (strong, nonatomic) IBOutlet UIView *depositView;
 @property (strong, nonatomic) IBOutlet UIImageView *loanArrow;
 @property (strong, nonatomic) IBOutlet UIImageView *depositArrow;
+@property (strong, nonatomic) IBOutlet UIView *emptyLoanView;
+@property (strong, nonatomic) IBOutlet UIView *emptyDepositView;
 @end
