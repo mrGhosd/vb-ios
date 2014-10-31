@@ -482,7 +482,7 @@
             </objects>
             <point key="canvasLocation" x="1122" y="-520"/>
         </scene>
-        <!--Partners View Controller-->
+        <!--Партнеры-->
         <scene sceneID="CRY-9q-yKs">
             <objects>
                 <viewController storyboardIdentifier="PartnersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xgN-QS-lDr" customClass="PartnersViewController" sceneMemberID="viewController">
@@ -517,17 +517,81 @@
                             <outlet property="delegate" destination="xgN-QS-lDr" id="zhA-00-OkS"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="6KF-y5-WpU">
+                    <navigationItem key="navigationItem" title="Партнеры" id="6KF-y5-WpU">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="zGH-dE-LlX"/>
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="zGH-dE-LlX" id="0HU-LG-Jsa"/>
                         <outlet property="collectionView" destination="rzl-yI-0vf" id="k4E-IF-rau"/>
+                        <segue destination="hMm-7f-wK4" kind="push" identifier="detail_partner_view" id="cB0-H6-Gwf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npD-0S-ttH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="68B-L5-Ccq">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="2191" y="-515"/>
+        </scene>
+        <!--Detail Partner View Controller-->
+        <scene sceneID="mAl-MC-8Mf">
+            <objects>
+                <viewController storyboardIdentifier="DetailPartnerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hMm-7f-wK4" customClass="DetailPartnerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MQP-gr-rwT"/>
+                        <viewControllerLayoutGuide type="bottom" id="vb3-IU-2EX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FMg-Fu-ScW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vb_pattrn_0061.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XcD-Cf-4Br">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D65-Ys-JX7">
+                                <rect key="frame" x="10" y="85" width="150" height="150"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb5-P0-ZLo">
+                                <rect key="frame" x="174" y="72" width="130" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Сайт:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2b-rD-KFm">
+                                <rect key="frame" x="174" y="119" width="52" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mO3-h6-XXb">
+                                <rect key="frame" x="234" y="121" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gu2-oa-IxC">
+                                <rect key="frame" x="10" y="243" width="294" height="305"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fK9-Lw-gNR"/>
+                    <connections>
+                        <outlet property="partnerDescription" destination="gu2-oa-IxC" id="Ujx-GE-zVO"/>
+                        <outlet property="partnerImage" destination="D65-Ys-JX7" id="DKd-6J-95R"/>
+                        <outlet property="partnerTitle" destination="tb5-P0-ZLo" id="Zpb-Yf-3Eh"/>
+                        <outlet property="partnerURL" destination="mO3-h6-XXb" id="Q9J-71-yhb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UzQ-fh-Lkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2719" y="-515"/>
         </scene>
         <!--Акции-->
         <scene sceneID="5BP-3m-mZW">

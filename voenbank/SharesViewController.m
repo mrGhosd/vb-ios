@@ -100,14 +100,6 @@
     else{
         
     }
-//    if(   )
-    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    if (cell == nil) {
-//        cell=[[UITableViewCell alloc]initWithStyle:
-//              UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-//    }
-    
     
     NSDictionary *tmpDict = [myObject objectAtIndex:indexPath.row];
     
@@ -130,8 +122,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-//    cell.view;
     if(selectedIndex == indexPath.row){
         selectedIndex = -1;
         [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -147,6 +137,7 @@
     selectedIndex = indexPath.row;
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(selectedIndex == indexPath.row){
         return 150;

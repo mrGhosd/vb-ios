@@ -9,6 +9,7 @@
 #import "PartnersViewController.h"
 #import "SWRevealViewController.h"
 #import "SidebarViewController.h"
+#import "DetailPartnerViewController.h"
 
 @interface PartnersViewController (){
     NSMutableArray *partnersList;
@@ -96,6 +97,14 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake(100, 100);
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    DetailPartnerViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"DetailPartnerViewController"];
+    viewController.detailPartner = partnerCells[indexPath.row];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

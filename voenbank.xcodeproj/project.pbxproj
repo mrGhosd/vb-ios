@@ -46,6 +46,7 @@
 		64EA07B919EDD18D00A3FA2A /* faq_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EA07B819EDD18D00A3FA2A /* faq_arrow_down.png */; };
 		64EA07BB19EDDFA400A3FA2A /* faq_arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EA07BA19EDDFA400A3FA2A /* faq_arrow_up.png */; };
 		64FACA891A030B2D00135C4B /* PartnersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FACA881A030B2D00135C4B /* PartnersViewController.m */; };
+		64FACA8E1A041AFB00135C4B /* DetailPartnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FACA8D1A041AFB00135C4B /* DetailPartnerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,8 @@
 		64EA07BA19EDDFA400A3FA2A /* faq_arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faq_arrow_up.png; sourceTree = "<group>"; };
 		64FACA871A030B2D00135C4B /* PartnersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnersViewController.h; sourceTree = "<group>"; };
 		64FACA881A030B2D00135C4B /* PartnersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnersViewController.m; sourceTree = "<group>"; };
+		64FACA8C1A041AFB00135C4B /* DetailPartnerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPartnerViewController.h; sourceTree = "<group>"; };
+		64FACA8D1A041AFB00135C4B /* DetailPartnerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPartnerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +243,8 @@
 				642C62B619E895FB00A3E446 /* SharesCell.m */,
 				64BE32D419574B01003E99D0 /* Images.xcassets */,
 				64BE32C319574B01003E99D0 /* Supporting Files */,
+				64FACA8C1A041AFB00135C4B /* DetailPartnerViewController.h */,
+				64FACA8D1A041AFB00135C4B /* DetailPartnerViewController.m */,
 			);
 			path = voenbank;
 			sourceTree = "<group>";
@@ -400,6 +405,7 @@
 				64FACA891A030B2D00135C4B /* PartnersViewController.m in Sources */,
 				64BE32D319574B01003E99D0 /* ViewController.m in Sources */,
 				64EA07B719EDC1D000A3FA2A /* RightPanelViewController.m in Sources */,
+				64FACA8E1A041AFB00135C4B /* DetailPartnerViewController.m in Sources */,
 				64BE32CD19574B01003E99D0 /* AppDelegate.m in Sources */,
 				648CE5F81983D01900AD7FAB /* MainViewController.m in Sources */,
 				6410B21B19EF0E8B006CCD40 /* RightPanelTableViewCell.m in Sources */,
