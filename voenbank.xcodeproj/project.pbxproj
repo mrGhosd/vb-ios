@@ -45,6 +45,7 @@
 		64EA07B719EDC1D000A3FA2A /* RightPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64EA07B619EDC1D000A3FA2A /* RightPanelViewController.m */; };
 		64EA07B919EDD18D00A3FA2A /* faq_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EA07B819EDD18D00A3FA2A /* faq_arrow_down.png */; };
 		64EA07BB19EDDFA400A3FA2A /* faq_arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EA07BA19EDDFA400A3FA2A /* faq_arrow_up.png */; };
+		64FACA891A030B2D00135C4B /* PartnersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FACA881A030B2D00135C4B /* PartnersViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,8 @@
 		64EA07B619EDC1D000A3FA2A /* RightPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightPanelViewController.m; sourceTree = "<group>"; };
 		64EA07B819EDD18D00A3FA2A /* faq_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faq_arrow_down.png; sourceTree = "<group>"; };
 		64EA07BA19EDDFA400A3FA2A /* faq_arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faq_arrow_up.png; sourceTree = "<group>"; };
+		64FACA871A030B2D00135C4B /* PartnersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnersViewController.h; sourceTree = "<group>"; };
+		64FACA881A030B2D00135C4B /* PartnersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnersViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +214,8 @@
 				64EA07B619EDC1D000A3FA2A /* RightPanelViewController.m */,
 				6410B21919EF0E8B006CCD40 /* RightPanelTableViewCell.h */,
 				6410B21A19EF0E8B006CCD40 /* RightPanelTableViewCell.m */,
+				64FACA871A030B2D00135C4B /* PartnersViewController.h */,
+				64FACA881A030B2D00135C4B /* PartnersViewController.m */,
 				64098E2219B3C19100813312 /* RegistrationViewController.h */,
 				64098E2319B3C19100813312 /* RegistrationViewController.m */,
 				64574C4319D6DBD90094979C /* EntryViewController.h */,
@@ -392,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				642C62B719E895FB00A3E446 /* SharesCell.m in Sources */,
+				64FACA891A030B2D00135C4B /* PartnersViewController.m in Sources */,
 				64BE32D319574B01003E99D0 /* ViewController.m in Sources */,
 				64EA07B719EDC1D000A3FA2A /* RightPanelViewController.m in Sources */,
 				64BE32CD19574B01003E99D0 /* AppDelegate.m in Sources */,

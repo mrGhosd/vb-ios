@@ -10,6 +10,7 @@
 #import "NewsViewController.h"
 #import "MainViewController.h"
 #import "SharesViewController.h"
+#import "PartnersViewController.h"
 #import "User.h"
 
 @interface SidebarViewController ()
@@ -35,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _menuItems = @[@"my_page", @"news", @"shares"];
+    _menuItems = @[@"my_page", @"news", @"shares", @"partners"];
 }
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
@@ -49,6 +50,10 @@
     }
     if([[segue identifier] isEqualToString:@"shares_page"]){
         SharesViewController *share = [segue destinationViewController];
+    }
+    
+    if([[segue identifier] isEqualToString:@"partners_page"]){
+        PartnersViewController *partner = [segue destinationViewController];
     }
 }
 
