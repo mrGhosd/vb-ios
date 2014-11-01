@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
 #import "User.h"
+#import "PersonalInfoViewController.h"
 
 @interface MainViewController ()
 {
@@ -52,6 +53,8 @@
     _nameField.text = [user.main objectForKey:@"name"];
     _surnameField.text = [user.main objectForKey:@"surname"];
     _secondname_field.text = [user.main objectForKey:@"secondname"];
+    self.roleField.text = [user.main objectForKey:@"user_role"];
+    self.dateOfBirthField.text = [user.main objectForKey:@"date_of_birth"];
     
     image = @"avatar_url";
     NSString *imageURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",[user.main objectForKey:image]];
@@ -93,4 +96,10 @@
 
 - (IBAction)sidebarButton:(id)sender {
 }
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"personalInfo"]){
+        PersonalInfoViewController *view = segue.destinationViewController;
+    }
+}
+
 @end

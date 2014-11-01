@@ -47,6 +47,19 @@
 		64EA07BB19EDDFA400A3FA2A /* faq_arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EA07BA19EDDFA400A3FA2A /* faq_arrow_up.png */; };
 		64FACA891A030B2D00135C4B /* PartnersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FACA881A030B2D00135C4B /* PartnersViewController.m */; };
 		64FACA8E1A041AFB00135C4B /* DetailPartnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FACA8D1A041AFB00135C4B /* DetailPartnerViewController.m */; };
+		64FACA911A04EE4800135C4B /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FACA901A04EE4800135C4B /* PersonalInfoViewController.m */; };
+		64FACA941A04FF7300135C4B /* ContactInformationInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FACA931A04FF7300135C4B /* ContactInformationInfoViewController.m */; };
+		64FACA971A04FF8200135C4B /* PasportInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FACA961A04FF8200135C4B /* PasportInfoViewController.m */; };
+		64FACA9A1A04FF9500135C4B /* VoenPasportInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FACA991A04FF9500135C4B /* VoenPasportInfoViewController.m */; };
+		64FACA9C1A059A0700135C4B /* administrator-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACA9B1A059A0700135C4B /* administrator-25.png */; };
+		64FACAA01A059AE500135C4B /* contact_card-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACA9F1A059AE500135C4B /* contact_card-25.png */; };
+		64FACAA21A059B2400135C4B /* passport-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACAA11A059B2400135C4B /* passport-25.png */; };
+		64FACAA41A059B4B00135C4B /* military_medal-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACAA31A059B4B00135C4B /* military_medal-25.png */; };
+		64FACAA61A059C2100135C4B /* user_male4-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACAA51A059C2100135C4B /* user_male4-50.png */; };
+		64FACAA81A059C7900135C4B /* news-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACAA71A059C7900135C4B /* news-50.png */; };
+		64FACAAA1A059CDC00135C4B /* sale-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACAA91A059CDC00135C4B /* sale-50.png */; };
+		64FACAAC1A059D5800135C4B /* parent_guardian-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACAAB1A059D5800135C4B /* parent_guardian-50.png */; };
+		64FACAB01A059E0200135C4B /* money-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACAAF1A059E0200135C4B /* money-25.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +134,23 @@
 		64FACA881A030B2D00135C4B /* PartnersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnersViewController.m; sourceTree = "<group>"; };
 		64FACA8C1A041AFB00135C4B /* DetailPartnerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPartnerViewController.h; sourceTree = "<group>"; };
 		64FACA8D1A041AFB00135C4B /* DetailPartnerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPartnerViewController.m; sourceTree = "<group>"; };
+		64FACA8F1A04EE4800135C4B /* PersonalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoViewController.h; sourceTree = "<group>"; };
+		64FACA901A04EE4800135C4B /* PersonalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoViewController.m; sourceTree = "<group>"; };
+		64FACA921A04FF7300135C4B /* ContactInformationInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactInformationInfoViewController.h; sourceTree = "<group>"; };
+		64FACA931A04FF7300135C4B /* ContactInformationInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactInformationInfoViewController.m; sourceTree = "<group>"; };
+		64FACA951A04FF8200135C4B /* PasportInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasportInfoViewController.h; sourceTree = "<group>"; };
+		64FACA961A04FF8200135C4B /* PasportInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasportInfoViewController.m; sourceTree = "<group>"; };
+		64FACA981A04FF9500135C4B /* VoenPasportInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoenPasportInfoViewController.h; sourceTree = "<group>"; };
+		64FACA991A04FF9500135C4B /* VoenPasportInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoenPasportInfoViewController.m; sourceTree = "<group>"; };
+		64FACA9B1A059A0700135C4B /* administrator-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "administrator-25.png"; sourceTree = "<group>"; };
+		64FACA9F1A059AE500135C4B /* contact_card-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_card-25.png"; sourceTree = "<group>"; };
+		64FACAA11A059B2400135C4B /* passport-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "passport-25.png"; sourceTree = "<group>"; };
+		64FACAA31A059B4B00135C4B /* military_medal-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "military_medal-25.png"; sourceTree = "<group>"; };
+		64FACAA51A059C2100135C4B /* user_male4-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_male4-50.png"; sourceTree = "<group>"; };
+		64FACAA71A059C7900135C4B /* news-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news-50.png"; sourceTree = "<group>"; };
+		64FACAA91A059CDC00135C4B /* sale-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sale-50.png"; sourceTree = "<group>"; };
+		64FACAAB1A059D5800135C4B /* parent_guardian-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parent_guardian-50.png"; sourceTree = "<group>"; };
+		64FACAAF1A059E0200135C4B /* money-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money-25.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +200,14 @@
 		643C590E19D57DD80038C4B8 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				64FACA8F1A04EE4800135C4B /* PersonalInfoViewController.h */,
+				64FACA901A04EE4800135C4B /* PersonalInfoViewController.m */,
+				64FACA921A04FF7300135C4B /* ContactInformationInfoViewController.h */,
+				64FACA931A04FF7300135C4B /* ContactInformationInfoViewController.m */,
+				64FACA951A04FF8200135C4B /* PasportInfoViewController.h */,
+				64FACA961A04FF8200135C4B /* PasportInfoViewController.m */,
+				64FACA981A04FF9500135C4B /* VoenPasportInfoViewController.h */,
+				64FACA991A04FF9500135C4B /* VoenPasportInfoViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -239,12 +277,12 @@
 				642C62AB19E3FC2100A3E446 /* FullNewsInfoViewController.m */,
 				642C62AD19E67D8400A3E446 /* SharesViewController.h */,
 				642C62AE19E67D8400A3E446 /* SharesViewController.m */,
+				64FACA8C1A041AFB00135C4B /* DetailPartnerViewController.h */,
+				64FACA8D1A041AFB00135C4B /* DetailPartnerViewController.m */,
 				642C62B519E895FB00A3E446 /* SharesCell.h */,
 				642C62B619E895FB00A3E446 /* SharesCell.m */,
 				64BE32D419574B01003E99D0 /* Images.xcassets */,
 				64BE32C319574B01003E99D0 /* Supporting Files */,
-				64FACA8C1A041AFB00135C4B /* DetailPartnerViewController.h */,
-				64FACA8D1A041AFB00135C4B /* DetailPartnerViewController.m */,
 			);
 			path = voenbank;
 			sourceTree = "<group>";
@@ -281,6 +319,15 @@
 		64CF4E991986E28D00274BF8 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				64FACAAF1A059E0200135C4B /* money-25.png */,
+				64FACAAB1A059D5800135C4B /* parent_guardian-50.png */,
+				64FACAA91A059CDC00135C4B /* sale-50.png */,
+				64FACAA71A059C7900135C4B /* news-50.png */,
+				64FACAA51A059C2100135C4B /* user_male4-50.png */,
+				64FACAA31A059B4B00135C4B /* military_medal-25.png */,
+				64FACAA11A059B2400135C4B /* passport-25.png */,
+				64FACA9F1A059AE500135C4B /* contact_card-25.png */,
+				64FACA9B1A059A0700135C4B /* administrator-25.png */,
 				64EA07BA19EDDFA400A3FA2A /* faq_arrow_up.png */,
 				64EA07B819EDD18D00A3FA2A /* faq_arrow_down.png */,
 				64CF4E9A1986E2B200274BF8 /* feedback_button.png */,
@@ -372,17 +419,26 @@
 			files = (
 				64CF4EA31986E2B200274BF8 /* slider_filled.jpg in Resources */,
 				64BE32D519574B01003E99D0 /* Images.xcassets in Resources */,
+				64FACAA21A059B2400135C4B /* passport-25.png in Resources */,
 				64BE32C719574B01003E99D0 /* InfoPlist.strings in Resources */,
 				64CF4EA61986E2B200274BF8 /* vb_pattrn_0061.jpg in Resources */,
 				642C62B119E8824100A3E446 /* testCellView.xib in Resources */,
+				64FACAA41A059B4B00135C4B /* military_medal-25.png in Resources */,
 				64CF4EA51986E2B200274BF8 /* sliderThumb.png in Resources */,
+				64FACA9C1A059A0700135C4B /* administrator-25.png in Resources */,
+				64FACAB01A059E0200135C4B /* money-25.png in Resources */,
 				64CF4EA41986E2B200274BF8 /* slider_unfilled.jpg in Resources */,
 				64EA07BB19EDDFA400A3FA2A /* faq_arrow_up.png in Resources */,
 				64CF4EA21986E2B200274BF8 /* menu.png in Resources */,
 				64CF4EA11986E2B200274BF8 /* feedback_button.png in Resources */,
+				64FACAAA1A059CDC00135C4B /* sale-50.png in Resources */,
 				64CF4EA71986E2B200274BF8 /* vb-logo.png in Resources */,
 				64EA07B919EDD18D00A3FA2A /* faq_arrow_down.png in Resources */,
+				64FACAA61A059C2100135C4B /* user_male4-50.png in Resources */,
 				64574C4219D6D5680094979C /* Main.storyboard in Resources */,
+				64FACAA01A059AE500135C4B /* contact_card-25.png in Resources */,
+				64FACAAC1A059D5800135C4B /* parent_guardian-50.png in Resources */,
+				64FACAA81A059C7900135C4B /* news-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,8 +457,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64FACA971A04FF8200135C4B /* PasportInfoViewController.m in Sources */,
 				642C62B719E895FB00A3E446 /* SharesCell.m in Sources */,
 				64FACA891A030B2D00135C4B /* PartnersViewController.m in Sources */,
+				64FACA9A1A04FF9500135C4B /* VoenPasportInfoViewController.m in Sources */,
 				64BE32D319574B01003E99D0 /* ViewController.m in Sources */,
 				64EA07B719EDC1D000A3FA2A /* RightPanelViewController.m in Sources */,
 				64FACA8E1A041AFB00135C4B /* DetailPartnerViewController.m in Sources */,
@@ -416,9 +474,11 @@
 				648CE5F51983CDA500AD7FAB /* SidebarViewController.m in Sources */,
 				642C62AF19E67D8400A3E446 /* SharesViewController.m in Sources */,
 				64BE32C919574B01003E99D0 /* main.m in Sources */,
+				64FACA941A04FF7300135C4B /* ContactInformationInfoViewController.m in Sources */,
 				642C62A919E3F4DC00A3E446 /* User.m in Sources */,
 				645159FA19E023AE00F299C8 /* SWRevealViewController.m in Sources */,
 				64098E2419B3C19100813312 /* RegistrationViewController.m in Sources */,
+				64FACA911A04EE4800135C4B /* PersonalInfoViewController.m in Sources */,
 				645159F419DB392700F299C8 /* APIConnect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

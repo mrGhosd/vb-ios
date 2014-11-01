@@ -16,4 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *surnameField;
 @property (weak, nonatomic) IBOutlet UIImageView *userAvatar;
 @property (weak, nonatomic) IBOutlet UILabel *secondname_field;
+@property (strong, nonatomic) IBOutlet UILabel *roleField;
+@property (strong, nonatomic) IBOutlet UILabel *dateOfBirthField;
+- (IBAction)personalInfo:(id)sender;
 @end

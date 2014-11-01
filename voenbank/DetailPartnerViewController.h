@@ -14,4 +14,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *partnerURL;
 @property (strong, nonatomic) IBOutlet UIImageView *partnerImage;
 @property (strong, nonatomic) IBOutlet UITextView *partnerDescription;
+
 @end
