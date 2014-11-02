@@ -60,6 +60,7 @@
 		64FACAAA1A059CDC00135C4B /* sale-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACAA91A059CDC00135C4B /* sale-50.png */; };
 		64FACAAC1A059D5800135C4B /* parent_guardian-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACAAB1A059D5800135C4B /* parent_guardian-50.png */; };
 		64FACAB01A059E0200135C4B /* money-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACAAF1A059E0200135C4B /* money-25.png */; };
+		64FACAB31A0646BF00135C4B /* LoansListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FACAB21A0646BF00135C4B /* LoansListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,8 @@
 		64FACAA91A059CDC00135C4B /* sale-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sale-50.png"; sourceTree = "<group>"; };
 		64FACAAB1A059D5800135C4B /* parent_guardian-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parent_guardian-50.png"; sourceTree = "<group>"; };
 		64FACAAF1A059E0200135C4B /* money-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money-25.png"; sourceTree = "<group>"; };
+		64FACAB11A0646BF00135C4B /* LoansListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoansListViewController.h; sourceTree = "<group>"; };
+		64FACAB21A0646BF00135C4B /* LoansListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoansListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +211,8 @@
 				64FACA961A04FF8200135C4B /* PasportInfoViewController.m */,
 				64FACA981A04FF9500135C4B /* VoenPasportInfoViewController.h */,
 				64FACA991A04FF9500135C4B /* VoenPasportInfoViewController.m */,
+				64FACAB11A0646BF00135C4B /* LoansListViewController.h */,
+				64FACAB21A0646BF00135C4B /* LoansListViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 				64FACA941A04FF7300135C4B /* ContactInformationInfoViewController.m in Sources */,
 				642C62A919E3F4DC00A3E446 /* User.m in Sources */,
 				645159FA19E023AE00F299C8 /* SWRevealViewController.m in Sources */,
+				64FACAB31A0646BF00135C4B /* LoansListViewController.m in Sources */,
 				64098E2419B3C19100813312 /* RegistrationViewController.m in Sources */,
 				64FACA911A04EE4800135C4B /* PersonalInfoViewController.m in Sources */,
 				645159F419DB392700F299C8 /* APIConnect.m in Sources */,

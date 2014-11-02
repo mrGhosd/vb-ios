@@ -12,7 +12,9 @@
 @property(nonatomic) id userData;
 @property(nonatomic) NSDictionary *main;
 @property(nonatomic) NSMutableArray *loans;
+@property(nonatomic) NSDictionary *loans_repayments;
 @property(nonatomic) NSMutableArray *deposits;
+@property(nonatomic) NSDictionary *contrib_account;
 @property(nonatomic) NSDictionary *passport;
 @property(nonatomic) NSDictionary *voen_pasport;
 @property(nonatomic) NSDictionary *contact_information;

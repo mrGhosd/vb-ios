@@ -43,7 +43,16 @@ static User *sharedSingleton_ = nil;
         }
         if([key isEqualToString:@"loans"]){
             NSDictionary *parentDict;
+            NSMutableArray *repaymentArr = [[NSMutableArray alloc] init];
+            
             for(NSDictionary *arr in result){
+                if([arr objectForKey:@"repayments"]){
+                    NSDictionary *repaymentDictionary;
+                    for(NSDictionary *testDict in [arr objectForKey:@"repayments"]){
+                        repaymentDictionary = [self parsePassed:testDict];
+                        [repaymentArr addObject:repaymentDictionary];
+                    }
+                }
                 parentDict = [NSDictionary dictionaryWithObjectsAndKeys:
                               [arr objectForKey:@"id"], @"id",
                               [arr objectForKey:@"user_id"], @"user_id",
@@ -58,6 +67,7 @@ static User *sharedSingleton_ = nil;
                               [arr objectForKey:@"closest_payment_date"], @"closest_payment_date",
                               [arr objectForKey:@"current_day_in_loan_history"], @"current_day_in_loan_history",
                               [arr objectForKey:@"payed_sum"], @"payed_sum",
+                              repaymentArr, @"repayments",
                               nil];
                 [self.loans addObject:parentDict];
             }
