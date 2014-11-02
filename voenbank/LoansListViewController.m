@@ -80,7 +80,9 @@
     static NSString *identifier = @"loanCell";
     NSDictionary *currentLoanCell = loanCells[indexPath.row];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:
+                             UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+    
     if (cell == nil) {
         cell=[[UITableViewCell alloc]initWithStyle:
               UITableViewCellStyleSubtitle reuseIdentifier:identifier];

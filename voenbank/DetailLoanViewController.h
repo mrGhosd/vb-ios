@@ -19,5 +19,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *loanStatus;
 @property (strong, nonatomic) IBOutlet UILabel *loanPayedSum;
 @property (strong, nonatomic) IBOutlet UILabel *loanCurrentDay;
+- (IBAction)toLoanRepayment:(id)sender;
 
 @end

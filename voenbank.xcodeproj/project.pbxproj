@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		64098E2419B3C19100813312 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64098E2319B3C19100813312 /* RegistrationViewController.m */; };
 		6410B21B19EF0E8B006CCD40 /* RightPanelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6410B21A19EF0E8B006CCD40 /* RightPanelTableViewCell.m */; };
+		642B79331A06D38A00036EE2 /* LoanRepaymentsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642B79321A06D38A00036EE2 /* LoanRepaymentsListViewController.m */; };
+		642B79351A06DBC200036EE2 /* money_box-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 642B79341A06DBC200036EE2 /* money_box-50.png */; };
 		642C62A619E3595700A3E446 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62A519E3595700A3E446 /* NewsViewController.m */; };
 		642C62A919E3F4DC00A3E446 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62A819E3F4DC00A3E446 /* User.m */; };
 		642C62AC19E3FC2100A3E446 /* FullNewsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62AB19E3FC2100A3E446 /* FullNewsInfoViewController.m */; };
@@ -81,6 +83,9 @@
 		64098E2319B3C19100813312 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		6410B21919EF0E8B006CCD40 /* RightPanelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightPanelTableViewCell.h; sourceTree = "<group>"; };
 		6410B21A19EF0E8B006CCD40 /* RightPanelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightPanelTableViewCell.m; sourceTree = "<group>"; };
+		642B79311A06D38A00036EE2 /* LoanRepaymentsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanRepaymentsListViewController.h; sourceTree = "<group>"; };
+		642B79321A06D38A00036EE2 /* LoanRepaymentsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanRepaymentsListViewController.m; sourceTree = "<group>"; };
+		642B79341A06DBC200036EE2 /* money_box-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money_box-50.png"; sourceTree = "<group>"; };
 		642C62A419E3595700A3E446 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		642C62A519E3595700A3E446 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		642C62A719E3F4DC00A3E446 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -222,6 +227,8 @@
 				64FACAB21A0646BF00135C4B /* LoansListViewController.m */,
 				64FACAB61A068C5B00135C4B /* DetailLoanViewController.h */,
 				64FACAB71A068C5B00135C4B /* DetailLoanViewController.m */,
+				642B79311A06D38A00036EE2 /* LoanRepaymentsListViewController.h */,
+				642B79321A06D38A00036EE2 /* LoanRepaymentsListViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -353,6 +360,7 @@
 				64CF4E9E1986E2B200274BF8 /* sliderThumb.png */,
 				64CF4E9F1986E2B200274BF8 /* vb_pattrn_0061.jpg */,
 				64CF4EA01986E2B200274BF8 /* vb-logo.png */,
+				642B79341A06DBC200036EE2 /* money_box-50.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -451,6 +459,7 @@
 				64CF4EA71986E2B200274BF8 /* vb-logo.png in Resources */,
 				64EA07B919EDD18D00A3FA2A /* faq_arrow_down.png in Resources */,
 				64FACAB51A06770B00135C4B /* banknotes-50.png in Resources */,
+				642B79351A06DBC200036EE2 /* money_box-50.png in Resources */,
 				64FACAA61A059C2100135C4B /* user_male4-50.png in Resources */,
 				64FACABA1A06A4BC00135C4B /* right3-50.png in Resources */,
 				64574C4219D6D5680094979C /* Main.storyboard in Resources */,
@@ -497,6 +506,7 @@
 				642C62A919E3F4DC00A3E446 /* User.m in Sources */,
 				645159FA19E023AE00F299C8 /* SWRevealViewController.m in Sources */,
 				64FACAB31A0646BF00135C4B /* LoansListViewController.m in Sources */,
+				642B79331A06D38A00036EE2 /* LoanRepaymentsListViewController.m in Sources */,
 				64098E2419B3C19100813312 /* RegistrationViewController.m in Sources */,
 				64FACA911A04EE4800135C4B /* PersonalInfoViewController.m in Sources */,
 				645159F419DB392700F299C8 /* APIConnect.m in Sources */,
