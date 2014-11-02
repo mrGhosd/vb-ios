@@ -61,6 +61,9 @@
 		64FACAAC1A059D5800135C4B /* parent_guardian-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACAAB1A059D5800135C4B /* parent_guardian-50.png */; };
 		64FACAB01A059E0200135C4B /* money-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACAAF1A059E0200135C4B /* money-25.png */; };
 		64FACAB31A0646BF00135C4B /* LoansListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FACAB21A0646BF00135C4B /* LoansListViewController.m */; };
+		64FACAB51A06770B00135C4B /* banknotes-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACAB41A06770B00135C4B /* banknotes-50.png */; };
+		64FACAB81A068C5B00135C4B /* DetailLoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FACAB71A068C5B00135C4B /* DetailLoanViewController.m */; };
+		64FACABA1A06A4BC00135C4B /* right3-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FACAB91A06A4BC00135C4B /* right3-50.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +157,10 @@
 		64FACAAF1A059E0200135C4B /* money-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money-25.png"; sourceTree = "<group>"; };
 		64FACAB11A0646BF00135C4B /* LoansListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoansListViewController.h; sourceTree = "<group>"; };
 		64FACAB21A0646BF00135C4B /* LoansListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoansListViewController.m; sourceTree = "<group>"; };
+		64FACAB41A06770B00135C4B /* banknotes-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "banknotes-50.png"; sourceTree = "<group>"; };
+		64FACAB61A068C5B00135C4B /* DetailLoanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailLoanViewController.h; sourceTree = "<group>"; };
+		64FACAB71A068C5B00135C4B /* DetailLoanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailLoanViewController.m; sourceTree = "<group>"; };
+		64FACAB91A06A4BC00135C4B /* right3-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right3-50.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +220,8 @@
 				64FACA991A04FF9500135C4B /* VoenPasportInfoViewController.m */,
 				64FACAB11A0646BF00135C4B /* LoansListViewController.h */,
 				64FACAB21A0646BF00135C4B /* LoansListViewController.m */,
+				64FACAB61A068C5B00135C4B /* DetailLoanViewController.h */,
+				64FACAB71A068C5B00135C4B /* DetailLoanViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -324,6 +333,8 @@
 		64CF4E991986E28D00274BF8 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				64FACAB91A06A4BC00135C4B /* right3-50.png */,
+				64FACAB41A06770B00135C4B /* banknotes-50.png */,
 				64FACAAF1A059E0200135C4B /* money-25.png */,
 				64FACAAB1A059D5800135C4B /* parent_guardian-50.png */,
 				64FACAA91A059CDC00135C4B /* sale-50.png */,
@@ -439,7 +450,9 @@
 				64FACAAA1A059CDC00135C4B /* sale-50.png in Resources */,
 				64CF4EA71986E2B200274BF8 /* vb-logo.png in Resources */,
 				64EA07B919EDD18D00A3FA2A /* faq_arrow_down.png in Resources */,
+				64FACAB51A06770B00135C4B /* banknotes-50.png in Resources */,
 				64FACAA61A059C2100135C4B /* user_male4-50.png in Resources */,
+				64FACABA1A06A4BC00135C4B /* right3-50.png in Resources */,
 				64574C4219D6D5680094979C /* Main.storyboard in Resources */,
 				64FACAA01A059AE500135C4B /* contact_card-25.png in Resources */,
 				64FACAAC1A059D5800135C4B /* parent_guardian-50.png in Resources */,
@@ -464,6 +477,7 @@
 			files = (
 				64FACA971A04FF8200135C4B /* PasportInfoViewController.m in Sources */,
 				642C62B719E895FB00A3E446 /* SharesCell.m in Sources */,
+				64FACAB81A068C5B00135C4B /* DetailLoanViewController.m in Sources */,
 				64FACA891A030B2D00135C4B /* PartnersViewController.m in Sources */,
 				64FACA9A1A04FF9500135C4B /* VoenPasportInfoViewController.m in Sources */,
 				64BE32D319574B01003E99D0 /* ViewController.m in Sources */,

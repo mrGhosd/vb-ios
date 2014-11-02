@@ -204,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUV-aK-DsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1851" y="353"/>
+            <point key="canvasLocation" x="1699" y="358"/>
         </scene>
         <!--Регистрация-->
         <scene sceneID="08o-g1-VG0">
@@ -419,6 +419,26 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="KFr-em-qyC" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="tYB-sg-qyP"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="loans" id="G23-51-eAy" userLabel="loans">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G23-51-eAy" id="Gvp-VG-oSe">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banknotes-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="AIp-8c-Nxz">
+                                            <rect key="frame" x="8" y="5" width="40" height="36"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Займы" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf4-st-p3S">
+                                            <rect key="frame" x="56" y="11" width="161" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="JIR-yD-ZU4" kind="custom" identifier="loans_list" customClass="SWRevealViewControllerSeguePushController" id="I2H-Ol-W4f"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="news" id="L4M-pG-Pv6">
@@ -798,6 +818,10 @@
                                                 <state key="normal" title="Список займов">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loansList:" destination="DY4-5j-O8c" eventType="touchUpInside" id="OVj-83-sVG"/>
+                                                    <segue destination="IpD-bk-cIE" kind="push" identifier="loans" id="nk3-gH-quf"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n6-vT-RhF">
                                                 <rect key="frame" x="164" y="312" width="156" height="30"/>
@@ -845,6 +869,7 @@
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="dateOfBirthField" destination="nML-h8-s33" id="sEf-4p-Pf7"/>
+                        <outlet property="depositsList" destination="5n6-vT-RhF" id="MTR-BZ-L7E"/>
                         <outlet property="nameField" destination="9he-eF-uTP" id="CDM-1H-gDA"/>
                         <outlet property="roleField" destination="ZDp-nP-m4K" id="XFX-Nf-Ky7"/>
                         <outlet property="secondname_field" destination="u6f-xK-Q4e" id="BFt-xP-Rgw"/>
@@ -1164,23 +1189,97 @@
             </objects>
             <point key="canvasLocation" x="2513" y="374"/>
         </scene>
-        <!--View Controller-->
+        <!--Займы-->
         <scene sceneID="vy4-j1-6pG">
             <objects>
-                <viewController id="IpD-bk-cIE" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="iZD-1A-aU5"/>
-                        <viewControllerLayoutGuide type="bottom" id="8ud-iY-Igq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QeL-zE-Klu">
+                <viewController storyboardIdentifier="LoansListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IpD-bk-cIE" customClass="LoansListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pYf-yc-GDm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="loanCell" id="rCU-dD-tTJ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rCU-dD-tTJ" id="vme-Jb-UgR">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IpD-bk-cIE" id="kH8-yD-lgG"/>
+                            <outlet property="delegate" destination="IpD-bk-cIE" id="Zs6-OG-0om"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Займы" id="7z2-xA-EZA">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="53Q-NA-Fq3"/>
+                        <barButtonItem key="rightBarButtonItem" image="money-25.png" id="vcp-me-PJ7"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="53Q-NA-Fq3" id="dPv-Xh-PKj"/>
+                        <outlet property="tableView" destination="pYf-yc-GDm" id="M0Q-yx-qC8"/>
+                        <segue destination="H0e-Rf-yVk" kind="push" identifier="detail_loan" id="ms8-rt-3GV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UM8-cs-7ek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2513" y="1152"/>
+            <point key="canvasLocation" x="2689" y="1184"/>
+        </scene>
+        <!--Detail Loan View Controller-->
+        <scene sceneID="9bC-co-PGo">
+            <objects>
+                <viewController storyboardIdentifier="DetailLoanViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H0e-Rf-yVk" customClass="DetailLoanViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yPI-gI-P6v"/>
+                        <viewControllerLayoutGuide type="bottom" id="9gl-ne-kNH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jLp-XY-yPA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="900"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rg6-qv-mUh">
+                                <rect key="frame" x="0.0" y="64" width="320" height="900"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nuh-F8-Ue5">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1018"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vb_pattrn_0061.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0Xo-Nf-Bkw">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="1018"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNQ-Fm-RUQ">
+                                                <rect key="frame" x="118" y="22" width="99" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banknotes-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="n1F-K5-6nb">
+                                                <rect key="frame" x="60" y="8" width="50" height="50"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nuh-F8-Ue5" firstAttribute="top" secondItem="rg6-qv-mUh" secondAttribute="top" id="g3P-us-MLs"/>
+                                    <constraint firstAttribute="bottom" secondItem="nuh-F8-Ue5" secondAttribute="bottom" constant="-118" id="hjt-bn-ZeR"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rg6-qv-mUh" firstAttribute="top" secondItem="jLp-XY-yPA" secondAttribute="topMargin" id="txA-0D-VcM"/>
+                            <constraint firstItem="9gl-ne-kNH" firstAttribute="top" secondItem="rg6-qv-mUh" secondAttribute="bottom" id="u0s-va-FyB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="x4j-5x-2Xf"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="900"/>
+                    <connections>
+                        <outlet property="loanTitle" destination="QNQ-Fm-RUQ" id="1GU-eH-6xd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywT-zm-mWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2695" y="2098"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nno-UE-fgQ">
@@ -1561,7 +1660,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sP0-nd-4Hh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4243" y="1132"/>
+            <point key="canvasLocation" x="4243" y="980"/>
         </scene>
         <!--Билет-->
         <scene sceneID="xm4-B8-MJG">
@@ -1572,7 +1671,7 @@
                         <viewControllerLayoutGuide type="bottom" id="TBM-FD-vQn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="F8J-rj-FxH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qcR-KS-fPE">
@@ -1716,7 +1815,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Билет" image="military_medal-25.png" id="6YK-UT-5Yq"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="800"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="infoVoenPasportEducation" destination="9F3-ze-nZl" id="Vaf-Ld-ora"/>
                         <outlet property="infoVoenPasportNationality" destination="dLt-cg-0kJ" id="hy3-w1-8F5"/>
@@ -1731,7 +1830,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AgP-jE-am5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3566" y="1719"/>
+            <point key="canvasLocation" x="4222" y="1663"/>
         </scene>
         <!--Паспорт-->
         <scene sceneID="Obn-EW-wuq">
@@ -1890,9 +1989,28 @@
             </objects>
             <point key="canvasLocation" x="4243" y="225"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aDq-AD-FoY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JIR-yD-ZU4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uwn-2e-7NY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IpD-bk-cIE" kind="relationship" relationship="rootViewController" id="Xbk-XA-zP9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="03x-w4-Eas" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2157" y="1184"/>
+        </scene>
     </scenes>
     <resources>
         <image name="administrator-25.png" width="25" height="25"/>
+        <image name="banknotes-50.png" width="50" height="50"/>
         <image name="contact_card-25.png" width="25" height="25"/>
         <image name="faq_arrow_down.png" width="9" height="10"/>
         <image name="feedback_button.png" width="142" height="30"/>
@@ -1914,6 +2032,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="zI1-tL-MHI"/>
+        <segue reference="Xbk-XA-zP9"/>
         <segue reference="lpK-P7-YYN"/>
     </inferredMetricsTieBreakers>
 </document>

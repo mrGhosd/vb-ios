@@ -124,9 +124,6 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"full data of news is %@", myObject[indexPath.row]);
-//    FullNewsInfoViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"FullNewsInfoViewController"];
-//    view.newsData = myObject[indexPath.row];
-//    [self.navigationController pushViewController:view animated:YES];
     self.currentCellData = myObject[indexPath.row];
     [self performSegueWithIdentifier:@"detail_view" sender:self];
 }

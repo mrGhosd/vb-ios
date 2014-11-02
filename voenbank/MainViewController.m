@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "User.h"
 #import "PersonalInfoViewController.h"
+#import "LoansListViewController.h"
 
 @interface MainViewController ()
 {
@@ -100,6 +101,11 @@
     if([[segue identifier] isEqualToString:@"personalInfo"]){
         PersonalInfoViewController *view = segue.destinationViewController;
     }
+    if([[segue identifier] isEqualToString:@"loans"]){
+        LoansListViewController *list = segue.destinationViewController;
+    }
 }
 
+- (IBAction)loansList:(id)sender {
+}
 @end

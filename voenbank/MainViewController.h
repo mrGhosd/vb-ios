@@ -19,4 +19,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *roleField;
 @property (strong, nonatomic) IBOutlet UILabel *dateOfBirthField;
 - (IBAction)personalInfo:(id)sender;
+- (IBAction)loansList:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *depositsList;
 @end

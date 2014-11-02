@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoansListViewController : UIViewController
-
+@interface LoansListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property(strong, nonatomic) NSMutableDictionary *choosenLoan;
 @end
