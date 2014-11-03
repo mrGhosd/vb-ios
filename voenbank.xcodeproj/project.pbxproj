@@ -11,6 +11,11 @@
 		6410B21B19EF0E8B006CCD40 /* RightPanelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6410B21A19EF0E8B006CCD40 /* RightPanelTableViewCell.m */; };
 		642B79331A06D38A00036EE2 /* LoanRepaymentsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642B79321A06D38A00036EE2 /* LoanRepaymentsListViewController.m */; };
 		642B79351A06DBC200036EE2 /* money_box-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 642B79341A06DBC200036EE2 /* money_box-50.png */; };
+		642B79371A06DF7500036EE2 /* money_bag-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 642B79361A06DF7500036EE2 /* money_bag-50.png */; };
+		642B793A1A06E0A600036EE2 /* DepositsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642B79391A06E0A600036EE2 /* DepositsListViewController.m */; };
+		642B793D1A06F08900036EE2 /* DetailDepositViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642B793C1A06F08900036EE2 /* DetailDepositViewController.m */; };
+		642B79401A06FF8000036EE2 /* ContributionAccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642B793F1A06FF8000036EE2 /* ContributionAccountsViewController.m */; };
+		642B79421A0781D900036EE2 /* card_in_use-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 642B79411A0781D900036EE2 /* card_in_use-50.png */; };
 		642C62A619E3595700A3E446 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62A519E3595700A3E446 /* NewsViewController.m */; };
 		642C62A919E3F4DC00A3E446 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62A819E3F4DC00A3E446 /* User.m */; };
 		642C62AC19E3FC2100A3E446 /* FullNewsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642C62AB19E3FC2100A3E446 /* FullNewsInfoViewController.m */; };
@@ -86,6 +91,14 @@
 		642B79311A06D38A00036EE2 /* LoanRepaymentsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanRepaymentsListViewController.h; sourceTree = "<group>"; };
 		642B79321A06D38A00036EE2 /* LoanRepaymentsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanRepaymentsListViewController.m; sourceTree = "<group>"; };
 		642B79341A06DBC200036EE2 /* money_box-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money_box-50.png"; sourceTree = "<group>"; };
+		642B79361A06DF7500036EE2 /* money_bag-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "money_bag-50.png"; sourceTree = "<group>"; };
+		642B79381A06E0A600036EE2 /* DepositsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepositsListViewController.h; sourceTree = "<group>"; };
+		642B79391A06E0A600036EE2 /* DepositsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepositsListViewController.m; sourceTree = "<group>"; };
+		642B793B1A06F08900036EE2 /* DetailDepositViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailDepositViewController.h; sourceTree = "<group>"; };
+		642B793C1A06F08900036EE2 /* DetailDepositViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailDepositViewController.m; sourceTree = "<group>"; };
+		642B793E1A06FF8000036EE2 /* ContributionAccountsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContributionAccountsViewController.h; sourceTree = "<group>"; };
+		642B793F1A06FF8000036EE2 /* ContributionAccountsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContributionAccountsViewController.m; sourceTree = "<group>"; };
+		642B79411A0781D900036EE2 /* card_in_use-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card_in_use-50.png"; sourceTree = "<group>"; };
 		642C62A419E3595700A3E446 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		642C62A519E3595700A3E446 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		642C62A719E3F4DC00A3E446 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -229,6 +242,12 @@
 				64FACAB71A068C5B00135C4B /* DetailLoanViewController.m */,
 				642B79311A06D38A00036EE2 /* LoanRepaymentsListViewController.h */,
 				642B79321A06D38A00036EE2 /* LoanRepaymentsListViewController.m */,
+				642B79381A06E0A600036EE2 /* DepositsListViewController.h */,
+				642B79391A06E0A600036EE2 /* DepositsListViewController.m */,
+				642B793B1A06F08900036EE2 /* DetailDepositViewController.h */,
+				642B793C1A06F08900036EE2 /* DetailDepositViewController.m */,
+				642B793E1A06FF8000036EE2 /* ContributionAccountsViewController.h */,
+				642B793F1A06FF8000036EE2 /* ContributionAccountsViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -340,6 +359,7 @@
 		64CF4E991986E28D00274BF8 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				642B79411A0781D900036EE2 /* card_in_use-50.png */,
 				64FACAB91A06A4BC00135C4B /* right3-50.png */,
 				64FACAB41A06770B00135C4B /* banknotes-50.png */,
 				64FACAAF1A059E0200135C4B /* money-25.png */,
@@ -361,6 +381,7 @@
 				64CF4E9F1986E2B200274BF8 /* vb_pattrn_0061.jpg */,
 				64CF4EA01986E2B200274BF8 /* vb-logo.png */,
 				642B79341A06DBC200036EE2 /* money_box-50.png */,
+				642B79361A06DF7500036EE2 /* money_bag-50.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -442,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64CF4EA31986E2B200274BF8 /* slider_filled.jpg in Resources */,
+				642B79421A0781D900036EE2 /* card_in_use-50.png in Resources */,
 				64BE32D519574B01003E99D0 /* Images.xcassets in Resources */,
 				64FACAA21A059B2400135C4B /* passport-25.png in Resources */,
 				64BE32C719574B01003E99D0 /* InfoPlist.strings in Resources */,
@@ -449,6 +471,7 @@
 				642C62B119E8824100A3E446 /* testCellView.xib in Resources */,
 				64FACAA41A059B4B00135C4B /* military_medal-25.png in Resources */,
 				64CF4EA51986E2B200274BF8 /* sliderThumb.png in Resources */,
+				642B79371A06DF7500036EE2 /* money_bag-50.png in Resources */,
 				64FACA9C1A059A0700135C4B /* administrator-25.png in Resources */,
 				64FACAB01A059E0200135C4B /* money-25.png in Resources */,
 				64CF4EA41986E2B200274BF8 /* slider_unfilled.jpg in Resources */,
@@ -486,10 +509,12 @@
 			files = (
 				64FACA971A04FF8200135C4B /* PasportInfoViewController.m in Sources */,
 				642C62B719E895FB00A3E446 /* SharesCell.m in Sources */,
+				642B793A1A06E0A600036EE2 /* DepositsListViewController.m in Sources */,
 				64FACAB81A068C5B00135C4B /* DetailLoanViewController.m in Sources */,
 				64FACA891A030B2D00135C4B /* PartnersViewController.m in Sources */,
 				64FACA9A1A04FF9500135C4B /* VoenPasportInfoViewController.m in Sources */,
 				64BE32D319574B01003E99D0 /* ViewController.m in Sources */,
+				642B79401A06FF8000036EE2 /* ContributionAccountsViewController.m in Sources */,
 				64EA07B719EDC1D000A3FA2A /* RightPanelViewController.m in Sources */,
 				64FACA8E1A041AFB00135C4B /* DetailPartnerViewController.m in Sources */,
 				64BE32CD19574B01003E99D0 /* AppDelegate.m in Sources */,
@@ -509,6 +534,7 @@
 				642B79331A06D38A00036EE2 /* LoanRepaymentsListViewController.m in Sources */,
 				64098E2419B3C19100813312 /* RegistrationViewController.m in Sources */,
 				64FACA911A04EE4800135C4B /* PersonalInfoViewController.m in Sources */,
+				642B793D1A06F08900036EE2 /* DetailDepositViewController.m in Sources */,
 				645159F419DB392700F299C8 /* APIConnect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

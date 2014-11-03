@@ -12,6 +12,7 @@
 #import "SharesViewController.h"
 #import "PartnersViewController.h"
 #import "LoansListViewController.h"
+#import "DepositsListViewController.h"
 #import "User.h"
 
 @interface SidebarViewController ()
@@ -37,7 +38,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _menuItems = @[@"my_page", @"loans", @"news", @"shares", @"partners"];
+    _menuItems = @[@"my_page", @"loans", @"deposits", @"news", @"shares", @"partners"];
 }
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
@@ -58,6 +59,9 @@
     }
     if([[segue identifier] isEqualToString:@"loans_list"]){
         LoansListViewController *list = [segue destinationViewController];
+    }
+    if([[segue identifier] isEqualToString:@"deposits_list"]){
+        DepositsListViewController *list = [segue destinationViewController];
     }
 }
 

@@ -43,9 +43,8 @@ static User *sharedSingleton_ = nil;
         }
         if([key isEqualToString:@"loans"]){
             NSDictionary *parentDict;
-            NSMutableArray *repaymentArr = [[NSMutableArray alloc] init];
-            
             for(NSDictionary *arr in result){
+                NSMutableArray *repaymentArr = [[NSMutableArray alloc] init];
                 if([arr objectForKey:@"repayments"]){
                     NSDictionary *repaymentDictionary;
                     for(NSDictionary *testDict in [arr objectForKey:@"repayments"]){
@@ -76,6 +75,14 @@ static User *sharedSingleton_ = nil;
         if([key isEqualToString:@"deposits"]){
             NSDictionary *parentDict;
             for(NSDictionary *arr in result){
+                NSMutableArray *accountsArr = [[NSMutableArray alloc] init];
+                if([arr objectForKey:@"accounts"]){
+                    NSDictionary *accountsDictionary;
+                    for(NSDictionary *testDict in [arr objectForKey:@"accounts"]){
+                        accountsDictionary = [self parsePassed:testDict];
+                        [accountsArr addObject:accountsDictionary];
+                    }
+                }
                 parentDict = [NSDictionary dictionaryWithObjectsAndKeys:
                               [arr objectForKey:@"id"], @"id",
                               [arr objectForKey:@"user_id"], @"user_id",
@@ -84,6 +91,8 @@ static User *sharedSingleton_ = nil;
                               [arr objectForKey:@"response"], @"response",
                               [arr objectForKey:@"created_at"], @"created_at",
                               [arr objectForKey:@"updated_at"], @"updated_at",
+                              [arr objectForKey:@"days_diff"], @"days_diff",
+                              accountsArr, @"contribution_accounts",
                               nil];
                 [self.deposits addObject:parentDict];
             }

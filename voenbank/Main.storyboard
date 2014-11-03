@@ -204,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUV-aK-DsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1699" y="358"/>
+            <point key="canvasLocation" x="1145" y="1114"/>
         </scene>
         <!--Регистрация-->
         <scene sceneID="08o-g1-VG0">
@@ -366,7 +366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tf4-R6-EVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1318" y="1151.5"/>
+            <point key="canvasLocation" x="1145" y="1815.5"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="YiW-8T-sz6">
@@ -418,7 +418,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="KFr-em-qyC" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="tYB-sg-qyP"/>
+                                    <segue destination="KFr-em-qyC" kind="custom" identifier="deposits_list" customClass="SWRevealViewControllerSeguePushController" id="tYB-sg-qyP"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="loans" id="G23-51-eAy" userLabel="loans">
@@ -439,6 +439,26 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="JIR-yD-ZU4" kind="custom" identifier="loans_list" customClass="SWRevealViewControllerSeguePushController" id="I2H-Ol-W4f"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="deposits" id="4xb-ZP-xbZ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4xb-ZP-xbZ" id="fUS-Rn-hli">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="money_bag-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="qP6-Iz-6b2">
+                                            <rect key="frame" x="8" y="5" width="40" height="36"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Вклады" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoG-f5-l0J">
+                                            <rect key="frame" x="56" y="11" width="161" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="epq-0s-TxQ" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="LxO-TR-qgk"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="news" id="L4M-pG-Pv6">
@@ -481,7 +501,7 @@
                                     <segue destination="QLU-1P-Tpr" kind="custom" identifier="shares_page" customClass="SWRevealViewControllerSeguePushController" id="D7I-bv-wfc"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="partners" id="6iD-Yt-qJg">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="partners" id="6iD-Yt-qJg">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6iD-Yt-qJg" id="oBe-zJ-eAL">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -823,12 +843,6 @@
                                                     <segue destination="IpD-bk-cIE" kind="push" identifier="loans" id="nk3-gH-quf"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n6-vT-RhF">
-                                                <rect key="frame" x="164" y="312" width="156" height="30"/>
-                                                <state key="normal" title="Список вкладов">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJs-JE-Eyv">
                                                 <rect key="frame" x="15" y="350" width="297" height="27"/>
                                                 <state key="normal" title="Личная информация">
@@ -841,6 +855,15 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IZD-uu-aRj">
                                                 <rect key="frame" x="8" y="8" width="150" height="150"/>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n6-vT-RhF">
+                                                <rect key="frame" x="155" y="312" width="156" height="30"/>
+                                                <state key="normal" title="Список вкладов">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="OCr-ki-eu4" kind="push" identifier="deposits" id="SUo-7D-drW"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -1222,7 +1245,207 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UM8-cs-7ek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2689" y="1184"/>
+            <point key="canvasLocation" x="2577" y="1768"/>
+        </scene>
+        <!--Вклады-->
+        <scene sceneID="bkx-qt-hQQ">
+            <objects>
+                <viewController id="OCr-ki-eu4" customClass="DepositsListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="00i-eK-DcI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="depositCell" id="48f-Jo-CZj">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="48f-Jo-CZj" id="43q-Ab-ebD">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OCr-ki-eu4" id="OCw-Ft-raF"/>
+                            <outlet property="delegate" destination="OCr-ki-eu4" id="xCC-Ua-2Ln"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Вклады" id="BYK-17-jyH">
+                        <barButtonItem key="backBarButtonItem" title="backButton" id="5ZB-5N-Vys"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="IMf-6e-mKn"/>
+                        <barButtonItem key="rightBarButtonItem" image="money-25.png" id="FPe-T0-VJP"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="IMf-6e-mKn" id="myU-BQ-HV7"/>
+                        <segue destination="Sd5-0d-jtk" kind="push" identifier="detail_deposit" id="YsR-z0-biM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DXh-zd-heX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3871" y="1731"/>
+        </scene>
+        <!--Detail Deposit View Controller-->
+        <scene sceneID="IaJ-kx-OEV">
+            <objects>
+                <viewController id="Sd5-0d-jtk" customClass="DetailDepositViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cvq-0W-V4U"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y2F-gy-wBK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rFU-5b-xjL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W2w-ej-VEG">
+                                <rect key="frame" x="0.0" y="49" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uVk-Cx-Sal">
+                                        <rect key="frame" x="0.0" y="5" width="320" height="600"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vb_pattrn_0061.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="xE0-2w-eaB">
+                                                <rect key="frame" x="0.0" y="10" width="320" height="900"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Статус:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BM-SG-y99">
+                                                <rect key="frame" x="13" y="138" width="136" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hy-1z-8dG">
+                                                <rect key="frame" x="152" y="333" width="165" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFX-DC-9Tl">
+                                                <rect key="frame" x="147" y="27" width="134" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Дата создания:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xw-ZT-4nP">
+                                                <rect key="frame" x="8" y="252" width="136" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Дней с начала:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfV-mo-cxu">
+                                                <rect key="frame" x="13" y="195" width="136" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="История платежей:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeT-zk-td5">
+                                                <rect key="frame" x="13" y="413" width="136" height="44"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Дата последнейго обновления:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoS-X0-jPT">
+                                                <rect key="frame" x="13" y="313" width="136" height="62"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Текущая сумма:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-qK-VMQ">
+                                                <rect key="frame" x="13" y="76" width="136" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2b-JM-nXX">
+                                                <rect key="frame" x="152" y="252" width="165" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbr-dt-ong">
+                                                <rect key="frame" x="152" y="76" width="165" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xde-yk-MTT">
+                                                <rect key="frame" x="157" y="410" width="50" height="50"/>
+                                                <state key="normal" image="right3-50.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="contributionAccounts:" destination="Sd5-0d-jtk" eventType="touchUpInside" id="zjo-0e-Tep"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ot4-V7-GWW">
+                                                <rect key="frame" x="152" y="195" width="165" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqz-xv-ngN">
+                                                <rect key="frame" x="152" y="138" width="165" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="money_bag-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="b48-aO-Bba">
+                                                <rect key="frame" x="89" y="18" width="50" height="50"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="uVk-Cx-Sal" secondAttribute="bottom" id="Ig4-6j-yA8"/>
+                                    <constraint firstItem="uVk-Cx-Sal" firstAttribute="top" secondItem="W2w-ej-VEG" secondAttribute="top" id="YQ3-FC-XBT"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W2w-ej-VEG" firstAttribute="top" secondItem="rFU-5b-xjL" secondAttribute="topMargin" id="01e-y6-5JZ"/>
+                            <constraint firstItem="Y2F-gy-wBK" firstAttribute="top" secondItem="W2w-ej-VEG" secondAttribute="bottom" id="0hQ-do-ALd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5p5-eM-y3H"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="depositCreate" destination="R2b-JM-nXX" id="LPp-6I-Z72"/>
+                        <outlet property="depositDaysDiff" destination="Ot4-V7-GWW" id="9Ql-ym-SzG"/>
+                        <outlet property="depositResponse" destination="lqz-xv-ngN" id="fca-Nw-HNe"/>
+                        <outlet property="depositSum" destination="hbr-dt-ong" id="Rf5-ti-OLH"/>
+                        <outlet property="depositTitle" destination="tFX-DC-9Tl" id="3N1-ya-KJ7"/>
+                        <outlet property="depositUpdate" destination="8Hy-1z-8dG" id="X8p-b4-81g"/>
+                        <segue destination="0Gj-8S-Ba8" kind="push" identifier="accounts" id="Pfi-bg-cQt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eiQ-Q6-gbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3871" y="2468"/>
+        </scene>
+        <!--Contribution Accounts View Controller-->
+        <scene sceneID="7Uc-dg-kfH">
+            <objects>
+                <viewController id="0Gj-8S-Ba8" customClass="ContributionAccountsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="g09-35-R2d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="accountCell" id="PeC-rN-8Z8">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PeC-rN-8Z8" id="CaA-OF-GfA">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0Gj-8S-Ba8" id="ksJ-28-mNU"/>
+                            <outlet property="delegate" destination="0Gj-8S-Ba8" id="k2z-Nx-rK3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="3bj-gB-ZwC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LPN-33-dY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3871" y="3191"/>
         </scene>
         <!--Detail Loan View Controller-->
         <scene sceneID="9bC-co-PGo">
@@ -1399,7 +1622,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywT-zm-mWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2689" y="1884"/>
+            <point key="canvasLocation" x="2577" y="2468"/>
         </scene>
         <!--Loan Repayments List View Controller-->
         <scene sceneID="Xnx-Dd-0NI">
@@ -1428,7 +1651,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WwJ-mb-UZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2689" y="2613"/>
+            <point key="canvasLocation" x="2577" y="3197"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nno-UE-fgQ">
@@ -1979,7 +2202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AgP-jE-am5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4222" y="1663"/>
+            <point key="canvasLocation" x="4754" y="1663"/>
         </scene>
         <!--Паспорт-->
         <scene sceneID="Obn-EW-wuq">
@@ -2154,7 +2377,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="03x-w4-Eas" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2157" y="1184"/>
+            <point key="canvasLocation" x="2045" y="1768"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xMF-X3-a13">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="epq-0s-TxQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dYW-Ri-5OJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OCr-ki-eu4" kind="relationship" relationship="rootViewController" id="Ohh-Cd-OV3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tHo-T2-O7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3339" y="1731"/>
         </scene>
     </scenes>
     <resources>
@@ -2166,6 +2407,7 @@
         <image name="menu.png" width="28" height="20"/>
         <image name="military_medal-25.png" width="25" height="25"/>
         <image name="money-25.png" width="25" height="25"/>
+        <image name="money_bag-50.png" width="50" height="50"/>
         <image name="news-50.png" width="50" height="50"/>
         <image name="parent_guardian-50.png" width="50" height="50"/>
         <image name="passport-25.png" width="25" height="25"/>
@@ -2182,7 +2424,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="zI1-tL-MHI"/>
-        <segue reference="Xbk-XA-zP9"/>
+        <segue reference="SUo-7D-drW"/>
+        <segue reference="nk3-gH-quf"/>
         <segue reference="lpK-P7-YYN"/>
     </inferredMetricsTieBreakers>
 </document>

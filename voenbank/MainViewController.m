@@ -11,6 +11,7 @@
 #import "User.h"
 #import "PersonalInfoViewController.h"
 #import "LoansListViewController.h"
+#import "DepositsListViewController.h"
 
 @interface MainViewController ()
 {
@@ -47,7 +48,6 @@
     
 }
 -(void) setupMainPageData{
-//    NSLog(@"MAINVIEWCONTROLLER JSON: %@", _userInformation);
     User *user = [[User sharedManager] parseUserData];
     
     
@@ -67,15 +67,6 @@
 
 }
 - (void) callSideBarButton{
-    //    // Change button color
-//    _sideButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
-//    
-//    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-//    _sideButton.target = self.revealViewController;
-//    _sideButton.action = @selector(revealToggle:);
-//    
-//    // Set the gesture
-//    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,6 +94,9 @@
     }
     if([[segue identifier] isEqualToString:@"loans"]){
         LoansListViewController *list = segue.destinationViewController;
+    }
+    if([[segue identifier] isEqualToString:@"deposits"] ){
+        DepositsListViewController *list = segue.destinationViewController;
     }
 }
 
