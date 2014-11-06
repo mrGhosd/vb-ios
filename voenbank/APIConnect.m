@@ -17,17 +17,22 @@
 @synthesize completed = _completed;
 @synthesize errored = _errored;
 
-- (void)getData:(NSString *)url params: (NSString *) params type: (NSString *) requestType success: (requestCompletedBlock) completed{
+- (void)getData:(NSString *)url params: (NSDictionary *) params type: (NSString *) requestType success: (requestCompletedBlock) completed{
     self.completed = completed;
+    NSError *error;
     NSURL *finalURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", MAIN_URL, url]];
-    NSData *postData = [params dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+//    NSData *postData = [params dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:&error];
+    
     NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
     //// создаем объект NSURLRequest - запрос
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:finalURL];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
     request.HTTPMethod = requestType;
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
     
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];

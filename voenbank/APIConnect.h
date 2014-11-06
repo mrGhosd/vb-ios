@@ -18,7 +18,7 @@ typedef void(^requestErrorBlock)(NSError *);
 @property (nonatomic, copy) requestErrorBlock errored;
 
 @property (nonatomic) NSString *dataFromServer;
--(void)getData:(NSString *)url params: (NSString *) params type: (NSString *) requestType success: (requestCompletedBlock) completed;
+-(void)getData:(NSString *)url params: (NSDictionary *) params type: (NSString *) requestType success: (requestCompletedBlock) completed;
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection;
 - (id) requestForStaticPages: (NSString *) urlPart;
 @end

@@ -124,9 +124,10 @@
                                      _loginField.text, @"login",
                                      _passwordField.text, @"password", nil];
         
-//        NSDictionary *userData = [[NSMutableDictionary ];
+        NSDictionary *userData = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                  data, @"user", nil];
 //        userData = [NSDictionary dictionaryWithOb];
-        [self.connection getData:@"/users/login" params:[NSString stringWithFormat:@"login=%@&password=%@",_loginField.text, _passwordField.text] type:@"POST" success:^(id json){
+        [self.connection getData:@"/users/login" params:userData type:@"POST" success:^(id json){
             [self toUserProfile:json];
         }];
     }

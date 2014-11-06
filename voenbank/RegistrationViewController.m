@@ -104,14 +104,52 @@
                           otherButtonTitles:nil];
     [alert show];
 }
--(NSString *) formRequestParams{
-    NSString *params = [NSString stringWithFormat:@"surname=%@&name=%@&secondname=%@&date_of_birth=%@&sum=%@&time=%@&phone=%@&email=%@&type=%@&role=%@", _surnameField.text, _nameField.text, _secondNameField.text, _dateOfBirthField.text, _surnameField.text,
-                        _timeField.text, _phoneNumberField.text, _emailField.text, _operationType, _userRole];
-    return params;
+-(NSDictionary *) formRequestParams{
+    NSString *mainUserDictKey;
+    NSDictionary *mainUserDict;
+    
+    if([self.operationType isEqualToString:@"Loan"]){
+        mainUserDictKey = @"loan_attributes";
+        NSDate *beginDate = [NSDate date];
+        NSDate *endDate = [self showEndDate];
+        mainUserDict = [[NSDictionary alloc] initWithObjectsAndKeys:
+                        self.sumField.text, @"loan_sum",
+                        [NSString stringWithFormat:@"%@", beginDate], @"begin_date",
+                        [NSString stringWithFormat:@"%@", endDate ], @"end_date",
+                        nil];
+    } else if([self.operationType isEqualToString:@"Deposit"])
+    {
+        mainUserDictKey = @"deposit_attributes";
+        mainUserDict = [[NSDictionary alloc] initWithObjectsAndKeys:
+                        self.sumField.text, @"deposit_current_summ",
+                        nil];
+    }
+    NSDictionary *contactInfo = [[NSDictionary alloc] initWithObjectsAndKeys:self.emailField.text, @"email", nil];
+    NSDictionary *mainData = [[NSDictionary alloc] initWithObjectsAndKeys:
+                              self.surnameField.text, @"surname",
+                              self.nameField.text, @"name",
+                              self.secondNameField.text, @"secondname",
+                              self.dateOfBirthField.text, @"date_of_birth",
+                              self.phoneNumberField.text, @"contact_phone",
+                              contactInfo, @"contact_information_attributes",
+                              mainUserDict, mainUserDictKey,
+                              self.userRole, @"role_id", nil];
+    NSDictionary *regData = [[NSDictionary alloc] initWithObjectsAndKeys:mainData, @"user",
+                                                                        self.operationType, @"operation", nil];
+    return regData;
+}
+
+- (NSDate *) showEndDate{
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    int months = self.timeField.text.integerValue;
+    [dateComponents setMonth:months];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDate *newDate = [calendar dateByAddingComponents:dateComponents toDate:[NSDate date] options:0];
+    return newDate;
 }
 - (IBAction)registrationButton:(id)sender {
     if([self isFieldCorrect]){
-        NSString *param = [self formRequestParams];
+        NSDictionary *param = [self formRequestParams];
         [self.connection getData:@"/users" params:param type:@"POST" success:^(id json){
             [self showAlertWindow:@"Поздравляем!" text:@"Спасбио за регистрацию в нашем сервисе!"];
             [self performSegueWithIdentifier:@"entryViewBack" sender:self];
