@@ -131,6 +131,7 @@
                               self.secondNameField.text, @"secondname",
                               self.dateOfBirthField.text, @"date_of_birth",
                               self.phoneNumberField.text, @"contact_phone",
+                              [NSString stringWithFormat:@"%hhd", [self getSexFieldData]], @"sex",
                               contactInfo, @"contact_information_attributes",
                               mainUserDict, mainUserDictKey,
                               self.userRole, @"role_id", nil];
@@ -156,6 +157,13 @@
         }];
     } else {
         [self showAlertWindow:@"Ошибка!" text:@"Поля пустые! Заполните выделенные поля для продолжения"];
+    }
+}
+- (BOOL) getSexFieldData{
+    if([self.sexField isOn]){
+        return YES;
+    } else {
+        return NO;
     }
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

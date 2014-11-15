@@ -26,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *timeField;
 @property (strong, nonatomic) IBOutlet UITextField *phoneNumberField;
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
+@property (strong, nonatomic) IBOutlet UISwitch *sexField;
 
 @property (strong, nonatomic) IBOutlet NSString *userRole;
 @property (strong, nonatomic) IBOutlet NSString *operationType;
