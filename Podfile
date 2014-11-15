@@ -6,6 +6,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'voenbank' do
     pod 'AFNetworking', '~> 2.0'
     pod 'MBProgressHUD'
+    pod 'HTMLReader'
 end
 
 target 'voenbankTests' do

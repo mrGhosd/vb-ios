@@ -17,6 +17,32 @@
 @synthesize completed = _completed;
 @synthesize errored = _errored;
 
+- (void) login:(NSDictionary *)data forUrl:(NSString *)url withComplition:(ResponseCopmlition) complition{
+    ResponseCopmlition response = [complition copy];
+    NSMutableURLRequest *request = [[[AFJSONRequestSerializer new] requestWithMethod:@"POST"
+                                                                           URLString:[NSString stringWithFormat:@"%@%@", MAIN_URL, url]
+                                                                          parameters:@{@"user": data}
+                                                                               error:nil] mutableCopy];
+    
+    AFHTTPRequestOperation *requestAPI = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+    AFJSONResponseSerializer *serializer = [AFJSONResponseSerializer new];
+    serializer.readingOptions = NSJSONReadingAllowFragments;
+    requestAPI.responseSerializer = serializer;
+    
+    [requestAPI setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        response(responseObject, YES);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        response(error, NO);
+    }];
+    
+    [requestAPI start];
+
+}
+
+- (void) registration:(NSDictionary *)data withComplition:(ResponseCopmlition) complition{
+
+}
+
 - (void)getData:(NSString *)url params: (NSDictionary *) params type: (NSString *) requestType success: (requestCompletedBlock) completed{
     self.completed = completed;
     NSError *error;

@@ -20,14 +20,17 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - HTMLReader (0.5.8)
   - MBProgressHUD (0.9)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - HTMLReader
   - MBProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  HTMLReader: e61b43d69deb09d8098a7aabacdd6cafd8749373
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
 
 COCOAPODS: 0.34.4

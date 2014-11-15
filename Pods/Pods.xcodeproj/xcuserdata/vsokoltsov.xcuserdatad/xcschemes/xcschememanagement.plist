@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-voenbank-HTMLReader.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-voenbank-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>95053B48352B0E8DA7F67EA7</key>
+		<key>255E35C94BA7C57F287DABD9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A32E1D0D98A660D112A49D3E</key>
+		<key>5D4CEF92FBF63EB729DBD951</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BB9D29E8C1D7C022A257A45B</key>
+		<key>F0D7BAD1F69D2F95E7E29A33</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F63718186F8B0118054022C6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
