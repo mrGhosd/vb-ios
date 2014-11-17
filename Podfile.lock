@@ -20,17 +20,28 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - HTMLReader (0.5.8)
+  - DTCoreText (1.6.14):
+    - DTFoundation/Core (~> 1.7.1)
+    - DTFoundation/DTAnimatedGIF (~> 1.7.1)
+    - DTFoundation/DTHTMLParser (~> 1.7.1)
+    - DTFoundation/UIKit (~> 1.7.1)
+  - DTFoundation/Core (1.7.3)
+  - DTFoundation/DTAnimatedGIF (1.7.3)
+  - DTFoundation/DTHTMLParser (1.7.3):
+    - DTFoundation/Core
+  - DTFoundation/UIKit (1.7.3):
+    - DTFoundation/Core
   - MBProgressHUD (0.9)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
-  - HTMLReader
+  - DTCoreText (~> 1.6)
   - MBProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
-  HTMLReader: e61b43d69deb09d8098a7aabacdd6cafd8749373
+  DTCoreText: 1fc0aadfa238d14c6cc56035af4e2b76b958e3b1
+  DTFoundation: 360bc65ab44f588611f47324b8cfb0f18e04b263
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
 
 COCOAPODS: 0.34.4

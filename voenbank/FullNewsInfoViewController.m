@@ -7,7 +7,7 @@
 //
 
 #import "FullNewsInfoViewController.h"
-
+#import <DTCoreText.h>
 @interface FullNewsInfoViewController ()
 
 @end
@@ -17,7 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initNewsInfo];
-    NSLog(@"News data is %@", self.newsData);
     // Do any additional setup after loading the view.
 }
 
@@ -30,7 +29,16 @@
     _newsLabel.text = [_newsData objectForKey:@"stock_title"];
     [_newsText setEditable:NO];
     _newsText.backgroundColor = [UIColor clearColor];
-    _newsText.text = [_newsData objectForKey:@"stock_text"];
+
+    
+    NSData *textData = [[_newsData objectForKey:@"stock_text"] dataUsingEncoding:NSUTF8StringEncoding];
+    NSAttributedString *text = [[NSAttributedString alloc] initWithHTMLData:textData documentAttributes:nil];
+//    NSAttributedString *string = [[NSAttributedString alloc] string [_newsData objectForKey:@"stock_text"]];
+//    [self.view addSubview:layoutFrame];
+    
+    self.newsText.text = text.string;
+//                                    @"This is a test.\n Will I pass?" attributes:
+//                                    @{NSParagraphStyleAttributeName : paragraphStyle, NSFontAttributeName : font}];
 }
 -(void) initImageNews{
     NSString *fullURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",[_newsData objectForKey:@"image_url"]];

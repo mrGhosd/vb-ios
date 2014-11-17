@@ -722,8 +722,8 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="YN1-c4-2AY" id="008-Dw-8P7"/>
-                            <outlet property="delegate" destination="YN1-c4-2AY" id="H9n-3D-x6o"/>
+                            <outlet property="dataSource" destination="YN1-c4-2AY" id="Pky-pD-sju"/>
+                            <outlet property="delegate" destination="YN1-c4-2AY" id="KgE-Xd-aaC"/>
                         </connections>
                     </tableView>
                     <toolbarItems/>
@@ -733,6 +733,8 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="RfR-LO-KeS" id="Gjq-Mn-IlB"/>
+                        <outlet property="tableData" destination="v03-oV-Qdz" id="qny-1W-SGk"/>
+                        <outlet property="tableView" destination="v03-oV-Qdz" id="c76-UY-qwb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2f1-Bd-a4r" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -384,11 +384,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/NewsViewController.m"
-            timestampString = "434548917.402538"
+            timestampString = "437958745.072258"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "-apiConnect"
             landmarkType = "5">
          </BreakpointContent>
@@ -448,11 +448,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/NewsViewController.m"
-            timestampString = "434548917.402538"
+            timestampString = "437958745.072258"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "-defBackButton"
             landmarkType = "5">
          </BreakpointContent>
@@ -464,11 +464,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/NewsViewController.m"
-            timestampString = "434548917.402538"
+            timestampString = "437959581.108649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -480,11 +480,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/NewsViewController.m"
-            timestampString = "434548917.402538"
+            timestampString = "437958745.072258"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "-initMainData"
             landmarkType = "5">
          </BreakpointContent>
@@ -496,11 +496,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/NewsViewController.m"
-            timestampString = "434548917.402538"
+            timestampString = "437959581.108649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>

@@ -18,6 +18,7 @@
     NSString *date;
     NSString *image;
     NSString *text;
+    UIRefreshControl *refreshControl;
 }
 
 @end
@@ -26,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self refreshInit];
     [self apiConnect];
     [self initMainData];
     [self initDicitionaries];
@@ -76,7 +78,70 @@
             [myObject addObject:dictionary];
         }
 }
+- (void) refreshInit{
+//    UITableViewController *tableViewController = [[UITableViewController alloc] init];
+//    tableViewController.tableView = self.tableView;
+//    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+//    [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
+//    tableViewController.refreshControl = refreshControl;
+//    
+//    refreshControl = [[UIRefreshControl alloc] init];
+//    refreshControl.backgroundColor = [UIColor purpleColor];
+//    refreshControl.tintColor = [UIColor whiteColor];
+//    [refreshControl addTarget:self
+//                            action:@selector(getLatestLoans)
+//                  forControlEvents:UIControlEventValueChanged];
+    
+    UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [self.tableView addSubview:refreshView]; //the tableView is a IBOutlet
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor whiteColor];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(getNewsData) forControlEvents:UIControlEventValueChanged];
+    
+    
+}
+- (void) getNewsData{
 
+}
+-(void)reloadData
+{
+    [self.tableView reloadData];
+    
+    if (refreshControl) {
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        refreshControl.attributedTitle = attributedTitle;
+    
+    [refreshControl endRefreshing];
+    }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if([myObject count] != nil){
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        return 1;
+    } else {
+        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.layer.frame.size.width, 500)];
+        
+        messageLabel.text = @"No data is currently available. Please pull down to refresh.";
+        messageLabel.textColor = [UIColor blackColor];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
+        [messageLabel sizeToFit];
+        self.tableView.backgroundView = messageLabel;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    return 0;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
@@ -110,7 +175,6 @@
     NSURL *url = [NSURL URLWithString: fullURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *img = [[UIImage alloc]initWithData:data];
-//    NSLog(@"IMAGE URL: %@", url)e;
     
     
     cell.textLabel.text = text;
@@ -123,7 +187,6 @@
 
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"full data of news is %@", myObject[indexPath.row]);
     self.currentCellData = myObject[indexPath.row];
     [self performSegueWithIdentifier:@"detail_view" sender:self];
 }
@@ -137,6 +200,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+//- (void)reloadData
+//{
+//    // Reload table data
+//    [self.tableView reloadData];
+//    
+//    // End the refreshing
+//    if (self.tableView.refreshControl) {
+//        
+//        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//        [formatter setDateFormat:@"MMM d, h:mm a"];
+//        NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+//        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+//                                                                    forKey:NSForegroundColorAttributeName];
+//        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+//        self.refreshControl.attributedTitle = attributedTitle;
+//        
+//        [self.refreshControl endRefreshing];
+//    }
+//}
 /*
 #pragma mark - Navigation
 

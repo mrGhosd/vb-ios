@@ -9,7 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-voenbank-HTMLReader.xcscheme</key>
+		<key>Pods-voenbank-DTCoreText.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-voenbank-DTFoundation.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>255E35C94BA7C57F287DABD9</key>
+		<key>27C376A728E1676E50CD4E51</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D4CEF92FBF63EB729DBD951</key>
+		<key>3BC70E9BB69047B42AA96E7E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F0D7BAD1F69D2F95E7E29A33</key>
+		<key>4E1E688080461738087455A2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F63718186F8B0118054022C6</key>
+		<key>B88C06C01DA3E66A8A193EF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C2509237A76A3EF159C880C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
