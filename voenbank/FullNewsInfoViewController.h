@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "APIConnect.h"
 
 @interface FullNewsInfoViewController : ViewController
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIImageView *newsImage;
 @property (strong, nonatomic) IBOutlet UILabel *newsLabel;
 @property(nonatomic) NSDictionary *newsData;

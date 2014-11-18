@@ -8,7 +8,11 @@
 
 #import "FullNewsInfoViewController.h"
 #import <DTCoreText.h>
-@interface FullNewsInfoViewController ()
+@interface FullNewsInfoViewController (){
+    APIConnect *api;
+    UIRefreshControl *refreshControl;
+    NSString *newsID;
+}
 
 @end
 
@@ -16,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    api = [[APIConnect alloc] init];
+    [self refreshInit];
     [self initNewsInfo];
     // Do any additional setup after loading the view.
 }
@@ -26,28 +32,53 @@
 }
 - (void) initNewsInfo{
     [self initImageNews];
-    _newsLabel.text = [_newsData objectForKey:@"stock_title"];
+    newsID = self.newsData[@"id"];
+    _newsLabel.text = self.newsData[@"stock_title"];
     [_newsText setEditable:NO];
     _newsText.backgroundColor = [UIColor clearColor];
 
     
     NSData *textData = [[_newsData objectForKey:@"stock_text"] dataUsingEncoding:NSUTF8StringEncoding];
     NSAttributedString *text = [[NSAttributedString alloc] initWithHTMLData:textData documentAttributes:nil];
-//    NSAttributedString *string = [[NSAttributedString alloc] string [_newsData objectForKey:@"stock_text"]];
-//    [self.view addSubview:layoutFrame];
-    
     self.newsText.text = text.string;
-//                                    @"This is a test.\n Will I pass?" attributes:
-//                                    @{NSParagraphStyleAttributeName : paragraphStyle, NSFontAttributeName : font}];
 }
 -(void) initImageNews{
     NSString *fullURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",[_newsData objectForKey:@"image_url"]];
     NSURL *url = [NSURL URLWithString: fullURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *img = [[UIImage alloc]initWithData:data];
-    _newsImage.frame = CGRectMake(10, 70, 300, 150);
-    _newsImage.image = img;
+//    self.newsImage.frame = CGRectMake(10, 70, 300, 150);
+    self.newsImage.image = img;
+    self.newsImage.clipsToBounds = YES;
+    self.newsImage.layer.borderWidth = 3.0f;
+    self.newsImage.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.newsImage.layer.cornerRadius = 10.0f;
+}
+- (void) refreshInit{
+    UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [self.scrollView addSubview:refreshView]; //the tableView is a IBOutlet
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor whiteColor];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(updateNewsInfo) forControlEvents:UIControlEventValueChanged];
+}
 
+-(void)updateNewsInfo{
+    NSString *url = [NSString stringWithFormat:@"/stocks/%@", newsID];
+    [api staticPagesInfo:url withComplition:^(id data, BOOL result){
+        if(result){
+            [self parseNewsInfo:data];
+        } else {
+            
+        }
+    }];
+}
+- (void) parseNewsInfo:(id) data{
+    self.newsData = (NSDictionary *)data;
+    [self initNewsInfo];
+    [refreshControl endRefreshing];
 }
 /*
 #pragma mark - Navigation

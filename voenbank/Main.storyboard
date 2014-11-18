@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -750,35 +751,66 @@
                         <viewControllerLayoutGuide type="bottom" id="gwC-oa-8V7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="x3O-tL-HMB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vb_pattrn_0061.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ucl-gV-yIV">
-                                <rect key="frame" x="0.0" y="60" width="320" height="467"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8V-kL-2do">
-                                <rect key="frame" x="0.0" y="78" width="320" height="114"/>
-                            </imageView>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U7z-Ib-aGO">
-                                <rect key="frame" x="16" y="262" width="288" height="254"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Текст новости" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGg-Ts-ZjE">
-                                <rect key="frame" x="16" y="224" width="288" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xjN-9N-r3K">
+                                <rect key="frame" x="0.0" y="64" width="320" height="630"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z6L-rL-quT">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="630"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vb_pattrn_0061.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ucl-gV-yIV">
+                                                <rect key="frame" x="0.0" y="-6" width="320" height="700"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="288" placeholderIntrinsicHeight="168" translatesAutoresizingMaskIntoConstraints="NO" id="C8V-kL-2do">
+                                                <rect key="frame" x="16" y="17" width="288" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="C8V-kL-2do" secondAttribute="height" multiplier="48:25" id="84P-Yz-XmZ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Текст новости" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGg-Ts-ZjE">
+                                                <rect key="frame" x="16" y="175" width="288" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U7z-Ib-aGO">
+                                                <rect key="frame" x="16" y="213" width="288" height="323"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="QGg-Ts-ZjE" firstAttribute="top" secondItem="C8V-kL-2do" secondAttribute="bottom" constant="8" id="44e-FW-OHU"/>
+                                            <constraint firstItem="C8V-kL-2do" firstAttribute="leading" secondItem="z6L-rL-quT" secondAttribute="leading" constant="16" id="B2z-D7-hzL"/>
+                                            <constraint firstItem="C8V-kL-2do" firstAttribute="top" secondItem="z6L-rL-quT" secondAttribute="top" constant="17" id="P38-IJ-S2I"/>
+                                            <constraint firstAttribute="trailing" secondItem="C8V-kL-2do" secondAttribute="trailing" constant="16" id="rE1-jm-iqv"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="z6L-rL-quT" secondAttribute="bottom" id="52H-lj-nGj"/>
+                                    <constraint firstItem="z6L-rL-quT" firstAttribute="top" secondItem="xjN-9N-r3K" secondAttribute="top" id="rx4-1W-F0a"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xjN-9N-r3K" firstAttribute="bottom" secondItem="x3O-tL-HMB" secondAttribute="bottomMargin" id="9WB-mP-cDH"/>
+                            <constraint firstItem="xjN-9N-r3K" firstAttribute="top" secondItem="x3O-tL-HMB" secondAttribute="topMargin" id="Z0e-Xv-cyg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5CE-Wk-H7Y"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="700"/>
                     <connections>
                         <outlet property="newsImage" destination="C8V-kL-2do" id="29e-Q0-7Wi"/>
                         <outlet property="newsLabel" destination="QGg-Ts-ZjE" id="mxV-XX-1bV"/>
                         <outlet property="newsText" destination="U7z-Ib-aGO" id="fSi-3Q-M6s"/>
+                        <outlet property="scrollView" destination="xjN-9N-r3K" id="bET-j9-w1P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQU-fU-8Ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
