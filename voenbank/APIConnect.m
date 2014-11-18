@@ -39,6 +39,28 @@
 
 }
 
+-(void) staticPagesInfo:(NSString *) url withComplition:(ResponseCopmlition) complition{
+    ResponseCopmlition response = [complition copy];
+    NSMutableURLRequest *request = [[[AFJSONRequestSerializer new] requestWithMethod:@"GET"
+                                                                           URLString:[NSString stringWithFormat:@"%@%@", MAIN_URL, url]
+                                                                          parameters:@{}
+                                                                               error:nil] mutableCopy];
+    
+    AFHTTPRequestOperation *requestAPI = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+    AFJSONResponseSerializer *serializer = [AFJSONResponseSerializer new];
+    serializer.readingOptions = NSJSONReadingAllowFragments;
+    requestAPI.responseSerializer = serializer;
+    
+    [requestAPI setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        response(responseObject, YES);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        response(error, NO);
+    }];
+    
+    [requestAPI start];
+
+}
+
 - (void) registration:(NSDictionary *)data withComplition:(ResponseCopmlition) complition{
 
 }

@@ -9,16 +9,12 @@
 #import "NewsViewController.h"
 #import "SWRevealViewController.h"
 #import "FullNewsInfoViewController.h"
+#import <MBProgressHUD.h>
 
 @interface NewsViewController ()
 {
-    NSMutableArray *myObject;
-    NSDictionary *dictionary;
-    NSString *stock_title;
-    NSString *date;
-    NSString *image;
-    NSString *text;
     UIRefreshControl *refreshControl;
+    NSArray *newsList;
 }
 
 @end
@@ -27,20 +23,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self defBackButton];
     [self refreshInit];
     [self apiConnect];
-    [self initMainData];
-    [self initDicitionaries];
+    [self getNewsData];
 }
 
 -(void) initMainData{
     self.tableView.delegate = self;
     [self defBackButton];
-    stock_title = @"stock_title";
-    date = @"date";
-    image = @"image_url";
-    text = @"stock_text";
-    myObject = [[NSMutableArray alloc] init];
 }
 
 - (void) apiConnect{
@@ -59,39 +50,7 @@
         
     }
 }
-
--(void) initDicitionaries{
-    id jsonObjects = [self.connection requestForStaticPages:@"/stocks"];
-    
-    for (NSDictionary *dataDict in jsonObjects) {
-            NSString *stock_title_data = [dataDict objectForKey:@"stock_title"];
-            NSString *time_data = [dataDict objectForKey:@"created_at"];
-            NSString *image_data = [dataDict objectForKey:@"image_url"];
-            NSString *stockText_data = [dataDict objectForKey:@"stock_text"];
-    
-            dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                          stock_title_data, stock_title,
-                          image_data, image,
-                          time_data,date,
-                          stockText_data, text,
-                          nil];
-            [myObject addObject:dictionary];
-        }
-}
 - (void) refreshInit{
-//    UITableViewController *tableViewController = [[UITableViewController alloc] init];
-//    tableViewController.tableView = self.tableView;
-//    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-//    [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
-//    tableViewController.refreshControl = refreshControl;
-//    
-//    refreshControl = [[UIRefreshControl alloc] init];
-//    refreshControl.backgroundColor = [UIColor purpleColor];
-//    refreshControl.tintColor = [UIColor whiteColor];
-//    [refreshControl addTarget:self
-//                            action:@selector(getLatestLoans)
-//                  forControlEvents:UIControlEventValueChanged];
-    
     UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     [self.tableView addSubview:refreshView]; //the tableView is a IBOutlet
     
@@ -100,11 +59,20 @@
     refreshControl.backgroundColor = [UIColor grayColor];
     [refreshView addSubview:refreshControl];
     [refreshControl addTarget:self action:@selector(getNewsData) forControlEvents:UIControlEventValueChanged];
-    
-    
 }
 - (void) getNewsData{
-
+    [self.tableView reloadData];
+    [self.connection staticPagesInfo:@"/stocks" withComplition:^(id data, BOOL success){
+        if(success){
+            [self parseNewsData:data];
+        } else {
+            [self reloadData];
+        }
+    }];
+}
+-(void) parseNewsData:(id) data{
+        newsList = [NSArray arrayWithArray:data];
+        [self reloadData];
 }
 -(void)reloadData
 {
@@ -114,7 +82,7 @@
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"MMM d, h:mm a"];
-        NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+        NSString *title = [NSString stringWithFormat:@"Последнее обновление: %@", [formatter stringFromDate:[NSDate date]]];
         NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
                                                                     forKey:NSForegroundColorAttributeName];
         NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
@@ -122,15 +90,19 @@
     
     [refreshControl endRefreshing];
     }
+    [self.tableView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    if([myObject count] != nil){
+    if([newsList count] != nil){
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        self.tableView.backgroundView = nil;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         return 1;
     } else {
+        [MBProgressHUD showHUDAddedTo:self.view
+                             animated:YES];
         UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.layer.frame.size.width, 500)];
-        
         messageLabel.text = @"No data is currently available. Please pull down to refresh.";
         messageLabel.textColor = [UIColor blackColor];
         messageLabel.numberOfLines = 0;
@@ -144,8 +116,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return [myObject count];
+    return [newsList count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -158,36 +129,25 @@
     }
     
     
-    NSDictionary *tmpDict = [myObject objectAtIndex:indexPath.row];
+    NSDictionary *tmpDict = newsList[indexPath.row];
     
-    NSMutableString *text;
-    //text = [NSString stringWithFormat:@"%@",[tmpDict objectForKey:title]];
-    text = [NSMutableString stringWithFormat:@"%@",
-            [tmpDict objectForKeyedSubscript:stock_title]];
-    
-    NSMutableString *detail;
-    detail = [NSMutableString stringWithFormat:@"%@ ",
-              [tmpDict objectForKey:date]];
-    NSMutableString *images;
-    images = [NSMutableString stringWithFormat:@"%@ ",
-              [tmpDict objectForKey:image]];
-    NSString *fullURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",[tmpDict objectForKey:image]];
+    NSMutableString *images = tmpDict[@"image_url"];
+    NSString *fullURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",tmpDict[@"image_url"]];
     NSURL *url = [NSURL URLWithString: fullURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *img = [[UIImage alloc]initWithData:data];
     
     
-    cell.textLabel.text = text;
-    cell.detailTextLabel.text= detail;
+    cell.textLabel.text = tmpDict[@"stock_title"];
+    cell.detailTextLabel.text= tmpDict[@"created_at"];
     cell.imageView.frame = CGRectMake(0, 0, 80, 70);
     cell.imageView.image = img;
-    
     
     return cell;
 
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    self.currentCellData = myObject[indexPath.row];
+    self.currentCellData = newsList[indexPath.row];
     [self performSegueWithIdentifier:@"detail_view" sender:self];
 }
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -200,33 +160,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//- (void)reloadData
-//{
-//    // Reload table data
-//    [self.tableView reloadData];
-//    
-//    // End the refreshing
-//    if (self.tableView.refreshControl) {
-//        
-//        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//        [formatter setDateFormat:@"MMM d, h:mm a"];
-//        NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
-//        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
-//                                                                    forKey:NSForegroundColorAttributeName];
-//        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
-//        self.refreshControl.attributedTitle = attributedTitle;
-//        
-//        [self.refreshControl endRefreshing];
-//    }
-//}
-/*
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
