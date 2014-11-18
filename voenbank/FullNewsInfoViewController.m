@@ -47,7 +47,6 @@
     NSURL *url = [NSURL URLWithString: fullURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *img = [[UIImage alloc]initWithData:data];
-//    self.newsImage.frame = CGRectMake(10, 70, 300, 150);
     self.newsImage.image = img;
     self.newsImage.clipsToBounds = YES;
     self.newsImage.layer.borderWidth = 3.0f;

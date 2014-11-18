@@ -9,9 +9,12 @@
 #import "SharesViewController.h"
 #import "SWRevealViewController.h"
 #import "SharesCell.h"
+#import <DTCoreText.h>
 
 @interface SharesViewController (){
     int selectedIndex;
+    NSArray *sharesList;
+    UIRefreshControl *refreshControl;
     NSMutableArray *myObject;
     NSDictionary *dictionary;
     NSString *title;
@@ -27,8 +30,11 @@
     [super viewDidLoad];
     [self defBackButton];
     [self apiConnect];
-    [self initMainData];
-    [self initDicitionaries];
+    [self refreshInit];
+    [self getSharesData];
+    selectedIndex = -1;
+//    [self initMainData];
+//    [self initDicitionaries];
     // Do any additional setup after loading the view.
 }
 
@@ -47,6 +53,70 @@
         
     }
 }
+- (void) getSharesData{
+    [self.tableView reloadData];
+    [self.connection staticPagesInfo:@"/shares" withComplition:^(id data, BOOL success){
+        if(success){
+            [self parseSharesData:data];
+        } else {
+            [self reloadData];
+        }
+    }];
+}
+- (void) refreshInit{
+    UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [self.tableView addSubview:refreshView]; //the tableView is a IBOutlet
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor whiteColor];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(getSharesData) forControlEvents:UIControlEventValueChanged];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if([sharesList count] != nil){
+        self.tableView.backgroundView = nil;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        return 1;
+    } else {
+        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.layer.frame.size.width, 500)];
+        messageLabel.text = @"No data is currently available. Please pull down to refresh.";
+        messageLabel.textColor = [UIColor blackColor];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
+        [messageLabel sizeToFit];
+        self.tableView.backgroundView = messageLabel;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    return 0;
+}
+
+
+-(void)reloadData
+{
+    [self.tableView reloadData];
+    
+    if (refreshControl) {
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Последнее обновление: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        refreshControl.attributedTitle = attributedTitle;
+        
+        [refreshControl endRefreshing];
+    }
+    [self.tableView reloadData];
+}
+
+-(void) parseSharesData:(id) data{
+    sharesList = [NSArray arrayWithArray:data];
+    [self reloadData];
+}
 
 - (void) apiConnect{
     APIConnect *connection = [[APIConnect alloc] init];
@@ -54,7 +124,7 @@
 }
 
 -(void) initMainData{
-    selectedIndex = -1;
+    
     self.tableView.delegate = self;
     title = @"share_title";
     date = @"date";
@@ -82,7 +152,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [myObject count];
+    return [sharesList count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -101,7 +171,7 @@
         
     }
     
-    NSDictionary *tmpDict = [myObject objectAtIndex:indexPath.row];
+    NSDictionary *tmpDict = sharesList[indexPath.row];
     
     NSMutableString *label;
     //text = [NSString stringWithFormat:@"%@",[tmpDict objectForKey:title]];
@@ -112,11 +182,13 @@
     detail = [NSMutableString stringWithFormat:@"%@ ",
               [tmpDict objectForKey:date]];
     
-    NSMutableString *shareText = [NSMutableString stringWithFormat:[ tmpDict objectForKey:text]];
+//    NSMutableString *shareText = tmpDict[@"share_text"];
+    NSData *textData = [tmpDict[@"share_text"] dataUsingEncoding:NSUTF8StringEncoding];
+    NSAttributedString *text = [[NSAttributedString alloc] initWithHTMLData:textData documentAttributes:nil];
     cell.clipsToBounds =YES;
-    cell.titleLabel.text = label;
-    cell.timeLabel.text = detail;
-    cell.shareText.text = shareText;
+    cell.titleLabel.text = tmpDict[@"share_title"];
+    cell.timeLabel.text = tmpDict[@"created_at"];
+    cell.shareText.text = text.string;
     return cell;
     
 }
@@ -140,7 +212,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(selectedIndex == indexPath.row){
-        return 150;
+        return 250;
     }
     else {
         return 44;
