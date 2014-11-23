@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "User.h"
+@class User;
 
 @interface RightPanelTableViewCell : UITableViewCell{
     int clickCount;

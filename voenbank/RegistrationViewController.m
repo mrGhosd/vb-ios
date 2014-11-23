@@ -7,6 +7,9 @@
 //
 
 #import "RegistrationViewController.h"
+#import "APIConnect.h"
+#import "EntryViewController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface RegistrationViewController (){
     UIDatePicker *date;
@@ -109,19 +112,19 @@
     NSDictionary *mainUserDict;
     
     if([self.operationType isEqualToString:@"Loan"]){
-        mainUserDictKey = @"loan_attributes";
+        mainUserDictKey = @"loans_attributes";
         NSDate *beginDate = [NSDate date];
         NSDate *endDate = [self showEndDate];
         mainUserDict = [[NSDictionary alloc] initWithObjectsAndKeys:
-                        self.sumField.text, @"loan_sum",
+                        self.sumField.text, @"sum",
                         [NSString stringWithFormat:@"%@", beginDate], @"begin_date",
                         [NSString stringWithFormat:@"%@", endDate ], @"end_date",
                         nil];
     } else if([self.operationType isEqualToString:@"Deposit"])
     {
-        mainUserDictKey = @"deposit_attributes";
+        mainUserDictKey = @"deposits_attributes";
         mainUserDict = [[NSDictionary alloc] initWithObjectsAndKeys:
-                        self.sumField.text, @"deposit_current_summ",
+                        self.sumField.text, @"current_amount",
                         nil];
     }
     NSDictionary *contactInfo = [[NSDictionary alloc] initWithObjectsAndKeys:self.emailField.text, @"email", nil];
@@ -134,10 +137,9 @@
                               [NSString stringWithFormat:@"%hhd", [self getSexFieldData]], @"sex",
                               contactInfo, @"contact_information_attributes",
                               mainUserDict, mainUserDictKey,
-                              self.userRole, @"role_id", nil];
-    NSDictionary *regData = [[NSDictionary alloc] initWithObjectsAndKeys:mainData, @"user",
-                                                                        self.operationType, @"operation", nil];
-    return regData;
+                              self.userRole, @"role_id",
+                              self.operationType, @"operation", nil];
+    return mainData;
 }
 
 - (NSDate *) showEndDate{
@@ -149,15 +151,26 @@
     return newDate;
 }
 - (IBAction)registrationButton:(id)sender {
-    if([self isFieldCorrect]){
-        NSDictionary *param = [self formRequestParams];
-        [self.connection getData:@"/users" params:param type:@"POST" success:^(id json){
+//    if([self isFieldCorrect]){
+//        NSDictionary *param = [self formRequestParams];
+//        [self.connection getData:@"/users" params:param type:@"POST" success:^(id json){
+//            [self showAlertWindow:@"Поздравляем!" text:@"Спасбио за регистрацию в нашем сервисе!"];
+//            [self performSegueWithIdentifier:@"entryViewBack" sender:self];
+//        }];
+//    } else {
+//        [self showAlertWindow:@"Ошибка!" text:@"Поля пустые! Заполните выделенные поля для продолжения"];
+//    }
+    [MBProgressHUD showHUDAddedTo:self.view
+                         animated:YES];
+    [self.connection login:[self formRequestParams] forUrl:@"/users" withComplition:^(id data, BOOL result){
+        if(result){
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             [self showAlertWindow:@"Поздравляем!" text:@"Спасбио за регистрацию в нашем сервисе!"];
-            [self performSegueWithIdentifier:@"entryViewBack" sender:self];
-        }];
-    } else {
-        [self showAlertWindow:@"Ошибка!" text:@"Поля пустые! Заполните выделенные поля для продолжения"];
-    }
+            [self performSegueWithIdentifier:@"entryViewBack" sender:self];;
+        } else {
+
+        }
+    }];
 }
 - (BOOL) getSexFieldData{
     if([self.sexField isOn]){

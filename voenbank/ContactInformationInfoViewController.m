@@ -24,7 +24,7 @@
     // Do any additional setup after loading the view.
 }
 - (void) initUser {
-    user = [[User sharedManager] parseUserData];
+    user = [User sharedManager] ;
 }
 - (void) initContactInformationData {
     self.infoContactAddress.text = [user.contact_information objectForKey:@"actual_adress"];

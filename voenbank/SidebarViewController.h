@@ -7,6 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class NewsViewController;
+@class MainViewController;
+@class SharesViewController;
+@class PartnersViewController;
+@class LoansListViewController;
+@class DepositsListViewController;
+@class User;
 
 @interface SidebarViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 

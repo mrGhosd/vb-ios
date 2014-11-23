@@ -239,14 +239,13 @@
 		643C590E19D57DD80038C4B8 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				64FACA8F1A04EE4800135C4B /* PersonalInfoViewController.h */,
-				64FACA901A04EE4800135C4B /* PersonalInfoViewController.m */,
-				64FACA921A04FF7300135C4B /* ContactInformationInfoViewController.h */,
-				64FACA931A04FF7300135C4B /* ContactInformationInfoViewController.m */,
-				64FACA951A04FF8200135C4B /* PasportInfoViewController.h */,
-				64FACA961A04FF8200135C4B /* PasportInfoViewController.m */,
-				64FACA981A04FF9500135C4B /* VoenPasportInfoViewController.h */,
-				64FACA991A04FF9500135C4B /* VoenPasportInfoViewController.m */,
+				6446BCF11A1F336E00E875AA /* user_info */,
+				6446BCF01A1E7C8500E875AA /* deposit */,
+				6446BCEF1A1E7C7F00E875AA /* loan */,
+				6446BCEE1A1E7C7300E875AA /* main */,
+				6446BCED1A1B60AC00E875AA /* Partners */,
+				6446BCEC1A1B60A100E875AA /* Shares */,
+				6446BCEB1A1B609A00E875AA /* News */,
 				64FACAB11A0646BF00135C4B /* LoansListViewController.h */,
 				64FACAB21A0646BF00135C4B /* LoansListViewController.m */,
 				64FACAB61A068C5B00135C4B /* DetailLoanViewController.h */,
@@ -261,6 +260,77 @@
 				642B793F1A06FF8000036EE2 /* ContributionAccountsViewController.m */,
 			);
 			name = controllers;
+			sourceTree = "<group>";
+		};
+		6446BCEB1A1B609A00E875AA /* News */ = {
+			isa = PBXGroup;
+			children = (
+				642C62A419E3595700A3E446 /* NewsViewController.h */,
+				642C62A519E3595700A3E446 /* NewsViewController.m */,
+				642C62AA19E3FC2100A3E446 /* FullNewsInfoViewController.h */,
+				642C62AB19E3FC2100A3E446 /* FullNewsInfoViewController.m */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		6446BCEC1A1B60A100E875AA /* Shares */ = {
+			isa = PBXGroup;
+			children = (
+				642C62B519E895FB00A3E446 /* SharesCell.h */,
+				642C62B619E895FB00A3E446 /* SharesCell.m */,
+				642C62AD19E67D8400A3E446 /* SharesViewController.h */,
+				642C62AE19E67D8400A3E446 /* SharesViewController.m */,
+			);
+			name = Shares;
+			sourceTree = "<group>";
+		};
+		6446BCED1A1B60AC00E875AA /* Partners */ = {
+			isa = PBXGroup;
+			children = (
+				64FACA8C1A041AFB00135C4B /* DetailPartnerViewController.h */,
+				64FACA8D1A041AFB00135C4B /* DetailPartnerViewController.m */,
+				64FACA871A030B2D00135C4B /* PartnersViewController.h */,
+				64FACA881A030B2D00135C4B /* PartnersViewController.m */,
+			);
+			name = Partners;
+			sourceTree = "<group>";
+		};
+		6446BCEE1A1E7C7300E875AA /* main */ = {
+			isa = PBXGroup;
+			children = (
+				648CE5F61983D01900AD7FAB /* MainViewController.h */,
+				648CE5F71983D01900AD7FAB /* MainViewController.m */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
+		6446BCEF1A1E7C7F00E875AA /* loan */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = loan;
+			sourceTree = "<group>";
+		};
+		6446BCF01A1E7C8500E875AA /* deposit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = deposit;
+			sourceTree = "<group>";
+		};
+		6446BCF11A1F336E00E875AA /* user_info */ = {
+			isa = PBXGroup;
+			children = (
+				64FACA8F1A04EE4800135C4B /* PersonalInfoViewController.h */,
+				64FACA901A04EE4800135C4B /* PersonalInfoViewController.m */,
+				64FACA921A04FF7300135C4B /* ContactInformationInfoViewController.h */,
+				64FACA931A04FF7300135C4B /* ContactInformationInfoViewController.m */,
+				64FACA951A04FF8200135C4B /* PasportInfoViewController.h */,
+				64FACA961A04FF8200135C4B /* PasportInfoViewController.m */,
+				64FACA981A04FF9500135C4B /* VoenPasportInfoViewController.h */,
+				64FACA991A04FF9500135C4B /* VoenPasportInfoViewController.m */,
+			);
+			name = user_info;
 			sourceTree = "<group>";
 		};
 		64BE32B019574B01003E99D0 = {
@@ -310,8 +380,6 @@
 				64EA07B619EDC1D000A3FA2A /* RightPanelViewController.m */,
 				6410B21919EF0E8B006CCD40 /* RightPanelTableViewCell.h */,
 				6410B21A19EF0E8B006CCD40 /* RightPanelTableViewCell.m */,
-				64FACA871A030B2D00135C4B /* PartnersViewController.h */,
-				64FACA881A030B2D00135C4B /* PartnersViewController.m */,
 				64098E2319B3C19100813312 /* RegistrationViewController.m */,
 				64098E2219B3C19100813312 /* RegistrationViewController.h */,
 				64574C4319D6DBD90094979C /* EntryViewController.h */,
@@ -320,22 +388,10 @@
 				64BE32CC19574B01003E99D0 /* AppDelegate.m */,
 				64574C3819D6A45F0094979C /* RegViewController.h */,
 				64574C3919D6A45F0094979C /* RegViewController.m */,
-				648CE5F61983D01900AD7FAB /* MainViewController.h */,
-				648CE5F71983D01900AD7FAB /* MainViewController.m */,
 				648CE5F31983CDA500AD7FAB /* SidebarViewController.h */,
 				648CE5F41983CDA500AD7FAB /* SidebarViewController.m */,
 				64BE32D119574B01003E99D0 /* ViewController.h */,
 				64BE32D219574B01003E99D0 /* ViewController.m */,
-				642C62A419E3595700A3E446 /* NewsViewController.h */,
-				642C62A519E3595700A3E446 /* NewsViewController.m */,
-				642C62AA19E3FC2100A3E446 /* FullNewsInfoViewController.h */,
-				642C62AB19E3FC2100A3E446 /* FullNewsInfoViewController.m */,
-				642C62AD19E67D8400A3E446 /* SharesViewController.h */,
-				642C62AE19E67D8400A3E446 /* SharesViewController.m */,
-				64FACA8C1A041AFB00135C4B /* DetailPartnerViewController.h */,
-				64FACA8D1A041AFB00135C4B /* DetailPartnerViewController.m */,
-				642C62B519E895FB00A3E446 /* SharesCell.h */,
-				642C62B619E895FB00A3E446 /* SharesCell.m */,
 				64BE32D419574B01003E99D0 /* Images.xcassets */,
 				64BE32C319574B01003E99D0 /* Supporting Files */,
 			);

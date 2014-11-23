@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RegistrationViewController.h"
-#import "APIConnect.h"
+@class RegistrationViewController;
+@class APIConnect;
 
 @interface EntryViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIView *loginView;

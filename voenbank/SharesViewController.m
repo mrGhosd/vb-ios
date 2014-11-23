@@ -9,17 +9,13 @@
 #import "SharesViewController.h"
 #import "SWRevealViewController.h"
 #import "SharesCell.h"
+#import "APIConnect.h"
 #import <DTCoreText.h>
 
 @interface SharesViewController (){
     int selectedIndex;
     NSArray *sharesList;
     UIRefreshControl *refreshControl;
-    NSMutableArray *myObject;
-    NSDictionary *dictionary;
-    NSString *title;
-    NSString *date;
-    NSString *text;
 }
 
 @end
@@ -122,33 +118,6 @@
     APIConnect *connection = [[APIConnect alloc] init];
     self.connection = connection;
 }
-
--(void) initMainData{
-    
-    self.tableView.delegate = self;
-    title = @"share_title";
-    date = @"date";
-    text = @"share_text";
-    myObject = [[NSMutableArray alloc] init];
-}
-
--(void) initDicitionaries{
-    id jsonObjects = [self.connection requestForStaticPages:@"/shares"];
-    
-    for (NSDictionary *dataDict in jsonObjects) {
-        NSString *share_title_data = [dataDict objectForKey:@"share_title"];
-        NSString *time_data = [dataDict objectForKey:@"created_at"];
-        NSString *share_text_data = [dataDict objectForKey:@"share_text"];
-        
-        dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                      share_title_data, title,
-                      time_data,date,
-                      share_text_data, text,
-                      nil];
-        [myObject addObject:dictionary];
-    }
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
@@ -164,25 +133,8 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"testCellView" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    if(selectedIndex == indexPath.row){
-        
-    }
-    else{
-        
-    }
     
     NSDictionary *tmpDict = sharesList[indexPath.row];
-    
-    NSMutableString *label;
-    //text = [NSString stringWithFormat:@"%@",[tmpDict objectForKey:title]];
-    label = [NSMutableString stringWithFormat:@"%@",
-            [tmpDict objectForKeyedSubscript:title]];
-    
-    NSMutableString *detail;
-    detail = [NSMutableString stringWithFormat:@"%@ ",
-              [tmpDict objectForKey:date]];
-    
-//    NSMutableString *shareText = tmpDict[@"share_text"];
     NSData *textData = [tmpDict[@"share_text"] dataUsingEncoding:NSUTF8StringEncoding];
     NSAttributedString *text = [[NSAttributedString alloc] initWithHTMLData:textData documentAttributes:nil];
     cell.clipsToBounds =YES;

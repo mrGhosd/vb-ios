@@ -25,7 +25,7 @@
     clickCount = 1;
     _menuItems = @[@"loanPart", @"depositPart"];
     selectedIndex = -1;
-    user = [[User sharedManager] parseUserData];
+    user = [User sharedManager];
     [self updateCellsRows];
     // Do any additional setup after loading the view.
 }

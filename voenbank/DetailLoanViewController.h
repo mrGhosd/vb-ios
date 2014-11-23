@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class LoanRepaymentsListViewController;
 
 @interface DetailLoanViewController : UIViewController
 @property(strong, nonatomic) NSMutableDictionary *loanInfo;

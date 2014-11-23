@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ContributionAccountsViewController;
 
 @interface DetailDepositViewController : UIViewController
 @property(strong, nonatomic) NSDictionary *deposit;

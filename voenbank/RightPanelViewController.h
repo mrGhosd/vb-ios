@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class User;
+@class RightPanelTableViewCell;
 
 @interface RightPanelViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

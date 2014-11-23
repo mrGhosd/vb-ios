@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "APIConnect.h"
-#import "EntryViewController.h"
+@class APIConnect;
+@class EntryViewController;
 
 @interface RegistrationViewController : UIViewController <UITextFieldDelegate>{
     IBOutlet UIScrollView *scroll;

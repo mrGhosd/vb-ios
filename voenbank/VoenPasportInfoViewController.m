@@ -25,7 +25,7 @@
     // Do any additional setup after loading the view.
 }
 - (void)initUser {
-    user = [[User sharedManager] parseUserData];
+    user = [User sharedManager];
 }
 
 - (void) initVoenPasportData {

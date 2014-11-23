@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "APIConnect.h"
+@class APIConnect;
 
 @interface FullNewsInfoViewController : ViewController
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;

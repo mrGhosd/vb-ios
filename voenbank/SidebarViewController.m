@@ -15,6 +15,7 @@
 #import "DepositsListViewController.h"
 #import "User.h"
 
+
 @interface SidebarViewController ()
 {
     NSArray *leftMenu;

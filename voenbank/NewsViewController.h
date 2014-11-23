@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "APIConnect.h"
+@class SWRevealViewController;
+@class FullNewsInfoViewController;
+@class APIConnect;
 
 
 @interface NewsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>

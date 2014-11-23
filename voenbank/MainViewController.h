@@ -7,6 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SWRevealViewController;
+@class User;
+@class APIConnect;
+@class PersonalInfoViewController;
+@class LoansListViewController;
+@class DepositsListViewController;
 
 @interface MainViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sideButton;
@@ -20,5 +26,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *dateOfBirthField;
 - (IBAction)personalInfo:(id)sender;
 - (IBAction)loansList:(id)sender;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UILabel *place_of_birth;
 @property (strong, nonatomic) IBOutlet UIButton *depositsList;
 @end

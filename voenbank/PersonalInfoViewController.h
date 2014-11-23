@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class User;
+@class APIConnect;
 
 @interface PersonalInfoViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *infoSurname;
@@ -18,5 +20,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *infoRole;
 @property (strong, nonatomic) IBOutlet UILabel *infoSex;
 @property (strong, nonatomic) IBOutlet UILabel *infoPhone;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

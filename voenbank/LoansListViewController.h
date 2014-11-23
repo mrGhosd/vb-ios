@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SWRevealViewController;
+@class SidebarViewController;
+@class DetailLoanViewController;
+@class User;
 
 @interface LoansListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

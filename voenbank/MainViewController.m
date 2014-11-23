@@ -9,13 +9,18 @@
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
 #import "User.h"
+#import "APIConnect.h"
 #import "PersonalInfoViewController.h"
 #import "LoansListViewController.h"
 #import "DepositsListViewController.h"
 
 @interface MainViewController ()
 {
-    NSString* image ;
+    NSString* image;
+    APIConnect *api;
+    NSString *userID;
+    User *user;
+    UIRefreshControl *refreshControl;
 }
 
 @end
@@ -33,6 +38,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self defineNavigationPanel];
+    [self refreshInit];
+    [self setupMainPageData];
+}
+-(void) defineNavigationPanel{
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -41,16 +51,38 @@
         [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
         
     }
-
-//    [self callSideBarButton];
-    [self setupMainPageData];
-    
-    
 }
+- (void) refreshInit{
+    UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [self.scrollView addSubview:refreshView]; //the tableView is a IBOutlet
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor whiteColor];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(updateUserInfo) forControlEvents:UIControlEventValueChanged];
+}
+- (void) updateUserInfo{
+    NSString *url = [NSString stringWithFormat:@"/users/%@", userID];
+    [api staticPagesInfo:url withComplition:^(id data, BOOL result){
+        if(result){
+            [self parseUserData:data];
+        } else {
+            
+        }
+    }];
+}
+
+-(void) parseUserData:(id)data{
+    [user parseUserInfo:data];
+    [self setupMainPageData];
+    [refreshControl endRefreshing];
+}
+
 -(void) setupMainPageData{
-    User *user = [[User sharedManager] parseUserData];
-    
-    
+    api = [[APIConnect alloc] init];
+    user = [User sharedManager];
+    userID = user.main[@"id"];
     _nameField.text = [user.main objectForKey:@"name"];
     _surnameField.text = [user.main objectForKey:@"surname"];
     _secondname_field.text = [user.main objectForKey:@"secondname"];
@@ -63,7 +95,11 @@
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *avatar = [[UIImage alloc] initWithData:data];
     _userAvatar.image = avatar;
-//    NSLog(@"IMAGE URL IS %@", imageURL);
+    
+    _userAvatar.clipsToBounds = YES;
+    _userAvatar.layer.borderWidth = 3.0f;
+    _userAvatar.layer.borderColor = [UIColor grayColor].CGColor;
+    _userAvatar.layer.cornerRadius = 10.0f;
 
 }
 - (void) callSideBarButton{

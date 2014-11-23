@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "APIConnect.h"
+@class SWRevealViewController;
+@class SharesCell;
+@class APIConnect;
 
 @interface SharesViewController : ViewController <UITableViewDelegate, UITableViewDataSource>
 

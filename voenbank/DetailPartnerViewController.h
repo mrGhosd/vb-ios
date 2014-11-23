@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class APIConnect;
 
 @interface DetailPartnerViewController : UIViewController
-@property(nonatomic, strong) NSDictionary *detailPartner;
+@property (nonatomic, strong) NSDictionary *detailPartner;
 @property (strong, nonatomic) IBOutlet UILabel *partnerTitle;
 @property (strong, nonatomic) IBOutlet UILabel *partnerURL;
 @property (strong, nonatomic) IBOutlet UIImageView *partnerImage;
 @property (strong, nonatomic) IBOutlet UITextView *partnerDescription;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

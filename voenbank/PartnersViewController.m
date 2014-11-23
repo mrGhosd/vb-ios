@@ -10,9 +10,11 @@
 #import "SWRevealViewController.h"
 #import "SidebarViewController.h"
 #import "DetailPartnerViewController.h"
+#import "APIConnect.h"
 
 @interface PartnersViewController (){
-    NSMutableArray *partnersList;
+    UIRefreshControl *refreshControl;
+    NSArray *partnersList;
     NSMutableDictionary *partnerInfo;
     NSMutableArray *partnerCells;
 }
@@ -23,11 +25,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"imageName.pnd"]];
-    self.collectionView.backgroundColor= [UIColor colorWithPatternImage:[UIImage imageNamed:@"vb_pattrn_0061.jpg"]];
+    self.collectionView.alwaysBounceVertical = YES;
+    [self setBackground];
     [self backButtonDefinition];
     [self apiConnect];
-    [self initPartnersData];
+    [self refreshInit];
+    [self getPartnersData];
     // Do any additional setup after loading the view.
 }
 
@@ -42,39 +45,61 @@
     }
 }
 
+-(void) setBackground{
+    self.collectionView.backgroundColor= [UIColor colorWithPatternImage:[UIImage imageNamed:@"vb_pattrn_0061.jpg"]];
+}
+
 - (void) apiConnect{
     APIConnect *connection = [[APIConnect alloc] init];
     self.connection = connection;
 }
-- (void) initPartnersData{
-    partnerCells = [[NSMutableArray alloc] init];
-    partnerInfo = [NSMutableDictionary new];
-    id jsonObjects = [self.connection requestForStaticPages:@"/partners"];
-    NSString *keyTitle= @"title";
-    NSString *keyDescription = @"description";
-    NSString *keyURL = @"url";
-    NSString *keyImageURL = @"image_url";
+- (void) refreshInit{
+    UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [self.collectionView addSubview:refreshView]; //the tableView is a IBOutlet
     
-    for(NSDictionary *dict in jsonObjects){
-        NSString *title = [dict objectForKey:@"partner_title"];
-        NSString *description = [dict objectForKey:@"partner_description"];
-        NSString *linkURL = [dict objectForKey:@"partner_url"];
-        NSString *imageURL = [dict objectForKey:@"image_url"];
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor whiteColor];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(getPartnersData) forControlEvents:UIControlEventValueChanged];
+}
+- (void) getPartnersData{
+    [self.collectionView reloadData];
+    [self.connection staticPagesInfo:@"/partners" withComplition:^(id data, BOOL success){
+        if(success){
+            [self parsePartnersData:data];
+        } else {
+            [self reloadData];
+        }
+    }];
+}
+-(void) parsePartnersData:(id) data{
+    partnersList = [NSArray arrayWithArray:data];
+    [self reloadData];
+}
+-(void)reloadData
+{
+    [self.collectionView reloadData];
+    
+    if (refreshControl) {
         
-        partnerInfo = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                       title, keyTitle,
-                       description, keyDescription,
-                       linkURL, keyURL,
-                       imageURL, keyImageURL,
-                       nil];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Последнее обновление: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        refreshControl.attributedTitle = attributedTitle;
         
-        [partnerCells addObject:partnerInfo];
+        [refreshControl endRefreshing];
     }
-    
-    
+    [self.collectionView reloadData];
+}
+- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
+    return 1;
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return partnerCells.count;
+    return partnersList.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"partnerCell";
@@ -84,28 +109,28 @@
     
     UIImageView *partnerView = (UIImageView *)[cell viewWithTag:5];
     
-    NSDictionary *currentCell = [partnerCells objectAtIndex:indexPath.row];
+    NSDictionary *currentCell = partnersList[indexPath.row];
     
     NSString *fullURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",[currentCell objectForKey:@"image_url"]];
     NSURL *url = [NSURL URLWithString: fullURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *img = [[UIImage alloc]initWithData:data];
     partnerView.image = img;
-    
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake(100, 100);
 }
-
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+//    int index = 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     DetailPartnerViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"DetailPartnerViewController"];
-    viewController.detailPartner = partnerCells[indexPath.row];
+//    viewController.detailPartner = [[NSDictionary alloc] init];
+    viewController.detailPartner = partnersList[(int)[indexPath row]];
     [self.navigationController pushViewController:viewController animated:YES];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

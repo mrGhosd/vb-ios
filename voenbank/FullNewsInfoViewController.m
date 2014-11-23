@@ -8,6 +8,8 @@
 
 #import "FullNewsInfoViewController.h"
 #import <DTCoreText.h>
+#import "APIConnect.h"
+
 @interface FullNewsInfoViewController (){
     APIConnect *api;
     UIRefreshControl *refreshControl;

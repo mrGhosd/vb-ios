@@ -11,6 +11,8 @@
 #import "RegistrationViewController.h"
 #import "User.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "RegistrationViewController.h"
+#import "APIConnect.h"
 
 @interface EntryViewController ()
 
@@ -124,13 +126,6 @@
         NSMutableDictionary *data = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                      _loginField.text, @"login",
                                      _passwordField.text, @"password", nil];
-        
-//        NSDictionary *userData = [[NSDictionary alloc] initWithObjectsAndKeys:
-//                                  data, @"user", nil];
-//        userData = [NSDictionary dictionaryWithOb];
-//        [self.connection getData:@"/users/login" params:userData type:@"POST" success:^(id json){
-//            [self toUserProfile:json];
-//        }];
         [MBProgressHUD showHUDAddedTo:self.view
                              animated:YES];
         [self.connection login:data forUrl:@"/users/login" withComplition:^(id data, BOOL result){
@@ -142,22 +137,12 @@
         }];
     }
 }
-void (^complete)(id) = ^(id json){
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    MainViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-    viewController.userInformation = json;
-};
-
 -(void) toUserProfile:(id) user{
-//    dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
-//    dispatch_async(backgroundQueue, ^{
-//        dispatch_queue_t mainQueue = dispatch_get_main_queue();
-//        dispatch_async(mainQueue, ^{});
-//    });
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     MainViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
     User *userObject = [User sharedManager];
-    userObject.userData = user;
+    [userObject parseUserInfo:user];
+//    userObject.userData = user;
     viewController.userInformation = user;
     [self.navigationController pushViewController:viewController animated:YES];
 }

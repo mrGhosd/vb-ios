@@ -7,6 +7,7 @@
 //
 
 #import "RightPanelTableViewCell.h"
+#import "User.h"
 
 @implementation RightPanelTableViewCell
 
@@ -31,7 +32,7 @@
 }
 
 -(void) initUser{
-    user = [[User sharedManager] parseUserData];
+    user = [User sharedManager];
 }
 - (void) initLoanCell{
     NSDictionary *currentUserLoan = user.loans.lastObject;

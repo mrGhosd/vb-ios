@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class User;
 
 @interface ContactInformationInfoViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *infoContactAddress;

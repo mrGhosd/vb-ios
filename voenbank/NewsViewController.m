@@ -9,6 +9,7 @@
 #import "NewsViewController.h"
 #import "SWRevealViewController.h"
 #import "FullNewsInfoViewController.h"
+#import "APIConnect.h"
 #import <MBProgressHUD.h>
 
 @interface NewsViewController ()
@@ -66,8 +67,7 @@
         if(success){
             [self parseNewsData:data];
         } else {
-            [self reloadData];
-        }
+            }
     }];
 }
 -(void) parseNewsData:(id) data{

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class User;
 
 @interface PasportInfoViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *InfoPasportSeria;

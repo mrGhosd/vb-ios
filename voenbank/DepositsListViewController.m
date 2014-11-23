@@ -42,7 +42,7 @@
     }
 }
 - (void) initUser {
-    user = [[User sharedManager] parseUserData];
+    user = [User sharedManager];
 }
 - (void) initArrays {
     depositCells = [[NSMutableArray alloc] init];

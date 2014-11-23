@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "APIConnect.h"
+@class APIConnect;
+@class SWRevealViewController;
+@class SidebarViewController;
+@class DetailPartnerViewController;
+
 
 @interface PartnersViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
