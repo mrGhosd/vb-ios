@@ -8,9 +8,13 @@
 
 #import "ContactInformationInfoViewController.h"
 #import "User.h"
+#import "APIConnect.h"
 
 @interface ContactInformationInfoViewController () {
+    NSString *userID;
+    APIConnect *api;
     User *user;
+    UIRefreshControl *refreshControl;
 }
 
 @end
@@ -19,14 +23,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    api = [[APIConnect alloc] init];
     [self initUser];
+    [self refreshInit];
     [self initContactInformationData];
     // Do any additional setup after loading the view.
 }
 - (void) initUser {
     user = [User sharedManager] ;
 }
+- (void) refreshInit{
+    UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [self.scrollView addSubview:refreshView]; //the tableView is a IBOutlet
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor whiteColor];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(updatePersonalUserInfo) forControlEvents:UIControlEventValueChanged];
+}
+-(void)updatePersonalUserInfo{
+    NSString *url = [NSString stringWithFormat:@"/users/%@", userID];
+    [api staticPagesInfo:url withComplition:^(id data, BOOL result){
+        if(result){
+            [self parseUserData:data];
+        } else {
+            
+        }
+    }];
+}
+-(void) parseUserData:(id)data{
+    [user parseUserInfo:data];
+    [self initContactInformationData];
+    [refreshControl endRefreshing];
+}
 - (void) initContactInformationData {
+    userID = user.main[@"id"];
     self.infoContactAddress.text = [user.contact_information objectForKey:@"actual_adress"];
     self.infoContactPhone.text = [NSString stringWithFormat:@"%@", [user.contact_information objectForKey:@"phone_adress"]];
     self.infoContactEmail.text = [user.contact_information objectForKey:@"email"];

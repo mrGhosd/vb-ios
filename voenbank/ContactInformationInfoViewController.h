@@ -17,5 +17,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *infoContactPersonName;
 @property (strong, nonatomic) IBOutlet UILabel *infoContactPersonSecondName;
 @property (strong, nonatomic) IBOutlet UILabel *infoContactPersonPhone;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

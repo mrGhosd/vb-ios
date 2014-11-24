@@ -1100,11 +1100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/ContactInformationInfoViewController.m"
-            timestampString = "436571639.572352"
+            timestampString = "438555499.585701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "-initContactInformationData"
             landmarkType = "5">
          </BreakpointContent>
