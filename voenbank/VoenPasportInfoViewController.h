@@ -19,5 +19,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *infoVoenPasportRelationship;
 @property (strong, nonatomic) IBOutlet UILabel *infoVoenPasportSpecialization;
 @property (strong, nonatomic) IBOutlet UILabel *infoVoenPasportSportMastery;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

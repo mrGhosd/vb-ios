@@ -7,10 +7,14 @@
 //
 
 #import "VoenPasportInfoViewController.h"
+#import "APIConnect.h"
 #import "User.h"
 
 @interface VoenPasportInfoViewController () {
+    NSString *userID;
     User *user;
+    APIConnect *api;
+    UIRefreshControl *refreshControl;
 }
 
 @end
@@ -20,15 +24,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUser];
+    [self refreshInit];
     [self initVoenPasportData];
     
     // Do any additional setup after loading the view.
 }
 - (void)initUser {
+    api = [[APIConnect alloc] init];
     user = [User sharedManager];
+}
+- (void) refreshInit{
+    UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [self.scrollView addSubview:refreshView]; //the tableView is a IBOutlet
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor whiteColor];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(updatePersonalUserInfo) forControlEvents:UIControlEventValueChanged];
+}
+-(void)updatePersonalUserInfo{
+    NSString *url = [NSString stringWithFormat:@"/users/%@", userID];
+    [api staticPagesInfo:url withComplition:^(id data, BOOL result){
+        if(result){
+            [self parseUserData:data];
+        } else {
+            
+        }
+    }];
+}
+
+-(void) parseUserData:(id)data{
+    [user parseUserInfo:data];
+    [self initVoenPasportData];
+    [refreshControl endRefreshing];
 }
 
 - (void) initVoenPasportData {
+    userID = user.main[@"id"];
     self.infoVoenPasportSeria.text = [NSString stringWithFormat:@"%@", [user.voen_pasport objectForKey:@"voen_seria"]];
     self.infoVoenPasportNumber.text = [NSString stringWithFormat:@"%@", [user.voen_pasport objectForKey:@"voen_number"]];
     self.infoVoenPasportWhen.text = [NSString stringWithFormat:@"%@", [user.voen_pasport objectForKey:@"voen_when"]];

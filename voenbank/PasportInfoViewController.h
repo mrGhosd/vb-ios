@@ -18,5 +18,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *infoPasportCode;
 @property (strong, nonatomic) IBOutlet UILabel *infoPasportOldSeria;
 @property (strong, nonatomic) IBOutlet UILabel *infoPasportOldNumber;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

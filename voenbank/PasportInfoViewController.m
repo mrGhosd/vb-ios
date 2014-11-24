@@ -8,9 +8,13 @@
 
 #import "PasportInfoViewController.h"
 #import "User.h"
+#import "APIConnect.h"
 
 @interface PasportInfoViewController (){
+    NSString *userID;
     User *user;
+    APIConnect *api;
+    UIRefreshControl *refreshControl;
 }
 
 @end
@@ -20,13 +24,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUser];
+    [self refreshInit];
     [self initPasportData];
     // Do any additional setup after loading the view.
 }
 - (void) initUser {
     user = [User sharedManager];
+    api = [[APIConnect alloc] init];
 }
+
+- (void) refreshInit{
+    UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [self.scrollView addSubview:refreshView]; //the tableView is a IBOutlet
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor whiteColor];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(updatePersonalUserInfo) forControlEvents:UIControlEventValueChanged];
+}
+-(void)updatePersonalUserInfo{
+    NSString *url = [NSString stringWithFormat:@"/users/%@", userID];
+    [api staticPagesInfo:url withComplition:^(id data, BOOL result){
+        if(result){
+            [self parseUserData:data];
+        } else {
+            
+        }
+    }];
+}
+
+-(void) parseUserData:(id)data{
+    [user parseUserInfo:data];
+    [self initPasportData];
+    [refreshControl endRefreshing];
+}
+
 - (void) initPasportData {
+    userID = user.main[@"id"];
     self.InfoPasportSeria.text = [NSString stringWithFormat:@"%@", [user.passport objectForKey:@"pasport_seria"] ];
     self.infoPasportNumber.text = [NSString stringWithFormat:@"%@", [user.passport objectForKey:@"pasport_number"] ];
     self.infoPasportWhen.text = [user.passport objectForKey:@"pasport_when"];

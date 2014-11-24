@@ -2256,15 +2256,15 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="pNx-Jh-PGY" secondAttribute="bottom" constant="-66" id="3iW-W6-y8j"/>
-                                    <constraint firstItem="pNx-Jh-PGY" firstAttribute="top" secondItem="qcR-KS-fPE" secondAttribute="top" constant="66" id="FWy-na-R1b"/>
+                                    <constraint firstAttribute="bottom" secondItem="pNx-Jh-PGY" secondAttribute="bottom" constant="-63" id="GU2-eX-OpZ"/>
+                                    <constraint firstItem="pNx-Jh-PGY" firstAttribute="top" secondItem="qcR-KS-fPE" secondAttribute="top" id="kmm-nh-chB"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="qcR-KS-fPE" secondAttribute="bottom" constant="-100" id="qpd-p3-fnc"/>
-                            <constraint firstItem="qcR-KS-fPE" firstAttribute="top" secondItem="F8J-rj-FxH" secondAttribute="topMargin" id="stz-Wf-ecg"/>
+                            <constraint firstItem="qcR-KS-fPE" firstAttribute="top" secondItem="YK0-Nq-hVw" secondAttribute="bottom" constant="50" id="rVa-fa-RuG"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="qcR-KS-fPE" secondAttribute="bottom" constant="-332" id="rt5-TZ-Pk4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Билет" image="military_medal-25.png" id="6YK-UT-5Yq"/>
@@ -2280,6 +2280,7 @@
                         <outlet property="infoVoenPasportSportMastery" destination="3q1-nd-oHg" id="mif-gD-fsg"/>
                         <outlet property="infoVoenPasportWhen" destination="u9h-iC-y7O" id="7w4-bI-rA1"/>
                         <outlet property="infoVoenPasportWhere" destination="vA8-VM-R8V" id="1be-kh-Lmh"/>
+                        <outlet property="scrollView" destination="qcR-KS-fPE" id="As0-Sw-d61"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AgP-jE-am5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2299,112 +2300,112 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34y-Gu-7L4">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="772"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="700"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4a5-Lw-5tl">
-                                        <rect key="frame" x="0.0" y="-74" width="320" height="772"/>
+                                        <rect key="frame" x="0.0" y="-3" width="320" height="700"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vb_pattrn_0061.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="l0I-Bh-znz">
-                                                <rect key="frame" x="0.0" y="72" width="320" height="772"/>
+                                                <rect key="frame" x="0.0" y="-65" width="320" height="772"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Паспортные данные:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JW9-rI-cI1">
-                                                <rect key="frame" x="8" y="143" width="304" height="30"/>
+                                                <rect key="frame" x="8" y="6" width="304" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Серия:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuC-ST-fcy">
-                                                <rect key="frame" x="8" y="181" width="136" height="21"/>
+                                                <rect key="frame" x="8" y="44" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Номер:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUF-VG-syE">
-                                                <rect key="frame" x="8" y="225" width="136" height="21"/>
+                                                <rect key="frame" x="8" y="88" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Кем выдан:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMS-jx-XKF">
-                                                <rect key="frame" x="8" y="271" width="136" height="21"/>
+                                                <rect key="frame" x="8" y="134" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Когда выдан:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2G9-kC-B7J">
-                                                <rect key="frame" x="8" y="313" width="136" height="21"/>
+                                                <rect key="frame" x="8" y="176" width="136" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Адрес прописки:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAA-BI-wjF">
-                                                <rect key="frame" x="8" y="354" width="136" height="44"/>
+                                                <rect key="frame" x="8" y="217" width="136" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Код подразделения:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybq-vC-Z2f">
-                                                <rect key="frame" x="8" y="427" width="136" height="42"/>
+                                                <rect key="frame" x="8" y="290" width="136" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Серия старого паспорта:" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="856-9F-ckw">
-                                                <rect key="frame" x="8" y="504" width="136" height="45"/>
+                                                <rect key="frame" x="8" y="367" width="136" height="45"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Номер старого паспорта" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saB-o8-lQI">
-                                                <rect key="frame" x="8" y="570" width="136" height="47"/>
+                                                <rect key="frame" x="8" y="433" width="136" height="47"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6P-fl-N1g">
-                                                <rect key="frame" x="152" y="181" width="160" height="21"/>
+                                                <rect key="frame" x="152" y="44" width="160" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnE-gn-x3G">
-                                                <rect key="frame" x="152" y="225" width="160" height="21"/>
+                                                <rect key="frame" x="152" y="88" width="160" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSq-tm-hiP">
-                                                <rect key="frame" x="152" y="271" width="160" height="21"/>
+                                                <rect key="frame" x="152" y="134" width="160" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAi-Gs-LN2">
-                                                <rect key="frame" x="152" y="313" width="160" height="21"/>
+                                                <rect key="frame" x="152" y="176" width="160" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twi-ey-n0F">
-                                                <rect key="frame" x="152" y="368" width="160" height="50"/>
+                                                <rect key="frame" x="152" y="231" width="160" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-hM-orM">
-                                                <rect key="frame" x="152" y="516" width="160" height="21"/>
+                                                <rect key="frame" x="152" y="379" width="160" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yb4-TS-tdf">
-                                                <rect key="frame" x="152" y="583" width="160" height="21"/>
+                                                <rect key="frame" x="152" y="446" width="160" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvW-Sd-i76">
-                                                <rect key="frame" x="152" y="437" width="160" height="21"/>
+                                                <rect key="frame" x="152" y="300" width="160" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2414,15 +2415,15 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="4a5-Lw-5tl" firstAttribute="top" secondItem="34y-Gu-7L4" secondAttribute="top" constant="-74" id="Fbn-bA-P6q"/>
-                                    <constraint firstAttribute="bottom" secondItem="4a5-Lw-5tl" secondAttribute="bottom" constant="74" id="ZlO-9c-RT2"/>
+                                    <constraint firstAttribute="bottom" secondItem="4a5-Lw-5tl" secondAttribute="bottom" constant="13" id="GcM-qG-swQ"/>
+                                    <constraint firstItem="4a5-Lw-5tl" firstAttribute="top" secondItem="34y-Gu-7L4" secondAttribute="top" constant="-3" id="OLS-TA-2GE"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="34y-Gu-7L4" firstAttribute="top" secondItem="rg2-Ov-rxu" secondAttribute="topMargin" id="2uZ-Uh-H4a"/>
-                            <constraint firstItem="oxs-Q4-ZAl" firstAttribute="top" secondItem="34y-Gu-7L4" secondAttribute="bottom" constant="51" id="3qr-qR-WY0"/>
+                            <constraint firstItem="34y-Gu-7L4" firstAttribute="top" secondItem="IqR-AJ-HBL" secondAttribute="bottom" constant="40" id="Dcn-e6-bn1"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="34y-Gu-7L4" secondAttribute="bottom" constant="-141" id="qhq-Ky-T13"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Паспорт" image="passport-25.png" id="Px0-vl-5l2"/>
@@ -2437,6 +2438,7 @@
                         <outlet property="infoPasportOldSeria" destination="3Ya-hM-orM" id="bw7-Fy-Jz5"/>
                         <outlet property="infoPasportWhen" destination="SAi-Gs-LN2" id="lGy-1B-4C9"/>
                         <outlet property="infoPasportWhere" destination="XSq-tm-hiP" id="fge-MH-mnp"/>
+                        <outlet property="scrollView" destination="34y-Gu-7L4" id="Lar-xL-aiz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kau-Pg-P4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
