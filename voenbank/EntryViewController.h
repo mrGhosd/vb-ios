@@ -10,7 +10,7 @@
 @class RegistrationViewController;
 @class APIConnect;
 
-@interface EntryViewController : UIViewController
+@interface EntryViewController : UIViewController <UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UIView *loginView;
 @property(strong, nonatomic) IBOutlet UIView *sliderView;
 - (IBAction)viewSwitcher:(id)sender;
@@ -25,12 +25,14 @@
 - (IBAction)authButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UISlider *sliderAmount;
 @property (weak, nonatomic) IBOutlet UISlider *sliderTime;
+@property (strong, nonatomic) IBOutlet UIButton *signUpButton;
 
 @property (nonatomic) Boolean roleWindowShow;
 @property (nonatomic) NSString *userRole;
 
 - (IBAction)changeAmount:(id)sender;
 - (IBAction)changeTime:(id)sender;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 
 @end

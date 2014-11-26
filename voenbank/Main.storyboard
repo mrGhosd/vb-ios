@@ -92,101 +92,136 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vb_pattrn_0061.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="yXQ-v3-5aE">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3n3-Mt-reA" userLabel="registrationView">
-                                <rect key="frame" x="0.0" y="177" width="320" height="383"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIA-FZ-TlV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="900"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mLu-be-qcd">
-                                        <rect key="frame" x="6" y="19" width="308" height="31"/>
-                                        <connections>
-                                            <action selector="changeAmount:" destination="KvL-Zv-byp" eventType="valueChanged" id="AW0-0K-vCc"/>
-                                        </connections>
-                                    </slider>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAh-Fo-dw6">
-                                        <rect key="frame" x="8" y="186" width="304" height="39"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <state key="normal" title="Оставить заявку" backgroundImage="feedback_button.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Qnj-cI-8oa" kind="push" identifier="registrationView" id="XCj-d9-kyL"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ss6-d8-r5e">
-                                        <rect key="frame" x="171" y="57" width="141" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Сумма:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2F-Kd-Ifg">
-                                        <rect key="frame" x="8" y="57" width="142" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fur-JR-Wyk">
-                                        <rect key="frame" x="196" y="136" width="116" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Срок:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qo9-pY-0lZ">
-                                        <rect key="frame" x="8" y="136" width="113" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xHp-Q9-BPE">
-                                        <rect key="frame" x="6" y="105" width="308" height="31"/>
-                                        <connections>
-                                            <action selector="changeTime:" destination="KvL-Zv-byp" eventType="valueChanged" id="R1H-Z7-NEt"/>
-                                        </connections>
-                                    </slider>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Le7-zT-5O9">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="750"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="vb_pattrn_0061.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="yXQ-v3-5aE">
+                                                <rect key="frame" x="0.0" y="-185" width="320" height="750"/>
+                                            </imageView>
+                                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3n3-Mt-reA" userLabel="registrationView">
+                                                <rect key="frame" x="0.0" y="100" width="320" height="383"/>
+                                                <subviews>
+                                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mLu-be-qcd">
+                                                        <rect key="frame" x="6" y="19" width="308" height="31"/>
+                                                        <connections>
+                                                            <action selector="changeAmount:" destination="KvL-Zv-byp" eventType="valueChanged" id="AW0-0K-vCc"/>
+                                                        </connections>
+                                                    </slider>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAh-Fo-dw6">
+                                                        <rect key="frame" x="8" y="186" width="304" height="39"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <state key="normal" title="Оставить заявку" backgroundImage="feedback_button.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="Qnj-cI-8oa" kind="push" identifier="registrationView" id="XCj-d9-kyL"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ss6-d8-r5e">
+                                                        <rect key="frame" x="171" y="57" width="141" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Сумма:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2F-Kd-Ifg">
+                                                        <rect key="frame" x="8" y="57" width="142" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fur-JR-Wyk">
+                                                        <rect key="frame" x="196" y="136" width="116" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Срок:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qo9-pY-0lZ">
+                                                        <rect key="frame" x="8" y="136" width="113" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xHp-Q9-BPE">
+                                                        <rect key="frame" x="6" y="105" width="308" height="31"/>
+                                                        <connections>
+                                                            <action selector="changeTime:" destination="KvL-Zv-byp" eventType="valueChanged" id="R1H-Z7-NEt"/>
+                                                        </connections>
+                                                    </slider>
+                                                </subviews>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wIh-cM-wjB" userLabel="loginView">
+                                                <rect key="frame" x="0.0" y="100" width="320" height="347"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Логин" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WQf-yx-p18">
+                                                        <rect key="frame" x="17" y="6" width="295" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="KvL-Zv-byp" id="yF5-fb-S4o"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nez-3s-IKK">
+                                                        <rect key="frame" x="17" y="44" width="295" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="KvL-Zv-byp" id="nVO-1H-neV"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6i-Nh-IeB">
+                                                        <rect key="frame" x="17" y="101" width="295" height="38"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                        <state key="normal" title="Войти" backgroundImage="feedback_button.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="authButton:" destination="KvL-Zv-byp" eventType="touchUpInside" id="Ace-X8-h3L"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vb-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pm5-qA-qa1">
+                                                <rect key="frame" x="35" y="8" width="251" height="40"/>
+                                            </imageView>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B7G-tt-8x0">
+                                                <rect key="frame" x="16" y="56" width="288" height="29"/>
+                                                <segments>
+                                                    <segment title="Войти"/>
+                                                    <segment title="Займ"/>
+                                                    <segment title="Вклад"/>
+                                                </segments>
+                                                <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <action selector="viewSwitcher:" destination="KvL-Zv-byp" eventType="valueChanged" id="nMT-MU-d23"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="yXQ-v3-5aE" secondAttribute="width" id="I0w-z8-hyv"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wIh-cM-wjB" userLabel="loginView">
-                                <rect key="frame" x="0.0" y="177" width="320" height="383"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Логин" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WQf-yx-p18">
-                                        <rect key="frame" x="17" y="29" width="295" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nez-3s-IKK">
-                                        <rect key="frame" x="17" y="67" width="295" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6i-Nh-IeB">
-                                        <rect key="frame" x="17" y="124" width="295" height="38"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Войти" backgroundImage="feedback_button.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="authButton:" destination="KvL-Zv-byp" eventType="touchUpInside" id="Ace-X8-h3L"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vb-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pm5-qA-qa1">
-                                <rect key="frame" x="16" y="72" width="288" height="69"/>
-                            </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B7G-tt-8x0">
-                                <rect key="frame" x="16" y="149" width="288" height="29"/>
-                                <segments>
-                                    <segment title="Войти"/>
-                                    <segment title="Займ"/>
-                                    <segment title="Вклад"/>
-                                </segments>
-                                <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="viewSwitcher:" destination="KvL-Zv-byp" eventType="valueChanged" id="nMT-MU-d23"/>
-                                </connections>
-                            </segmentedControl>
+                                <constraints>
+                                    <constraint firstItem="Le7-zT-5O9" firstAttribute="height" secondItem="gIA-FZ-TlV" secondAttribute="height" id="FYz-1a-MDq"/>
+                                    <constraint firstItem="Le7-zT-5O9" firstAttribute="top" secondItem="gIA-FZ-TlV" secondAttribute="top" id="IvG-nq-tGP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Le7-zT-5O9" secondAttribute="trailing" id="VY0-mI-klU"/>
+                                    <constraint firstItem="Le7-zT-5O9" firstAttribute="width" secondItem="gIA-FZ-TlV" secondAttribute="width" id="YVo-Vr-Eqb"/>
+                                    <constraint firstItem="Le7-zT-5O9" firstAttribute="leading" secondItem="gIA-FZ-TlV" secondAttribute="leading" id="qdc-GK-lO8"/>
+                                    <constraint firstAttribute="bottom" secondItem="Le7-zT-5O9" secondAttribute="bottom" id="qmQ-ZO-y3n"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="gIA-FZ-TlV" secondAttribute="bottom" constant="-332" id="8Oq-H9-Zay"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gIA-FZ-TlV" secondAttribute="trailing" constant="-16" id="M6d-GC-zNJ"/>
+                            <constraint firstItem="gIA-FZ-TlV" firstAttribute="leading" secondItem="asb-oE-R9h" secondAttribute="leadingMargin" constant="-16" id="TOT-YU-WRd"/>
+                            <constraint firstItem="gIA-FZ-TlV" firstAttribute="top" secondItem="asb-oE-R9h" secondAttribute="topMargin" id="XmY-xh-EFc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6WA-cX-gWt"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -195,7 +230,9 @@
                         <outlet property="loginField" destination="nez-3s-IKK" id="tOm-Sl-FHw"/>
                         <outlet property="loginView" destination="wIh-cM-wjB" id="XDs-ly-4Nm"/>
                         <outlet property="passwordField" destination="nez-3s-IKK" id="5ba-dh-9E8"/>
+                        <outlet property="scrollView" destination="gIA-FZ-TlV" id="8fE-LX-brY"/>
                         <outlet property="segment" destination="B7G-tt-8x0" id="SGp-Wk-IEt"/>
+                        <outlet property="signUpButton" destination="H6i-Nh-IeB" id="nsJ-RP-spn"/>
                         <outlet property="sliderAmount" destination="mLu-be-qcd" id="SnS-QC-QoT"/>
                         <outlet property="sliderSumLabel" destination="Ss6-d8-r5e" id="OeE-A6-LW2"/>
                         <outlet property="sliderTime" destination="xHp-Q9-BPE" id="1oE-xz-otL"/>
@@ -205,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUV-aK-DsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1145" y="1114"/>
+            <point key="canvasLocation" x="1145" y="997"/>
         </scene>
         <!--Регистрация-->
         <scene sceneID="08o-g1-VG0">
