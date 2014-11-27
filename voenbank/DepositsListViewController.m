@@ -9,10 +9,15 @@
 #import "DepositsListViewController.h"
 #import "SidebarViewController.h"
 #import "SWRevealViewController.h"
+#import "APIConnect.h"
 #import "User.h"
 #import "DetailDepositViewController.h"
+#import <MBProgressHUD.h>
 
 @interface DepositsListViewController (){
+    UIRefreshControl *refreshControl;
+    NSString *userID;
+    APIConnect *api;
     User *user;
     NSMutableArray *depositCells;
     NSMutableDictionary *depositCellInfo;
@@ -27,9 +32,74 @@
     [super viewDidLoad];
     [self defBackButton];
     [self initUser];
+    [self refreshInit];
     [self initArrays];
     [self initDepositsData];
-    // Do any additional setup after loading the view.
+}
+
+
+- (void) refreshInit{
+    UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [self.tableView addSubview:refreshView]; //the tableView is a IBOutlet
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor whiteColor];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(getNewsData) forControlEvents:UIControlEventValueChanged];
+}
+- (void) getNewsData{
+    [self.tableView reloadData];
+    NSString *fullURL = [NSString stringWithFormat:@"/users/%@/deposits", userID];
+    [api staticPagesInfo:fullURL withComplition:^(id data, BOOL success){
+        if(success){
+            [self parseDepositsData:data];
+        } else {
+        }
+    }];
+}
+-(void) parseDepositsData:(id) data{
+    depositCells = [NSMutableArray arrayWithArray:data ];
+    [self reloadData];
+}
+-(void)reloadData
+{
+    [self.tableView reloadData];
+    
+    if (refreshControl) {
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Последнее обновление: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        refreshControl.attributedTitle = attributedTitle;
+        
+        [refreshControl endRefreshing];
+    }
+    [self.tableView reloadData];
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if([depositCells count] != nil){
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        self.tableView.backgroundView = nil;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        return 1;
+    } else {
+        [MBProgressHUD showHUDAddedTo:self.view
+                             animated:YES];
+        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.layer.frame.size.width, 500)];
+        messageLabel.text = @"No data is currently available. Please pull down to refresh.";
+        messageLabel.textColor = [UIColor blackColor];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
+        [messageLabel sizeToFit];
+        self.tableView.backgroundView = messageLabel;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    return 0;
 }
 
 - (void) defBackButton{
@@ -43,22 +113,14 @@
 }
 - (void) initUser {
     user = [User sharedManager];
+    api = [[APIConnect alloc] init];
+    userID = user.main[@"id"];
 }
 - (void) initArrays {
-    depositCells = [[NSMutableArray alloc] init];
     depositCellInfo = [[NSMutableDictionary alloc] init];
 }
 - (void) initDepositsData {
-    NSMutableDictionary *depositCell;
-    for(NSMutableDictionary *dict in user.deposits){
-        NSString *current_summ = [dict objectForKey:@"deposit_current_summ"];
-        NSString *createdAt = [dict objectForKey:@"created_at"];
-        
-        depositCell = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                       current_summ, @"sum",
-                       createdAt, @"time", nil];
-        [depositCells addObject:depositCell];
-    }
+    depositCells = [NSMutableArray arrayWithArray:user.deposits];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return user.deposits.count;
@@ -76,8 +138,8 @@
               UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ рублей", [currentDepositCell objectForKey:@"sum"]];
-    cell.detailTextLabel.text = [currentDepositCell objectForKey:@"time"];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ рублей", [currentDepositCell objectForKey:@"current_amount"]];
+    cell.detailTextLabel.text = [self correctConvertOfDate:[currentDepositCell objectForKey:@"created_at"]];
     cell.imageView.frame = CGRectMake(8, 5, 40, 36);
     cell.imageView.image = [UIImage imageNamed:@"money_bag-50.png"];
     return cell;
@@ -93,7 +155,14 @@
         view.deposit = detail;
     }
 }
-
+- (NSString *) correctConvertOfDate:(NSString *) date{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    NSDate *correctDate = [dateFormat dateFromString:date];
+    [dateFormat setDateFormat:@"dd.MM.YYYY HH:mm:SS"];
+    NSString *finalDate = [dateFormat stringFromDate:correctDate];
+    return finalDate;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

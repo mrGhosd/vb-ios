@@ -14,5 +14,6 @@
 
 @interface DepositsListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

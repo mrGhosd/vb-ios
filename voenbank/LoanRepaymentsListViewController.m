@@ -86,7 +86,7 @@
         [MBProgressHUD showHUDAddedTo:self.view
                              animated:YES];
         UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.layer.frame.size.width, 500)];
-        messageLabel.text = @"No data is currently available. Please pull down to refresh.";
+        messageLabel.text = @"По данному займу не выполнялись выплаты.";
         messageLabel.textColor = [UIColor blackColor];
         messageLabel.numberOfLines = 0;
         messageLabel.textAlignment = NSTextAlignmentCenter;
@@ -94,6 +94,7 @@
         [messageLabel sizeToFit];
         self.tableView.backgroundView = messageLabel;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     }
     return 0;
 }
@@ -104,15 +105,6 @@
 }
 -(void) initRepaymentCells{
     repaymentCell = [NSMutableArray arrayWithArray:self.loanRepayments];
-//    for(NSDictionary *payment in self.loanRepayments){
-//        NSString *sum = [payment objectForKey:@"granted_summ"];
-//        NSString *createdAt = [payment objectForKey:@"created_at"];
-//        
-//        repCell = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-//                   sum,@"sum",
-//                   createdAt, @"create",nil];
-//        [repaymentCell addObject:repCell];
-//    }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"repaymentCell";

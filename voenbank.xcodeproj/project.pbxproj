@@ -246,12 +246,6 @@
 				6446BCED1A1B60AC00E875AA /* Partners */,
 				6446BCEC1A1B60A100E875AA /* Shares */,
 				6446BCEB1A1B609A00E875AA /* News */,
-				64FACAB11A0646BF00135C4B /* LoansListViewController.h */,
-				64FACAB21A0646BF00135C4B /* LoansListViewController.m */,
-				64FACAB61A068C5B00135C4B /* DetailLoanViewController.h */,
-				64FACAB71A068C5B00135C4B /* DetailLoanViewController.m */,
-				642B79311A06D38A00036EE2 /* LoanRepaymentsListViewController.h */,
-				642B79321A06D38A00036EE2 /* LoanRepaymentsListViewController.m */,
 				642B79381A06E0A600036EE2 /* DepositsListViewController.h */,
 				642B79391A06E0A600036EE2 /* DepositsListViewController.m */,
 				642B793B1A06F08900036EE2 /* DetailDepositViewController.h */,
@@ -307,6 +301,12 @@
 		6446BCEF1A1E7C7F00E875AA /* loan */ = {
 			isa = PBXGroup;
 			children = (
+				64FACAB11A0646BF00135C4B /* LoansListViewController.h */,
+				64FACAB21A0646BF00135C4B /* LoansListViewController.m */,
+				64FACAB61A068C5B00135C4B /* DetailLoanViewController.h */,
+				64FACAB71A068C5B00135C4B /* DetailLoanViewController.m */,
+				642B79311A06D38A00036EE2 /* LoanRepaymentsListViewController.h */,
+				642B79321A06D38A00036EE2 /* LoanRepaymentsListViewController.m */,
 			);
 			name = loan;
 			sourceTree = "<group>";

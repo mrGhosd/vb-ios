@@ -1467,6 +1467,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="IMf-6e-mKn" id="myU-BQ-HV7"/>
+                        <outlet property="tableView" destination="00i-eK-DcI" id="N8w-k6-4hI"/>
                         <segue destination="Sd5-0d-jtk" kind="push" identifier="detail_deposit" id="YsR-z0-biM"/>
                     </connections>
                 </viewController>

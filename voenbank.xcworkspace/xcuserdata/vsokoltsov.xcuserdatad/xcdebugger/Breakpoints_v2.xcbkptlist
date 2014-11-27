@@ -1090,11 +1090,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/LoanRepaymentsListViewController.m"
-            timestampString = "438820077.660847"
+            timestampString = "438823887.067213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "-initRepaymentCells"
             landmarkType = "5">
          </BreakpointContent>
