@@ -8,9 +8,14 @@
 
 #import "DetailDepositViewController.h"
 #import "ContributionAccountsViewController.h"
+#import "APIConnect.h"
 
 @interface DetailDepositViewController (){
     NSArray *currentAccounts;
+    APIConnect *api;
+    UIRefreshControl *refreshControl;
+    NSString *userID;
+    NSString *depositID;
 }
 
 @end
@@ -19,16 +24,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    api = [[APIConnect alloc] init];
+    [self refreshInit];
     [self initDepositDetail];
     // Do any additional setup after loading the view.
 }
+
+- (void) refreshInit{
+    UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [self.scrollView addSubview:refreshView]; //the tableView is a IBOutlet
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor whiteColor];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(updateDepositInfo) forControlEvents:UIControlEventValueChanged];
+}
+
+-(void)updateDepositInfo{
+    NSString *url = [NSString stringWithFormat:@"/users/%@/deposits/%@", userID, depositID];
+    [api staticPagesInfo:url withComplition:^(id data, BOOL result){
+        if(result){
+            [self parseLoanInfo:data];
+        } else {
+            
+        }
+    }];
+}
+- (void) parseLoanInfo:(id) data{
+    self.deposit = (NSMutableDictionary *)data;
+    [self initDepositDetail];
+    [refreshControl endRefreshing];
+}
+
+
 - (void) initDepositDetail {
+    userID = self.deposit[@"user_id"];
+    depositID = self.deposit[@"id"];
     self.depositTitle.text = [NSString stringWithFormat:@"Вклад №%@", [self.deposit objectForKey:@"id"]];
-    self.depositSum.text = [NSString stringWithFormat:@"%@ рублей", [self.deposit objectForKey:@"deposit_current_summ"]];
+    self.depositSum.text = [NSString stringWithFormat:@"%@ рублей", [self.deposit objectForKey:@"current_amount"]];
     self.depositResponse.text = [self getDepostResponseValue];
     self.depositDaysDiff.text = [NSString stringWithFormat:@"%@ дней", [self.deposit objectForKey:@"days_diff"]];
-    self.depositCreate.text = [NSString stringWithFormat:@"%@", [self.deposit objectForKey:@"created_at"]];
-    self.depositUpdate.text = [NSString stringWithFormat:@"%@", [self.deposit objectForKey:@"updated_at"]];
+    self.depositCreate.text = [self correctConvertOfDate:[NSString stringWithFormat:@"%@", [self.deposit objectForKey:@"created_at"]] ];
+    self.depositUpdate.text = [self correctConvertOfDate:[NSString stringWithFormat:@"%@", [self.deposit objectForKey:@"updated_at"]] ];
     
 }
 - (NSString *) getDepostResponseValue{
@@ -56,6 +94,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSString *) correctConvertOfDate:(NSString *) date{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    NSDate *correctDate = [dateFormat dateFromString:date];
+    [dateFormat setDateFormat:@"dd.MM.YYYY"];
+    NSString *finalDate = [dateFormat stringFromDate:correctDate];
+    return finalDate;
+}
+
 
 - (IBAction)contributionAccounts:(id)sender {
     currentAccounts = [NSArray arrayWithArray:[self.deposit objectForKey:@"contribution_accounts"]];

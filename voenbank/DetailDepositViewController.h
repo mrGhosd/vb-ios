@@ -17,5 +17,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *depositDaysDiff;
 @property (strong, nonatomic) IBOutlet UILabel *depositCreate;
 - (IBAction)contributionAccounts:(id)sender;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UILabel *depositUpdate;
 @end
