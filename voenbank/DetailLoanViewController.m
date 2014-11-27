@@ -12,6 +12,7 @@
 
 @interface DetailLoanViewController (){
     NSMutableArray *loanrepayments;
+    NSDictionary *loanInfo;
     APIConnect *api;
     UIRefreshControl *refreshControl;
     NSString *userID;
@@ -116,12 +117,14 @@
 
 - (IBAction)toLoanRepayment:(id)sender {
     loanrepayments = [NSMutableArray arrayWithArray:[self.loanInfo objectForKey:@"repayments"]];
+    loanInfo = [NSDictionary dictionaryWithDictionary:self.loanInfo];
     [self performSegueWithIdentifier:@"loan_repayments" sender:self];
 }
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([[segue identifier] isEqualToString:@"loan_repayments"]) {
         LoanRepaymentsListViewController *repayment = segue.destinationViewController;
         repayment.loanRepayments = [NSArray arrayWithArray:loanrepayments];
+        repayment.loanInfo = [NSDictionary dictionaryWithDictionary:loanInfo];
     }
 }
 @end

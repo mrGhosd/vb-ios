@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LoanRepaymentsListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property(nonatomic, strong) NSDictionary *loanInfo;
 @property(nonatomic, strong) NSArray *loanRepayments;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end
