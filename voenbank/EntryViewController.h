@@ -33,6 +33,7 @@
 - (IBAction)changeAmount:(id)sender;
 - (IBAction)changeTime:(id)sender;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+- (IBAction)outerTouch:(id)sender;
 
 
 @end

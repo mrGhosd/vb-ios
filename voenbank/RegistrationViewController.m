@@ -14,7 +14,7 @@
 @interface RegistrationViewController (){
     UIDatePicker *date;
 }
-
+@property (weak, nonatomic) UITextField *activeField;
 
 @end
 
@@ -34,17 +34,66 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     [self initApi];
+    [self registerForKeyboardNotifications];
     [self setTimeAndSum];
     [self setupDatePicker];
     [_dateOfBirthField setInputView:date];
-//    [scroll setScrollEnabled:YES];
-//    [scroll setContentSize:CGSizeMake(320, 784)];
 }
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)textFieldDidBeginEditing:(UITextField *)sender
+{
+    self.activeField = sender;
+}
+
+- (IBAction)textFieldDidEndEditing:(UITextField *)sender
+{
+    self.activeField = nil;
+}
+// Call this method somewhere in your view controller setup code.
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void) keyboardDidShow:(NSNotification *)notification
+{
+    NSDictionary* info = [notification userInfo];
+    CGRect kbRect = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    kbRect = [scroll convertRect:kbRect fromView:nil];
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbRect.size.height, 0.0);
+    scroll.contentInset = contentInsets;
+    scroll.scrollIndicatorInsets = contentInsets;
+    
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbRect.size.height;
+    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
+        [scroll scrollRectToVisible:self.activeField.frame animated:YES];
+    }
+}
+
+- (void) keyboardWillBeHidden:(NSNotification *)notification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    scroll.contentInset = contentInsets;
+    scroll.scrollIndicatorInsets = contentInsets;
+}
+
+
 -(void) initApi{
     APIConnect *connection = [[APIConnect alloc] init];
     self.connection = connection;

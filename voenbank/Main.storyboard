@@ -169,7 +169,7 @@
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Логин" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WQf-yx-p18">
                                                         <rect key="frame" x="17" y="6" width="295" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="KvL-Zv-byp" id="yF5-fb-S4o"/>
                                                         </connections>
@@ -177,7 +177,7 @@
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nez-3s-IKK">
                                                         <rect key="frame" x="17" y="44" width="295" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="KvL-Zv-byp" id="nVO-1H-neV"/>
                                                         </connections>
@@ -228,6 +228,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Le7-zT-5O9" firstAttribute="height" secondItem="gIA-FZ-TlV" secondAttribute="height" id="FYz-1a-MDq"/>
                                     <constraint firstItem="Le7-zT-5O9" firstAttribute="top" secondItem="gIA-FZ-TlV" secondAttribute="top" id="IvG-nq-tGP"/>
@@ -265,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUV-aK-DsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1145" y="997"/>
+            <point key="canvasLocation" x="1145" y="1078"/>
         </scene>
         <!--Регистрация-->
         <scene sceneID="08o-g1-VG0">
@@ -279,11 +280,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="7io-yi-pMu">
-                                <rect key="frame" x="0.0" y="68" width="320" height="754"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="900" pagingEnabled="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="7io-yi-pMu">
+                                <rect key="frame" x="0.0" y="68" width="320" height="900"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XGk-bY-3Pt">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="754"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="900"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vb_pattrn_0061.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2Og-Cl-saB">
                                                 <rect key="frame" x="0.0" y="-150" width="320" height="1300"/>
@@ -1788,6 +1789,7 @@
                         <outlet property="loanSum" destination="gcm-jR-6h7" id="L5m-4D-2ml"/>
                         <outlet property="loanTime" destination="tK8-FZ-cjW" id="Hwg-hV-yC2"/>
                         <outlet property="loanTitle" destination="QNQ-Fm-RUQ" id="1GU-eH-6xd"/>
+                        <outlet property="scrollView" destination="rg6-qv-mUh" id="TBm-qr-wZC"/>
                         <segue destination="1MP-hm-2g7" kind="push" identifier="loan_repayments" id="S7b-aa-vUM"/>
                     </connections>
                 </viewController>

@@ -21,5 +21,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *loanPayedSum;
 @property (strong, nonatomic) IBOutlet UILabel *loanCurrentDay;
 - (IBAction)toLoanRepayment:(id)sender;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

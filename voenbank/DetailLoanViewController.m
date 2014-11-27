@@ -8,8 +8,14 @@
 
 #import "DetailLoanViewController.h"
 #import "LoanRepaymentsListViewController.h"
+#import "APIConnect.h"
+
 @interface DetailLoanViewController (){
     NSMutableArray *loanrepayments;
+    APIConnect *api;
+    UIRefreshControl *refreshControl;
+    NSString *userID;
+    NSString *loanID;
 }
 
 @end
@@ -18,17 +24,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    api = [[APIConnect alloc] init];
+    [self refreshInit];
     [self initLoanData];
     // Do any additional setup after loading the view.
 }
+- (void) refreshInit{
+    UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [self.scrollView addSubview:refreshView]; //the tableView is a IBOutlet
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor whiteColor];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(updateLoanInfo) forControlEvents:UIControlEventValueChanged];
+    
+}
 - (void) initLoanData{
+    userID = self.loanInfo[@"user_id"];
+    loanID = self.loanInfo[@"id"];
     NSString *title = [NSString stringWithFormat:@"Займ №%@", [self.loanInfo objectForKey:@"id"]];
     self.loanTitle.text = title;
-    self.loanSum.text = [NSString stringWithFormat:@"%@ рублей", [self.loanInfo objectForKey:@"loan_sum"]];
+    self.loanSum.text = [NSString stringWithFormat:@"%@ рублей", [self.loanInfo objectForKey:@"sum"]];
     self.loanTime.text = [NSString stringWithFormat:@"%@ месяца(ев)", [self.loanInfo objectForKey:@"date_in_months"]];
     self.loanPayedSum.text = [self.loanInfo objectForKey:@"payed_sum"];
-    self.loanBeginDate.text = [self.loanInfo objectForKey:@"begin_date"];
-    self.loanEndDate.text = [self.loanInfo objectForKey:@"end_date"];
+    self.loanBeginDate.text = [self correctConvertOfDate:[self.loanInfo objectForKey:@"begin_date"] ];
+    self.loanEndDate.text = [self correctConvertOfDate:[self.loanInfo objectForKey:@"end_date"]];
     self.loanStatus.text = [self getLoanStatus];
     self.loanResponse.text = [self getLoanResponse];
     self.loanCurrentDay.text = [NSString stringWithFormat:@"%@ день", [self.loanInfo objectForKey:@"current_day_in_loan_history"]];
@@ -44,6 +65,21 @@
     }
     return status;
 }
+-(void)updateLoanInfo{
+    NSString *url = [NSString stringWithFormat:@"/users/%@/loans/%@", userID, loanID];
+    [api staticPagesInfo:url withComplition:^(id data, BOOL result){
+        if(result){
+            [self parseLoanInfo:data];
+        } else {
+            
+        }
+    }];
+}
+- (void) parseLoanInfo:(id) data{
+    self.loanInfo = (NSMutableDictionary *)data;
+    [self initLoanData];
+    [refreshControl endRefreshing];
+}
 
 -(NSString *) getLoanResponse{
     NSString *response;
@@ -58,6 +94,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (NSString *) correctConvertOfDate:(NSString *) date{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    NSDate *correctDate = [dateFormat dateFromString:date];
+    [dateFormat setDateFormat:@"dd.MM.YYYY"];
+    NSString *finalDate = [dateFormat stringFromDate:correctDate];
+    return finalDate;
 }
 
 /*

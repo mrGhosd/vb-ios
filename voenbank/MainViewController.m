@@ -88,6 +88,7 @@
     _secondname_field.text = [user.main objectForKey:@"secondname"];
     self.roleField.text = [user.main objectForKey:@"user_role"];
     self.dateOfBirthField.text = [user.main objectForKey:@"date_of_birth"];
+    self.place_of_birth.text = user.main[@"place_of_birth"];
     
     image = @"avatar_url";
     NSString *imageURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",[user.main objectForKey:image]];

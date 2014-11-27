@@ -24,64 +24,67 @@
     [super viewDidLoad];
     APIConnect *connection = [[APIConnect alloc] init];
     self.connection = connection;
+    self.loginField.delegate = self;
 //    self.scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+//    UITapGestureRecognizer *messagesTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+//    messagesTap.delegate = self;
     [self.navigationItem setHidesBackButton:YES];
-    [self registerForKeyboardNotifications];
     [self initSliderApperance];
 }
-- (IBAction)textFieldDidBeginEditing:(UITextField *)sender
-{
-    self.activeField = sender;
-}
-
-- (IBAction)textFieldDidEndEditing:(UITextField *)sender
-{
-    self.activeField = nil;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-// Call this method somewhere in your view controller setup code.
-- (void)registerForKeyboardNotifications
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardDidShow:)
-                                                 name:UIKeyboardDidShowNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillBeHidden:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
-}
-
-// Called when the UIKeyboardDidShowNotification is sent.
-- (void) keyboardDidShow:(NSNotification *)notification
-{
-    NSDictionary* info = [notification userInfo];
-    CGRect kbRect = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-    kbRect = [self.scrollView convertRect:kbRect fromView:nil];
-    
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbRect.size.height, 0.0);
-    self.scrollView.contentInset = contentInsets;
-    self.scrollView.scrollIndicatorInsets = contentInsets;
-    
-    CGRect aRect = self.view.frame;
-    aRect.size.height -= kbRect.size.height;
-    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
-        [self.scrollView scrollRectToVisible:self.activeField.frame animated:YES];
-    }
-}
-
-- (void) keyboardWillBeHidden:(NSNotification *)notification
-{
-    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
-    self.scrollView.contentInset = contentInsets;
-    self.scrollView.scrollIndicatorInsets = contentInsets;
-}
+//- (IBAction)textFieldDidBeginEditing:(UITextField *)sender
+//{
+//    self.activeField = sender;
+//}
+//
+//- (IBAction)textFieldDidEndEditing:(UITextField *)sender
+//{
+//    self.activeField = nil;
+//}
+//
+//- (void)didReceiveMemoryWarning {
+//    [super didReceiveMemoryWarning];
+//    // Dispose of any resources that can be recreated.
+//}
+//
+//// Call this method somewhere in your view controller setup code.
+//- (void)registerForKeyboardNotifications
+//{
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardDidShow:)
+//                                                 name:UIKeyboardDidShowNotification
+//                                               object:nil];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardWillBeHidden:)
+//                                                 name:UIKeyboardWillHideNotification
+//                                               object:nil];
+//}
+//
+//// Called when the UIKeyboardDidShowNotification is sent.
+//- (void) keyboardDidShow:(NSNotification *)notification
+//{
+//    NSDictionary* info = [notification userInfo];
+//    CGRect kbRect = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+//    kbRect = [self.scrollView convertRect:kbRect fromView:nil];
+//    
+//    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbRect.size.height, 0.0);
+//    self.scrollView.contentInset = contentInsets;
+//    self.scrollView.scrollIndicatorInsets = contentInsets;
+//    
+//    CGRect aRect = self.view.frame;
+//    aRect.size.height -= kbRect.size.height;
+//    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
+//        [self.scrollView scrollRectToVisible:self.activeField.frame animated:YES];
+//    }
+//}
+//
+//- (void) keyboardWillBeHidden:(NSNotification *)notification
+//{
+//    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+//    self.scrollView.contentInset = contentInsets;
+//    self.scrollView.scrollIndicatorInsets = contentInsets;
+//    
+//}
 -(void) initLittlePopup{
     UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Пожалуйста, выберите роль:" delegate:self cancelButtonTitle:@"Отмена" destructiveButtonTitle:nil otherButtonTitles:
                             @"Курсант",
@@ -233,4 +236,7 @@
     }
 }
 
+- (IBAction)outerTouch:(id)sender {
+    
+}
 @end

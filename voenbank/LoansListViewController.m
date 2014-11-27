@@ -11,9 +11,14 @@
 #import "SidebarViewController.h"
 #import "DetailLoanViewController.h"
 #import "User.h"
+#import "APIConnect.h"
+#import <MBProgressHUD.h>
 
 @interface LoansListViewController (){
+    UIRefreshControl *refreshControl;
+    NSString *userID;
     User *user;
+    APIConnect *api;
     NSMutableArray *loansList;
     NSMutableArray *loanCells;
     NSDictionary *chLoan;
@@ -27,6 +32,7 @@
     [super viewDidLoad];
     [self defBackButton];
     [self initUser];
+    [self refreshInit];
     [self getListOfUserLoans];
     [self initLoansList];
     
@@ -34,30 +40,80 @@
 }
 - (void) initUser {
     user = [User sharedManager];
+    api = [[APIConnect alloc] init];
 }
 - (void) getListOfUserLoans {
+    userID = user.main[@"id"];
     self.tableView.delegate = self;
     loansList = [NSMutableArray arrayWithArray:user.loans];
     self.choosenLoan = [NSMutableDictionary new];
+}
+
+- (void) refreshInit{
+    UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [self.tableView addSubview:refreshView]; //the tableView is a IBOutlet
     
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor whiteColor];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(getNewsData) forControlEvents:UIControlEventValueChanged];
+}
+- (void) getNewsData{
+    [self.tableView reloadData];
+    NSString *fullURL = [NSString stringWithFormat:@"/users/%@/loans", userID];
+    [api staticPagesInfo:fullURL withComplition:^(id data, BOOL success){
+        if(success){
+            [self parseLoansData:data];
+        } else {
+        }
+    }];
+}
+-(void) parseLoansData:(id) data{
+    loanCells = data;
+    [self reloadData];
+}
+-(void)reloadData
+{
+    [self.tableView reloadData];
+    
+    if (refreshControl) {
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Последнее обновление: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        refreshControl.attributedTitle = attributedTitle;
+        
+        [refreshControl endRefreshing];
+    }
+    [self.tableView reloadData];
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if([loanCells count] != nil){
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        self.tableView.backgroundView = nil;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        return 1;
+    } else {
+        [MBProgressHUD showHUDAddedTo:self.view
+                             animated:YES];
+        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.layer.frame.size.width, 500)];
+        messageLabel.text = @"No data is currently available. Please pull down to refresh.";
+        messageLabel.textColor = [UIColor blackColor];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
+        [messageLabel sizeToFit];
+        self.tableView.backgroundView = messageLabel;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    return 0;
 }
 - (void) initLoansList {
-    loanCells = [[NSMutableArray alloc] init];
-    NSMutableDictionary *loanCell;
-    for(NSMutableDictionary *loanInfo in loansList){
-        NSString *loanId = [loanInfo objectForKey:@"id"];
-        NSString *loanSum = [loanInfo objectForKey:@"loan_sum"];
-        NSString *loanTime = [loanInfo objectForKey:@"date_in_months"];
-        NSString *loanCreatedAt = [loanInfo objectForKey:@"begin_date"];
-        
-        loanCell = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                    loanId,@"id",
-                    loanSum, @"loan_sum",
-                    loanTime, @"loan_time",
-                    loanCreatedAt, @"loan_created_at",
-                    nil];
-        [loanCells addObject:loanCell];
-    }
+    loanCells = [NSMutableArray arrayWithArray:loansList];
 }
 
 - (void) defBackButton{
@@ -87,8 +143,8 @@
         cell=[[UITableViewCell alloc]initWithStyle:
               UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ р. / %@ м. ", [currentLoanCell objectForKey:@"loan_sum"], [currentLoanCell objectForKey:@"loan_time"]];
-    cell.detailTextLabel.text = [currentLoanCell objectForKey:@"loan_created_at"];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ р. / %@ м. ", [currentLoanCell objectForKey:@"sum"], [currentLoanCell objectForKey:@"date_in_months"]];
+    cell.detailTextLabel.text = [self correctConvertOfDate:[currentLoanCell objectForKey:@"begin_date"]];
     cell.imageView.frame = CGRectMake(8, 5, 40, 36);
     cell.imageView.image = [UIImage imageNamed:@"banknotes-50.png"];
     return cell;
@@ -97,6 +153,15 @@
     
     chLoan = [NSDictionary  dictionaryWithDictionary:loansList[indexPath.row]];
     [self performSegueWithIdentifier:@"detail_loan" sender:self];
+}
+
+- (NSString *) correctConvertOfDate:(NSString *) date{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    NSDate *correctDate = [dateFormat dateFromString:date];
+    [dateFormat setDateFormat:@"dd.MM.YYYY HH:mm:SS"];
+    NSString *finalDate = [dateFormat stringFromDate:correctDate];
+    return finalDate;
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
