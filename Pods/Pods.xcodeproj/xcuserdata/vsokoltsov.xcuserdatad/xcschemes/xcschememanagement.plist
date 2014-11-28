@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-voenbank-UICKeyChainStore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-voenbank.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>27C376A728E1676E50CD4E51</key>
+		<key>139764A93DD8846D20B2E567</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3BC70E9BB69047B42AA96E7E</key>
+		<key>13DFB0051AC210A18C5C54D7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4E1E688080461738087455A2</key>
+		<key>51E52FDE3FB3EB42D22D98F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B88C06C01DA3E66A8A193EF1</key>
+		<key>76E3C7201889D7C9DF084115</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C2509237A76A3EF159C880C4</key>
+		<key>B449F1A22DBBCB5672077E56</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB57C4D7FDC0AD293DA1ABDD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

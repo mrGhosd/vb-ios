@@ -13,6 +13,8 @@
 #import "PersonalInfoViewController.h"
 #import "LoansListViewController.h"
 #import "DepositsListViewController.h"
+#import "EntryViewController.h"
+#import <UICKeyChainStore.h>
 
 @interface MainViewController ()
 {
@@ -20,6 +22,7 @@
     APIConnect *api;
     NSString *userID;
     User *user;
+    UICKeyChainStore *store;
     UIRefreshControl *refreshControl;
 }
 
@@ -138,5 +141,14 @@
 }
 
 - (IBAction)loansList:(id)sender {
+}
+- (IBAction)exitButtonTap:(id)sender {
+    store = [UICKeyChainStore keyChainStore];
+    [store removeItemForKey:@"login"];
+    [store removeItemForKey:@"password"];
+    [store synchronize];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    EntryViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"EntryViewController"];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 @end

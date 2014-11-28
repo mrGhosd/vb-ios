@@ -146,11 +146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/EntryViewController.m"
-            timestampString = "438726208.226594"
+            timestampString = "438898558.801707"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -162,11 +162,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/EntryViewController.m"
-            timestampString = "438741020.003688"
+            timestampString = "438898925.240054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-actionSheet:clickedButtonAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -178,11 +178,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/EntryViewController.m"
-            timestampString = "438741020.003688"
+            timestampString = "438898925.240054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "-initViewWithSliders:"
             landmarkType = "5">
          </BreakpointContent>
@@ -320,11 +320,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/EntryViewController.m"
-            timestampString = "438741020.003688"
+            timestampString = "438898925.240054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "-authButton:"
             landmarkType = "5">
          </BreakpointContent>
@@ -572,11 +572,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/EntryViewController.m"
-            timestampString = "438741020.003688"
+            timestampString = "438898925.240054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -588,11 +588,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/EntryViewController.m"
-            timestampString = "438741020.003688"
+            timestampString = "438898925.240054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -620,11 +620,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/MainViewController.m"
-            timestampString = "438761264.105165"
+            timestampString = "438901476.393813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "-setupMainPageData"
             landmarkType = "5">
          </BreakpointContent>
@@ -636,11 +636,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/MainViewController.m"
-            timestampString = "438761264.105165"
+            timestampString = "438901476.393813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-setupMainPageData"
             landmarkType = "5">
          </BreakpointContent>
@@ -652,11 +652,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/MainViewController.m"
-            timestampString = "438761264.105165"
+            timestampString = "438901476.393813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "-setupMainPageData"
             landmarkType = "5">
          </BreakpointContent>
@@ -972,11 +972,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/MainViewController.m"
-            timestampString = "438214052.877472"
+            timestampString = "438901476.393813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -988,11 +988,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/MainViewController.m"
-            timestampString = "438761264.105165"
+            timestampString = "438901476.393813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-setupMainPageData"
             landmarkType = "5">
          </BreakpointContent>
@@ -1004,11 +1004,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/MainViewController.m"
-            timestampString = "438761264.105165"
+            timestampString = "438901476.393813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "-setupMainPageData"
             landmarkType = "5">
          </BreakpointContent>
@@ -1148,11 +1148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/MainViewController.m"
-            timestampString = "438214607.492692"
+            timestampString = "438901476.393813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "-setupMainPageData"
             landmarkType = "5">
          </BreakpointContent>

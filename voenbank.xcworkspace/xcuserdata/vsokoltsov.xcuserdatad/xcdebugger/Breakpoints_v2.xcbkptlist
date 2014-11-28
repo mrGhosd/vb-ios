@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/EntryViewController.m"
-            timestampString = "438741020.003688"
+            timestampString = "438898925.240054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "-viewSwitcher:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/EntryViewController.m"
-            timestampString = "438741020.003688"
+            timestampString = "438898925.240054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "-toUserProfile:"
             landmarkType = "5">
          </BreakpointContent>
@@ -618,11 +618,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/MainViewController.m"
-            timestampString = "438214143.81311"
+            timestampString = "438901476.393813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "-updateUserInfo"
             landmarkType = "5">
          </BreakpointContent>
@@ -634,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/MainViewController.m"
-            timestampString = "438214180.370631"
+            timestampString = "438901476.393813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "-updateUserInfo"
             landmarkType = "5">
             <Locations>
@@ -884,11 +884,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/EntryViewController.m"
-            timestampString = "438741020.003688"
+            timestampString = "438898925.240054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "-authButton:"
             landmarkType = "5">
          </BreakpointContent>
@@ -900,11 +900,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/EntryViewController.m"
-            timestampString = "438741020.003688"
+            timestampString = "438898925.240054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "-authButton:"
             landmarkType = "5">
             <Locations>
@@ -984,22 +984,6 @@
             startingLineNumber = "48"
             endingLineNumber = "48"
             landmarkName = "-getListOfUserLoans"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "voenbank/EntryViewController.m"
-            timestampString = "438741020.003688"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
-            landmarkName = "-outerTouch:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1192,6 +1176,54 @@
             startingLineNumber = "76"
             endingLineNumber = "76"
             landmarkName = "-initDepositCell"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "voenbank/EntryViewController.m"
+            timestampString = "438898925.240054"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "-initUserKeyChain"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "voenbank/EntryViewController.m"
+            timestampString = "438898925.240054"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "voenbank/MainViewController.m"
+            timestampString = "438901476.393813"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "-exitButtonTap:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

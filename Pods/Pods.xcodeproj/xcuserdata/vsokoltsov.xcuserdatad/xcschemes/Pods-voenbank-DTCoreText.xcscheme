@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C2509237A76A3EF159C880C4"
+               BlueprintIdentifier = "76E3C7201889D7C9DF084115"
                BuildableName = "libPods-voenbank-DTCoreText.a"
                BlueprintName = "Pods-voenbank-DTCoreText"
                ReferencedContainer = "container:Pods.xcodeproj">

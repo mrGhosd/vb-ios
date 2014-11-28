@@ -29,4 +29,5 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UILabel *place_of_birth;
 @property (strong, nonatomic) IBOutlet UIButton *depositsList;
+- (IBAction)exitButtonTap:(id)sender;
 @end

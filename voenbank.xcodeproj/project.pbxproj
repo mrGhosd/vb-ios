@@ -31,6 +31,9 @@
 		64574C4519D6DBD90094979C /* EntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64574C4419D6DBD90094979C /* EntryViewController.m */; };
 		648CE5F51983CDA500AD7FAB /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CE5F41983CDA500AD7FAB /* SidebarViewController.m */; };
 		648CE5F81983D01900AD7FAB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 648CE5F71983D01900AD7FAB /* MainViewController.m */; };
+		6495F6CE1A290E4300881613 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6495F6CD1A290E4300881613 /* Security.framework */; };
+		6495F6D21A2918E800881613 /* exit-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 6495F6D11A2918E800881613 /* exit-50.png */; };
+		6495F6D41A29190A00881613 /* exit-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 6495F6D31A29190A00881613 /* exit-25.png */; };
 		64BE32BD19574B01003E99D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32BC19574B01003E99D0 /* Foundation.framework */; };
 		64BE32BF19574B01003E99D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32BE19574B01003E99D0 /* CoreGraphics.framework */; };
 		64BE32C119574B01003E99D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BE32C019574B01003E99D0 /* UIKit.framework */; };
@@ -129,6 +132,9 @@
 		648CE5F41983CDA500AD7FAB /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		648CE5F61983D01900AD7FAB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		648CE5F71983D01900AD7FAB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		6495F6CD1A290E4300881613 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6495F6D11A2918E800881613 /* exit-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exit-50.png"; sourceTree = "<group>"; };
+		6495F6D31A29190A00881613 /* exit-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exit-25.png"; sourceTree = "<group>"; };
 		64BE32B919574B01003E99D0 /* voenbank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voenbank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64BE32BC19574B01003E99D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		64BE32BE19574B01003E99D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -194,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6495F6CE1A290E4300881613 /* Security.framework in Frameworks */,
 				6417EE351A182CC100021F49 /* libPods-voenbank-DTCoreText.a in Frameworks */,
 				6417EE361A182CC100021F49 /* libPods-voenbank-DTFoundation.a in Frameworks */,
 				64BE32BF19574B01003E99D0 /* CoreGraphics.framework in Frameworks */,
@@ -357,6 +364,7 @@
 		64BE32BB19574B01003E99D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6495F6CD1A290E4300881613 /* Security.framework */,
 				6417EE331A182CC100021F49 /* libPods-voenbank-DTCoreText.a */,
 				6417EE341A182CC100021F49 /* libPods-voenbank-DTFoundation.a */,
 				64BE32BC19574B01003E99D0 /* Foundation.framework */,
@@ -430,6 +438,8 @@
 		64CF4E991986E28D00274BF8 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6495F6D31A29190A00881613 /* exit-25.png */,
+				6495F6D11A2918E800881613 /* exit-50.png */,
 				642B79411A0781D900036EE2 /* card_in_use-50.png */,
 				64FACAB91A06A4BC00135C4B /* right3-50.png */,
 				64FACAB41A06770B00135C4B /* banknotes-50.png */,
@@ -554,12 +564,14 @@
 				64FACAA41A059B4B00135C4B /* military_medal-25.png in Resources */,
 				64CF4EA51986E2B200274BF8 /* sliderThumb.png in Resources */,
 				642B79371A06DF7500036EE2 /* money_bag-50.png in Resources */,
+				6495F6D21A2918E800881613 /* exit-50.png in Resources */,
 				64FACA9C1A059A0700135C4B /* administrator-25.png in Resources */,
 				64FACAB01A059E0200135C4B /* money-25.png in Resources */,
 				64CF4EA41986E2B200274BF8 /* slider_unfilled.jpg in Resources */,
 				64EA07BB19EDDFA400A3FA2A /* faq_arrow_up.png in Resources */,
 				64CF4EA21986E2B200274BF8 /* menu.png in Resources */,
 				64CF4EA11986E2B200274BF8 /* feedback_button.png in Resources */,
+				6495F6D41A29190A00881613 /* exit-25.png in Resources */,
 				64FACAAA1A059CDC00135C4B /* sale-50.png in Resources */,
 				64CF4EA71986E2B200274BF8 /* vb-logo.png in Resources */,
 				64EA07B919EDD18D00A3FA2A /* faq_arrow_down.png in Resources */,

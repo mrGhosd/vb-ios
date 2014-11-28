@@ -32,16 +32,19 @@ PODS:
   - DTFoundation/UIKit (1.7.3):
     - DTFoundation/Core
   - MBProgressHUD (0.9)
+  - UICKeyChainStore (1.1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - DTCoreText (~> 1.6)
   - MBProgressHUD
+  - UICKeyChainStore
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   DTCoreText: 1fc0aadfa238d14c6cc56035af4e2b76b958e3b1
   DTFoundation: 360bc65ab44f588611f47324b8cfb0f18e04b263
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+  UICKeyChainStore: 257d869d42527b9853ebb11d6dc3ac377b270e72
 
 COCOAPODS: 0.34.4

@@ -7,6 +7,7 @@ target 'voenbank' do
     pod 'AFNetworking', '~> 2.0'
     pod 'MBProgressHUD'
     pod 'DTCoreText', '~> 1.6'
+    pod 'UICKeyChainStore'
 end
 
 target 'voenbankTests' do

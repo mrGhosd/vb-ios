@@ -1066,12 +1066,21 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQo-Pi-BX6">
+                                                <rect key="frame" x="93" y="385" width="115" height="39"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Выход" image="exit-25.png"/>
+                                                <connections>
+                                                    <action selector="exitButtonTap:" destination="DY4-5j-O8c" eventType="touchUpInside" id="yjW-B6-wVE"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="9he-eF-uTP" secondAttribute="trailing" constant="17" id="9Ig-ji-yz2"/>
                                             <constraint firstAttribute="trailing" secondItem="5n6-vT-RhF" secondAttribute="trailing" constant="17" id="9Ym-us-knD"/>
                                             <constraint firstItem="Kpd-HF-wyI" firstAttribute="leading" secondItem="x23-Lu-FUA" secondAttribute="leading" constant="17" id="9ag-fZ-Uu9"/>
+                                            <constraint firstAttribute="centerX" secondItem="tQo-Pi-BX6" secondAttribute="centerX" id="CoU-Ky-xCb"/>
                                             <constraint firstAttribute="centerX" secondItem="PJs-JE-Eyv" secondAttribute="centerX" id="DOh-Zc-U0X"/>
                                             <constraint firstAttribute="trailing" secondItem="VKP-b9-xnR" secondAttribute="trailing" constant="17" id="GMG-Zy-kRq"/>
                                             <constraint firstItem="Niq-7z-7qp" firstAttribute="leading" secondItem="x23-Lu-FUA" secondAttribute="leading" constant="17" id="OGv-ur-7oT"/>
@@ -1127,7 +1136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qxl-mw-MW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3046" y="374"/>
+            <point key="canvasLocation" x="3014" y="374"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c5a-6f-fMv">
@@ -2701,6 +2710,7 @@
         <image name="administrator-25.png" width="25" height="25"/>
         <image name="banknotes-50.png" width="50" height="50"/>
         <image name="contact_card-25.png" width="25" height="25"/>
+        <image name="exit-25.png" width="25" height="25"/>
         <image name="faq_arrow_down.png" width="9" height="10"/>
         <image name="feedback_button.png" width="142" height="30"/>
         <image name="menu.png" width="28" height="20"/>
