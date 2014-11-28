@@ -139,7 +139,7 @@
     
     
     cell.textLabel.text = tmpDict[@"stock_title"];
-    cell.detailTextLabel.text= tmpDict[@"created_at"];
+    cell.detailTextLabel.text= [self correctConvertOfDate:tmpDict[@"created_at"] ];
     cell.imageView.frame = CGRectMake(0, 0, 80, 70);
     cell.imageView.image = img;
     
@@ -155,6 +155,14 @@
         FullNewsInfoViewController *detailView = segue.destinationViewController;
         detailView.newsData = self.currentCellData;
     }
+}
+- (NSString *) correctConvertOfDate:(NSString *) date{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    NSDate *correctDate = [dateFormat dateFromString:date];
+    [dateFormat setDateFormat:@"dd.MM.YYYY HH:mm:SS"];
+    NSString *finalDate = [dateFormat stringFromDate:correctDate];
+    return finalDate;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

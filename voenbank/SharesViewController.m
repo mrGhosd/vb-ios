@@ -139,7 +139,7 @@
     NSAttributedString *text = [[NSAttributedString alloc] initWithHTMLData:textData documentAttributes:nil];
     cell.clipsToBounds =YES;
     cell.titleLabel.text = tmpDict[@"share_title"];
-    cell.timeLabel.text = tmpDict[@"created_at"];
+    cell.timeLabel.text = [self correctConvertOfDate:tmpDict[@"created_at"]];
     cell.shareText.text = text.string;
     return cell;
     
@@ -169,6 +169,14 @@
     else {
         return 44;
     }
+}
+- (NSString *) correctConvertOfDate:(NSString *) date{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    NSDate *correctDate = [dateFormat dateFromString:date];
+    [dateFormat setDateFormat:@"dd.MM.YYYY HH:mm:SS"];
+    NSString *finalDate = [dateFormat stringFromDate:correctDate];
+    return finalDate;
 }
 /*
 #pragma mark - Navigation
