@@ -868,16 +868,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xjN-9N-r3K">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xjN-9N-r3K">
                                 <rect key="frame" x="0.0" y="64" width="320" height="630"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z6L-rL-quT">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z6L-rL-quT">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="630"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vb_pattrn_0061.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Ucl-gV-yIV">
                                                 <rect key="frame" x="0.0" y="-6" width="320" height="700"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="288" placeholderIntrinsicHeight="168" translatesAutoresizingMaskIntoConstraints="NO" id="C8V-kL-2do">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="288" placeholderIntrinsicHeight="168" translatesAutoresizingMaskIntoConstraints="NO" id="C8V-kL-2do">
                                                 <rect key="frame" x="16" y="17" width="288" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="C8V-kL-2do" secondAttribute="height" multiplier="48:25" id="84P-Yz-XmZ"/>
@@ -889,9 +889,12 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U7z-Ib-aGO">
+                                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U7z-Ib-aGO">
                                                 <rect key="frame" x="16" y="213" width="288" height="323"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="323" id="ppe-fH-WBS"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -901,20 +904,29 @@
                                             <constraint firstItem="QGg-Ts-ZjE" firstAttribute="top" secondItem="C8V-kL-2do" secondAttribute="bottom" constant="8" id="44e-FW-OHU"/>
                                             <constraint firstItem="C8V-kL-2do" firstAttribute="leading" secondItem="z6L-rL-quT" secondAttribute="leading" constant="16" id="B2z-D7-hzL"/>
                                             <constraint firstItem="C8V-kL-2do" firstAttribute="top" secondItem="z6L-rL-quT" secondAttribute="top" constant="17" id="P38-IJ-S2I"/>
+                                            <constraint firstItem="U7z-Ib-aGO" firstAttribute="leading" secondItem="z6L-rL-quT" secondAttribute="leading" constant="16" id="P9X-lZ-OXU"/>
+                                            <constraint firstItem="U7z-Ib-aGO" firstAttribute="top" secondItem="QGg-Ts-ZjE" secondAttribute="bottom" constant="8" id="nMc-di-OoK"/>
+                                            <constraint firstAttribute="bottom" secondItem="U7z-Ib-aGO" secondAttribute="bottom" constant="94" id="r4C-Sj-iN5"/>
                                             <constraint firstAttribute="trailing" secondItem="C8V-kL-2do" secondAttribute="trailing" constant="16" id="rE1-jm-iqv"/>
+                                            <constraint firstAttribute="trailing" secondItem="U7z-Ib-aGO" secondAttribute="trailing" constant="16" id="sJk-H4-AVl"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="z6L-rL-quT" secondAttribute="bottom" id="52H-lj-nGj"/>
+                                    <constraint firstAttribute="trailing" secondItem="z6L-rL-quT" secondAttribute="trailing" id="HIv-Kb-qhq"/>
+                                    <constraint firstItem="z6L-rL-quT" firstAttribute="leading" secondItem="xjN-9N-r3K" secondAttribute="leading" id="LCe-V3-0qY"/>
                                     <constraint firstItem="z6L-rL-quT" firstAttribute="top" secondItem="xjN-9N-r3K" secondAttribute="top" id="rx4-1W-F0a"/>
+                                    <constraint firstAttribute="width" secondItem="z6L-rL-quT" secondAttribute="width" id="u9s-gn-TEb"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="xjN-9N-r3K" secondAttribute="trailing" constant="-16" id="8QS-nT-cLv"/>
                             <constraint firstItem="xjN-9N-r3K" firstAttribute="bottom" secondItem="x3O-tL-HMB" secondAttribute="bottomMargin" id="9WB-mP-cDH"/>
                             <constraint firstItem="xjN-9N-r3K" firstAttribute="top" secondItem="x3O-tL-HMB" secondAttribute="topMargin" id="Z0e-Xv-cyg"/>
+                            <constraint firstItem="xjN-9N-r3K" firstAttribute="leading" secondItem="x3O-tL-HMB" secondAttribute="leadingMargin" constant="-16" id="nAf-WB-kxC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5CE-Wk-H7Y"/>
