@@ -10,4 +10,6 @@
 
 @interface ContributionAccountsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property(strong, nonatomic) NSArray *depositAccounts;
+@property(strong, nonatomic) NSDictionary *deposit;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end

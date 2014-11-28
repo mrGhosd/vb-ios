@@ -12,6 +12,7 @@
 
 @interface DetailDepositViewController (){
     NSArray *currentAccounts;
+    NSDictionary *depositInfo;
     APIConnect *api;
     UIRefreshControl *refreshControl;
     NSString *userID;
@@ -106,7 +107,8 @@
 
 
 - (IBAction)contributionAccounts:(id)sender {
-    currentAccounts = [NSArray arrayWithArray:[self.deposit objectForKey:@"contribution_accounts"]];
+    currentAccounts = [NSArray arrayWithArray:[self.deposit objectForKey:@"accounts"]];
+    depositInfo = [NSDictionary dictionaryWithDictionary:self.deposit];
     [self performSegueWithIdentifier:@"accounts" sender:self];
 }
 
@@ -114,6 +116,7 @@
     if([[segue identifier] isEqualToString:@"accounts"]) {
         ContributionAccountsViewController *accounts = segue.destinationViewController;
         accounts.depositAccounts = [NSArray arrayWithArray:currentAccounts];
+        accounts.deposit = [NSDictionary dictionaryWithDictionary:depositInfo];
     }
 }
 @end

@@ -1663,6 +1663,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="3bj-gB-ZwC"/>
+                    <connections>
+                        <outlet property="tableView" destination="g09-35-R2d" id="2vQ-mS-d4T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPN-33-dY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
