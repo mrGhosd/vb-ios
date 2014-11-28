@@ -13,7 +13,6 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    [self initUser];
     clickCount = 1;
     if(user.loans.count != 0){
         [self initLoanCell];
@@ -30,16 +29,21 @@
         self.loanArrow.image = [UIImage imageNamed:@"faq_arrow_up.png"];
     }
 }
-
+- (instancetype) setUserInfo:(User *)userData {
+     user = userData;
+    [self initLoanCell];
+    [self initDepositCell];
+    return self;
+}
 -(void) initUser{
     user = [User sharedManager];
 }
 - (void) initLoanCell{
     NSDictionary *currentUserLoan = user.loans.lastObject;
-    self.loanSumLabel.text = [NSString stringWithFormat:@"%@ р.", [currentUserLoan objectForKey:@"loan_sum"]];
+    self.loanSumLabel.text = [NSString stringWithFormat:@"%@ р.", [currentUserLoan objectForKey:@"sum"]];
     self.loanTimeLabel.text = [NSString stringWithFormat:@"%@ месяца(ев)", [currentUserLoan objectForKey:@"date_in_months"]];
-    self.loanBeginDateLabel.text = [NSString stringWithFormat:@"%@",
-                                    [currentUserLoan objectForKey:@"begin_date"]];;
+    self.loanBeginDateLabel.text = [self correctConvertOfDate:[NSString stringWithFormat:@"%@",
+                                    currentUserLoan[@"begin_date"]]];
     NSString *status = [currentUserLoan objectForKey:@"status"];
     if(status.boolValue == true){
         status = @"Оплачен";
@@ -68,7 +72,7 @@
 - (void) initDepositCell{
     NSDictionary *currentUserDeposit = user.deposits.lastObject;
     self.depositIdLabel.text = [NSString stringWithFormat:@"%@", [currentUserDeposit objectForKey:@"id"]];
-    self.depositCurrentSumLabel.text = [NSString stringWithFormat:@"%@", [currentUserDeposit objectForKey:@"deposit_current_summ"]];
+    self.depositCurrentSumLabel.text = [NSString stringWithFormat:@"%@", [currentUserDeposit objectForKey:@"current_amount"]];
     NSString *response = [currentUserDeposit objectForKey:@"response"];
     if([response boolValue] == true){
         response = @"Одобрен";
@@ -76,7 +80,7 @@
         response = @"Не просмотрен";
     }
     self.depositStatusLabel.text = response;
-    self.depositCreatedAtLabel.text = [NSString stringWithFormat:@"%@", [currentUserDeposit objectForKey:@"created_at"]];
+    self.depositCreatedAtLabel.text = [self correctConvertOfDate:[NSString stringWithFormat:@"%@", currentUserDeposit[@"created_at"]]];
     
 }
 -(void) setViewForCell:(BOOL) type{
@@ -85,6 +89,15 @@
     } else {
         self.emptyDepositView.hidden = NO;
     }
+}
+
+- (NSString *) correctConvertOfDate:(NSString *) date{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    NSDate *correctDate = [dateFormat dateFromString:date];
+    [dateFormat setDateFormat:@"dd.MM.YYYY"];
+    NSString *finalDate = [dateFormat stringFromDate:correctDate];
+    return finalDate;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

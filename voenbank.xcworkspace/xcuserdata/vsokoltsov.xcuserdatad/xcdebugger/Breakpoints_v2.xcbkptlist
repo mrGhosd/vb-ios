@@ -726,11 +726,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "voenbank/RightPanelTableViewCell.m"
-            timestampString = "438465225.389104"
+            timestampString = "438828878.151751"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-initDepositCell"
             landmarkType = "5">
          </BreakpointContent>
@@ -1176,6 +1176,22 @@
             startingLineNumber = "55"
             endingLineNumber = "55"
             landmarkName = "-parseRepaymentsData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "voenbank/RightPanelTableViewCell.m"
+            timestampString = "438828878.151751"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-initDepositCell"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

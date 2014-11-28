@@ -8,10 +8,15 @@
 
 #import "RightPanelViewController.h"
 #import "User.h"
+#import "APIConnect.h"
 #import "RightPanelTableViewCell.h"
+#import <MBProgressHUD.h>
 
 @interface RightPanelViewController (){
+    UIRefreshControl *refreshControl;
+    NSString *userID;
     User *user;
+    APIConnect *api;
     NSInteger selectedIndex;
     int clickCount;
 }
@@ -26,6 +31,9 @@
     _menuItems = @[@"loanPart", @"depositPart"];
     selectedIndex = -1;
     user = [User sharedManager];
+    userID = user.main[@"id"];
+    api = [[APIConnect alloc] init];
+    [self refreshInit];
     [self updateCellsRows];
     // Do any additional setup after loading the view.
 }
@@ -41,7 +49,48 @@
     if(user.deposits.count == 0){
         [topCell setViewForCell: NO];
     }
-
+}
+- (void) refreshInit{
+    UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [self.tableView addSubview:refreshView]; //the tableView is a IBOutlet
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor whiteColor];
+    refreshControl.backgroundColor = [UIColor grayColor];
+    [refreshView addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(getNewsData) forControlEvents:UIControlEventValueChanged];
+}
+- (void) getNewsData{
+    [self.tableView reloadData];
+    NSString *fullURL = [NSString stringWithFormat:@"/users/%@", userID];
+    [api staticPagesInfo:fullURL withComplition:^(id data, BOOL success){
+        if(success){
+            [self parseLoansData:data];
+        } else {
+        }
+    }];
+}
+-(void) parseLoansData:(id) data{
+    [user parseUserInfo:data];
+    [self reloadData];
+}
+-(void)reloadData
+{
+    [self.tableView reloadData];
+    
+    if (refreshControl) {
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Последнее обновление: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        refreshControl.attributedTitle = attributedTitle;
+        
+        [refreshControl endRefreshing];
+    }
+    [self.tableView reloadData];
 }
 -(void) initUserLoanDepositData{
     }
@@ -57,7 +106,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *CellIdentifier = [self.menuItems objectAtIndex:indexPath.row];
-    RightPanelTableViewCell *cell = (RightPanelTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    RightPanelTableViewCell *cell = [(RightPanelTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath] setUserInfo:user];
     cell.clipsToBounds =YES;
     return cell;
     
@@ -73,7 +122,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     RightPanelTableViewCell *cell = (RightPanelTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-
+    [cell setUserInfo:user];
     if(selectedIndex == indexPath.row){
         selectedIndex = -1;
 //        cell.loanArrow.layer.transform = CATransform3DMakeRotation(M_PI*1,1.0,0.0,0.0);
@@ -108,54 +157,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-//- (IBAction)showLoanView:(id)sender {
-////    self.edgesForExtendedLayout = UIRectEdgeNone;
-//    [self.view layoutIfNeeded];
-//
-//    [UIView animateWithDuration:0.5 animations:^{
-//        int size;
-//        int animationCount;
-//        if(clickCount == 1) {
-//            size = -200.0;
-//            clickCount = 0 ;
-//            animationCount = 1;
-//        } else if(clickCount == 0)
-//        {
-//            size = 200.0;
-//            clickCount = 1;
-//            animationCount = 2;
-//        }
-//
-//        [self animateLoanDepositWindows:size animation:animationCount window:self.loanView image:self.loanImageArrow];
-//        [self.view layoutIfNeeded];
-//    }];
-//}
-//
-//- (IBAction)showDepositView:(id)sender {
-//    [self.view layoutIfNeeded];
-////    self.edgesForExtendedLayout = UIRectEdgeNone;
-//    [UIView animateWithDuration:0.5 animations:^{
-//        int size;
-//        int animationCount;
-//        if(clickCount == 0) {
-//            size = -200.0;
-//            clickCount = 1 ;
-//            animationCount = 1;
-//        } else if(clickCount == 1)
-//        {
-//            size = 200.0;
-//            clickCount = 0;
-//            animationCount = 2;
-//        }
-//        
-//        [self animateLoanDepositWindows:size animation:animationCount window:self.depositView image:self.depositImageArrow ];
-//        [self.view layoutIfNeeded];
-//    }];
-//
-//}
-//-(void) animateLoanDepositWindows: (int) size animation: (int) count window: (UIView *) view image: (UIImageView *) image{
-//    image.layer.transform = CATransform3DMakeRotation(M_PI*count,1.0,0.0,0.0);
-//    view.frame = CGRectMake(view.frame.origin.x , view.frame.origin.y, view.frame.size.width, view.frame.size.height + size);
-//}
 @end

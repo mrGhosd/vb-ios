@@ -36,5 +36,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *depositCreatedAtLabel;
 
 - (void)setArrowDown:(BOOL)down;
--(void) setViewForCell:(BOOL) type;
+- (void) setViewForCell:(BOOL) type;
+- (instancetype) setUserInfo:(User *)userData;
 @end

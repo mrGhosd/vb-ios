@@ -246,12 +246,6 @@
 				6446BCED1A1B60AC00E875AA /* Partners */,
 				6446BCEC1A1B60A100E875AA /* Shares */,
 				6446BCEB1A1B609A00E875AA /* News */,
-				642B79381A06E0A600036EE2 /* DepositsListViewController.h */,
-				642B79391A06E0A600036EE2 /* DepositsListViewController.m */,
-				642B793B1A06F08900036EE2 /* DetailDepositViewController.h */,
-				642B793C1A06F08900036EE2 /* DetailDepositViewController.m */,
-				642B793E1A06FF8000036EE2 /* ContributionAccountsViewController.h */,
-				642B793F1A06FF8000036EE2 /* ContributionAccountsViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -314,6 +308,12 @@
 		6446BCF01A1E7C8500E875AA /* deposit */ = {
 			isa = PBXGroup;
 			children = (
+				642B79381A06E0A600036EE2 /* DepositsListViewController.h */,
+				642B79391A06E0A600036EE2 /* DepositsListViewController.m */,
+				642B793B1A06F08900036EE2 /* DetailDepositViewController.h */,
+				642B793C1A06F08900036EE2 /* DetailDepositViewController.m */,
+				642B793E1A06FF8000036EE2 /* ContributionAccountsViewController.h */,
+				642B793F1A06FF8000036EE2 /* ContributionAccountsViewController.m */,
 			);
 			name = deposit;
 			sourceTree = "<group>";
