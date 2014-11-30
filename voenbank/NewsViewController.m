@@ -131,11 +131,7 @@
     
     NSDictionary *tmpDict = newsList[indexPath.row];
     
-    NSMutableString *images = tmpDict[@"image_url"];
-    NSString *fullURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",tmpDict[@"image_url"]];
-    NSURL *url = [NSURL URLWithString: fullURL];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *img = [[UIImage alloc]initWithData:data];
+    UIImage *img = [self.connection loadImageHelper:tmpDict[@"image_url"]];
     
     
     cell.textLabel.text = tmpDict[@"stock_title"];

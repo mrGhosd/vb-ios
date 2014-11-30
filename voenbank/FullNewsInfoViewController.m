@@ -45,10 +45,7 @@
     self.newsText.text = text.string;
 }
 -(void) initImageNews{
-    NSString *fullURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",[_newsData objectForKey:@"image_url"]];
-    NSURL *url = [NSURL URLWithString: fullURL];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *img = [[UIImage alloc]initWithData:data];
+    UIImage *img = [api loadImageHelper:self.newsData[@"image_url"]];
     self.newsImage.image = img;
     self.newsImage.clipsToBounds = YES;
     self.newsImage.layer.borderWidth = 3.0f;

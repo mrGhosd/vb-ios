@@ -73,10 +73,7 @@
 }
 
 - (void) initImage {
-    NSString *fullURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@", self.detailPartner[@"image_url"]];
-    NSURL *url = [NSURL URLWithString: fullURL];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *img = [[UIImage alloc]initWithData:data];
+    UIImage *img = [api loadImageHelper:self.detailPartner[@"image_url"]];
     self.partnerImage.image = img;
 }
 

@@ -110,11 +110,8 @@
     UIImageView *partnerView = (UIImageView *)[cell viewWithTag:5];
     
     NSDictionary *currentCell = partnersList[indexPath.row];
-    
-    NSString *fullURL = [[NSString alloc] initWithFormat:@"http://127.0.0.1:3000%@",[currentCell objectForKey:@"image_url"]];
-    NSURL *url = [NSURL URLWithString: fullURL];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    UIImage *img = [[UIImage alloc]initWithData:data];
+
+    UIImage *img = [self.connection loadImageHelper:currentCell[@"image_url"]];
     partnerView.image = img;
     return cell;
 }
