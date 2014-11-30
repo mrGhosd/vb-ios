@@ -70,7 +70,7 @@
     self.infoSecondName.text = [user.main objectForKey:@"secondname"];
     self.infoDateOfBirth.text = [user.main objectForKey:@"date_of_birth"];
     self.infoPlaceOfBirth.text = [user.main objectForKey:@"place_of_birth"];
-//    self.infoCreatedAt.text = [user.main objectForKey:@"created_at"];
+    self.infoCreatedAt.text = [api dataParseHelper:user.main[@"created_at"]withPattern:@"dd.MM.YYYY"];
     self.infoRole.text = [user.main objectForKey:@"user_role"];
     self.infoSex.text = [user.main objectForKey:@"user_sex"];
     self.infoPhone.text = [user.main objectForKey:@"contact_phone"];

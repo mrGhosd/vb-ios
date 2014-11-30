@@ -23,4 +23,5 @@ typedef void(^requestErrorBlock)(NSError *);
 -(void)login:(NSDictionary *)data forUrl:(NSString *)url withComplition:(ResponseCopmlition) complition;
 -(void) staticPagesInfo:(NSString *) url withComplition:(ResponseCopmlition) complition;
 - (UIImage *) loadImageHelper:(NSString *) receivedUrl;
+- (NSString *) dataParseHelper:(NSString *) date withPattern: (NSString *)pattern;
 @end

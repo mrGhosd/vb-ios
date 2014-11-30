@@ -76,4 +76,13 @@
     UIImage *img = [[UIImage alloc]initWithData:data];
     return img;
 }
+- (NSString *) dataParseHelper:(NSString *) date withPattern: (NSString *)pattern{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    NSDate *correctDate = [dateFormat dateFromString:date];
+    [dateFormat setDateFormat:pattern];
+    NSString *finalDate = [dateFormat stringFromDate:correctDate];
+    return finalDate;
+}
+
 @end
